@@ -4,6 +4,7 @@ import GuideCard from '../components/GuideCard.astro';
 import { characters } from '../data/characters';
 import {
   formatGuideDate,
+  getGuideSlug,
   guideCategoryLabels,
   guideDifficultyLabels,
 } from '../data/guides';
@@ -18,12 +19,53 @@ const { guide, relatedGuides } = Astro.props;
 const character = guide.data.characterId
   ? characters.find((entry) => entry.id === guide.data.characterId)
   : undefined;
+const canonicalUrl = new URL(`/guides/${getGuideSlug(guide)}/`, Astro.site);
+const spendingSensitive = guide.data.category === 'currency' || guide.data.category === 'unlock';
+const structuredData = [
+  {
+    '@type': 'Article',
+    headline: guide.data.title,
+    description: guide.data.description,
+    url: canonicalUrl.href,
+    mainEntityOfPage: canonicalUrl.href,
+    datePublished: guide.data.publishedAt.toISOString(),
+    dateModified: guide.data.lastUpdated.toISOString(),
+    author: {
+      '@id': 'https://myheroultra.com/#organization',
+    },
+    publisher: {
+      '@id': 'https://myheroultra.com/#organization',
+    },
+    image: new URL('/social-card.png', Astro.site).href,
+    ...(character ? { about: { '@type': 'Thing', name: character.name } } : {}),
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Guides',
+        item: new URL('/guides/', Astro.site).href,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: guide.data.title,
+        item: canonicalUrl.href,
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title={`${guide.data.title} | Ultra Rumble Field Notes`}
   description={guide.data.description}
   ogType="article"
+  publishedAt={guide.data.publishedAt}
+  modifiedAt={guide.data.lastUpdated}
+  structuredData={structuredData}
 >
   <article class="guide-article">
     <header class="guide-hero">
@@ -51,8 +93,12 @@ const character = guide.data.characterId
 
     {guide.data.needsVerification && (
       <aside class="guide-alert">
-        <strong>Verify before spending.</strong>
-        <p>Unlock pools, banners, license rewards, and prices can change. Check the current in-game screen before using currency or tickets.</p>
+        <strong>{spendingSensitive ? 'Verify before spending.' : 'Balance details can change.'}</strong>
+        <p>
+          {spendingSensitive
+            ? 'Unlock pools, banners, license rewards, and prices can change. Check the current in-game screen before using currency or tickets.'
+            : 'Skill behavior and balance values can change between updates. Check the latest patch information when exact details matter.'}
+        </p>
       </aside>
     )}
 

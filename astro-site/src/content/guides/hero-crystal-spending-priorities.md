@@ -8,6 +8,7 @@ tags:
   - roll-tickets
   - beginner
 difficulty: beginner
+publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
 patchReviewed: null
 sourceUrls:
@@ -79,4 +80,3 @@ Divide your crystals into two mental accounts:
 - **Spendable:** everything above that protected amount.
 
 If a purchase reaches into the protected balance, wait one day and inspect the offer again. The shop is very good at manufacturing urgency; your account benefits from being boring.
-

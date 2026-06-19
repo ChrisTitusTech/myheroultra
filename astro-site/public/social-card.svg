@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#151c31"/>
+      <stop offset="1" stop-color="#090d1a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(235 55) rotate(42) scale(700 500)">
+      <stop stop-color="#6278ff" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#6278ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M890 85h116l84 136-84 136H890l84-136-84-136Z" fill="none" stroke="#98a8ff" stroke-width="4" opacity=".32"/>
+  <path d="M965 130h49l37 60-37 60h-49l37-60-37-60Z" fill="#98a8ff" opacity=".82"/>
+  <text x="84" y="126" fill="#98a8ff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" letter-spacing="5">UNOFFICIAL PLAYER FIELD NOTES</text>
+  <text x="80" y="252" fill="#f7f8fc" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Ultra Rumble</text>
+  <text x="80" y="334" fill="#f7f8fc" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800">Field Notes</text>
+  <text x="84" y="415" fill="#cbd3ed" font-family="Arial, Helvetica, sans-serif" font-size="31">Character guides, practical strategy,</text>
+  <text x="84" y="458" fill="#cbd3ed" font-family="Arial, Helvetica, sans-serif" font-size="31">unlocks, and beginner resources.</text>
+  <rect x="80" y="526" width="1040" height="2" fill="#2c3654"/>
+  <text x="84" y="576" fill="#98a3c2" font-family="Arial, Helvetica, sans-serif" font-size="24">myheroultra.com</text>
+</svg>

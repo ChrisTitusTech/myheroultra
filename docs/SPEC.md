@@ -172,6 +172,10 @@ Rules:
 - Node.js 22 for local development and Cloudflare builds.
 - Canonical production origin fixed to `https://myheroultra.com`.
 - Sitemap and robots.txt.
+- Open Graph and Twitter share metadata with a local 1200×630 image.
+- JSON-LD for the site, guide articles, and breadcrumb trails.
+- Security headers and immutable caching for fingerprinted build assets.
+- Image intake and optimization rules documented in `docs/IMAGE_POLICY.md`.
 - Responsive design.
 - Accessible controls and semantic HTML.
 

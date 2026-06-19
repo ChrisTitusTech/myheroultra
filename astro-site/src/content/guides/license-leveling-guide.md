@@ -9,6 +9,7 @@ tags:
   - missions
   - beginner
 difficulty: beginner
+publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
 patchReviewed: null
 sourceUrls:
@@ -86,4 +87,3 @@ Before maintenance:
 - Keep Hero Crystals protected unless a deliberate purchase passes your budget rule.
 
 Licenses reward consistency far more reliably than panic.
-

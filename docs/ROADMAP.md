@@ -165,6 +165,10 @@ Acceptance criteria:
 - Every major page has title and description.
 - Images include alt text.
 
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Phase 4 added a local 1200×630 social card, Open Graph and Twitter image metadata, Article/WebPage/Breadcrumb JSON-LD, article publication dates, Cloudflare security and cache headers, an image optimization policy, explicit static-asset HTML handling, and a recorded Lighthouse audit. The home page, character browser, and representative guide each scored 100 in Performance, Accessibility, Best Practices, and SEO.
+
 ## Phase 5 — Advanced Tools
 Goal: Add richer fan-site utilities after content foundation is stable.
 

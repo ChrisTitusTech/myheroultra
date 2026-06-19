@@ -21,6 +21,8 @@ Validation:
 npm run validate
 ```
 
+Image intake and optimization rules are documented in `docs/IMAGE_POLICY.md`. Phase 4 Lighthouse results are recorded in `docs/PHASE4_AUDIT.md`.
+
 ## Cloudflare Workers
 
 This project produces static files and deploys them through Cloudflare Workers Static Assets. It does not require the Cloudflare Astro adapter because there is no server-rendered Astro code.

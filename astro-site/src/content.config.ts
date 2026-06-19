@@ -14,6 +14,7 @@ const guides = defineCollection({
     characterId: z.enum(['star-and-stripe', 'all-might', 'hawks', 'mt-lady']).optional(),
     tags: z.array(z.string()).default([]),
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
+    publishedAt: z.coerce.date(),
     lastUpdated: z.coerce.date(),
     patchReviewed: z.string().nullable(),
     sourceUrls: z.array(z.url()).default([]),

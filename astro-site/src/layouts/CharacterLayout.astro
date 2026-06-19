@@ -14,12 +14,44 @@ interface Props {
 }
 
 const { character, relatedGuides = [] } = Astro.props;
+const canonicalUrl = new URL(`/characters/${character.slug}/`, Astro.site);
+const structuredData = [
+  {
+    '@type': 'WebPage',
+    name: `${character.name} Guide`,
+    description: character.summary,
+    url: canonicalUrl.href,
+    about: {
+      '@type': 'Thing',
+      name: character.name,
+      description: character.summary,
+    },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Characters',
+        item: new URL('/characters/', Astro.site).href,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: character.name,
+        item: canonicalUrl.href,
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
   title={`${character.name} Guide | Ultra Rumble Field Notes`}
   description={`${character.summary} View ${character.name} skills, ratings, strengths, weaknesses, and beginner notes.`}
   ogType="article"
+  structuredData={structuredData}
 >
   <article class="character-page">
     <CharacterHero character={character} />

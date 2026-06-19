@@ -5,6 +5,7 @@ category: system
 tags:
   - internal
 difficulty: beginner
+publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
 patchReviewed: null
 sourceUrls: []

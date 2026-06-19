@@ -8,6 +8,7 @@ tags:
   - unlocks
   - beginner
 difficulty: beginner
+publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
 patchReviewed: null
 sourceUrls:
@@ -77,4 +78,3 @@ Read the confirmation screen and verify:
 - The character is not already obtainable through a free license track you are close to completing.
 
 That ten-second check is cheaper than learning the currency icons by regret.
-
