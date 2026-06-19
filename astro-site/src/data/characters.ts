@@ -32,7 +32,6 @@ export interface CharacterRecord {
   summary: string;
   playstyle: string;
   unlockMethod: string | null;
-  beginnerRating: number;
   stats: CharacterStatRatings;
   skills: CharacterSkill[];
   recommendedLevelOrder: string[];
@@ -53,7 +52,6 @@ export const characters = [
     summary: 'A ranged damage dealer built around space control, vacuum setups, and decisive chase tools.',
     playstyle: 'Create a favorable fight with Zero Air, then convert the opening with ranged pressure or Keraunos.',
     unlockMethod: null,
-    beginnerRating: 6,
     stats: {
       hp: 350,
       damage: 9,
@@ -112,7 +110,6 @@ export const characters = [
     summary: 'A durable all-rounder with ranged pressure, vertical mobility, and tools for disrupting close fights.',
     playstyle: 'Take strong positions early, pressure from mid-range, and use mobility to engage or rescue teammates.',
     unlockMethod: null,
-    beginnerRating: 8,
     stats: {
       hp: 350,
       damage: 8,
@@ -160,7 +157,7 @@ export const characters = [
       'High Jump is valuable even when no enemy is nearby; use it to claim rooftops and scout safely.',
       'Do not spend every movement option entering a fight. Keep a route out.',
     ],
-    tags: ['beginner-friendly', 'mobility', 'frontline', 'rescue'],
+    tags: ['mobility', 'frontline', 'rescue'],
     source: {
       sourceUrl: 'https://ultrarumble.com/character/12',
       sourceName: 'UltraRumble.com',
@@ -177,7 +174,6 @@ export const characters = [
     summary: 'A highly mobile scout and skirmisher who pressures from the air and chooses when fights begin.',
     playstyle: 'Use flight and tracking information to isolate targets, poke safely, and rotate before enemies can answer.',
     unlockMethod: null,
-    beginnerRating: 5,
     stats: {
       hp: 250,
       damage: 7,
@@ -242,7 +238,6 @@ export const characters = [
     summary: 'A straightforward brawler who controls close space and can become enormous for late-fight disruption.',
     playstyle: 'Stay near cover at normal size, punish enemies who enter your range, and save Gigantification for open team fights.',
     unlockMethod: null,
-    beginnerRating: 9,
     stats: {
       hp: 350,
       damage: 8,
@@ -284,7 +279,7 @@ export const characters = [
       'Fight from the edge of cover so ranged teams cannot focus you for free.',
       'Gigantification is strongest in open space where enemies cannot immediately hide indoors.',
     ],
-    tags: ['beginner-friendly', 'brawler', 'area-control', 'frontline'],
+    tags: ['brawler', 'area-control', 'frontline'],
     source: {
       sourceUrl: 'https://ultrarumble.com/character/10',
       sourceName: 'UltraRumble.com',

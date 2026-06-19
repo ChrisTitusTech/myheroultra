@@ -53,7 +53,6 @@ export interface CharacterRecord {
   name: string;
   role: CharacterRole;
   unlockMethod: string | null;
-  beginnerRating: number;
   stats: CharacterStatRatings;
   skills: CharacterSkill[];
   recommendedLevelOrder: string[];
@@ -94,13 +93,15 @@ Required sorts:
 - Damage
 - Mobility
 - Range
-- Defense
+- Team utility
 - Difficulty
-- Beginner rating
 
 Behavior:
 - Sorting must work client-side.
 - Filtering must work client-side.
+- Sorting direction must be explicit and reversible.
+- Active filters must provide a visible result count and reset action.
+- Beginner-friendly filtering includes characters with a difficulty rating of 5 or lower.
 - The base page must still render useful static content without JavaScript.
 - URL query params are optional for v1, recommended for v2.
 

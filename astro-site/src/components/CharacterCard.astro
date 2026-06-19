@@ -17,6 +17,6 @@ const { character } = Astro.props;
   <dl class="card__stats">
     <div><dt>HP</dt><dd>{character.stats.hp}</dd></div>
     <div><dt>Mobility</dt><dd>{character.stats.mobility}/10</dd></div>
-    <div><dt>Beginner</dt><dd>{character.beginnerRating}/10</dd></div>
+    <div><dt>Difficulty</dt><dd>{character.stats.difficulty}/10</dd></div>
   </dl>
 </article>

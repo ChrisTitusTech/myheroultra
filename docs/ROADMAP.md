@@ -106,17 +106,23 @@ Goal: Add sortable and filterable roster UI.
 
 Tasks:
 - Add `CharacterTable.tsx` React component.
-- Support sorting by name, HP, damage, mobility, range, team utility, difficulty, beginner rating.
-- Support filtering by role.
+- Support sorting by name, HP, damage, mobility, range, team utility, and difficulty.
+- Support ascending and descending sort directions.
+- Support filtering by role, difficulty band, and playstyle tag.
 - Add beginner-friendly toggle.
 - Add mobile-friendly card/table layout.
 - Add no-results state.
+- Add result count and reset controls.
 
 Acceptance criteria:
 - Sorting works without page reload.
 - Filtering works without page reload.
 - Static page remains useful before hydration.
 - Controls are keyboard accessible.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Phase 2 completed the React roster island with explicit sort direction, role/difficulty/tag filters, a beginner-friendly filter defined as difficulty 5 or lower, live result counts, reset actions, an actionable no-results state, and a mobile card presentation that preserves the semantic table on larger screens. The redundant numeric beginner rating was removed in favor of difficulty plus practical beginner notes.
 
 ## Phase 3 — Guide System
 Goal: Publish useful player guides.

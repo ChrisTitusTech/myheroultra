@@ -18,7 +18,7 @@ const { character } = Astro.props;
   </nav>
   <div class="character-hero__badges">
     <RoleBadge role={character.role} />
-    <span class="difficulty">Beginner rating {character.beginnerRating}/10</span>
+    <span class="difficulty">Difficulty {character.stats.difficulty}/10</span>
   </div>
   <h1>{character.name}</h1>
   <p class="character-hero__summary">{character.summary}</p>
