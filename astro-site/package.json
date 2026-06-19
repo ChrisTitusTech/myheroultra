@@ -1,0 +1,37 @@
+{
+  "name": "myheroultra",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "check": "astro check",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "astro": "astro",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@astrojs/react": "5.0.7",
+    "astro": "6.4.8",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "@eslint/js": "10.0.1",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "10.5.0",
+    "eslint-plugin-astro": "1.7.0",
+    "globals": "17.4.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.61.1",
+    "wrangler": "4.102.0"
+  }
+}

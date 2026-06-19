@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatBar from '../../components/StatBar.astro';
+import RoleBadge from '../../components/RoleBadge.astro';
+import { characters, getCharacterBySlug } from '../../data/characters';
+
+export function getStaticPaths() {
+  return characters.map((character) => ({ params: { slug: character.slug } }));
+}
+
+const character = getCharacterBySlug(Astro.params.slug ?? '');
+if (!character) throw new Error(`Character not found: ${Astro.params.slug}`);
+---
+<BaseLayout title={`${character.name} Guide | My Hero Fan Site`} description={`Stats, skills, and level order for ${character.name}.`}>
+  <article class="character-page">
+    <p><a href="/characters">← Characters</a></p>
+    <h1>{character.name}</h1>
+    <RoleBadge role={character.role} />
+
+    <h2>Stats</h2>
+    <StatBar label="Damage" value={character.stats.damage} />
+    <StatBar label="Mobility" value={character.stats.mobility} />
+    <StatBar label="Range" value={character.stats.range} />
+    <StatBar label="Defense" value={character.stats.defense} />
+    <StatBar label="Difficulty" value={character.stats.difficulty} />
+
+    {character.recommendedLevelOrder && (
+      <>
+        <h2>Recommended Level Order</h2>
+        <p>{character.recommendedLevelOrder.join(' → ')}</p>
+      </>
+    )}
+
+    <h2>Skills</h2>
+    <ul>
+      {character.skills.map((skill) => (
+        <li><strong>{skill.displayName}</strong>: {skill.summary}</li>
+      ))}
+    </ul>
+  </article>
+</BaseLayout>

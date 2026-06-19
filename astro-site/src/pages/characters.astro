@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CharacterCard from '../components/CharacterCard.astro';
+import CharacterTable from '../components/CharacterTable';
+import { characters } from '../data/characters';
+---
+<BaseLayout title="Characters | My Hero Fan Site" description="Browse My Hero Ultra Rumble characters by role, HP, damage, mobility, and beginner rating.">
+  <h1>Characters</h1>
+  <CharacterTable characters={characters} client:load />
+  <section class="grid" aria-label="Character cards">
+    {characters.map((character) => <CharacterCard character={character} />)}
+  </section>
+</BaseLayout>

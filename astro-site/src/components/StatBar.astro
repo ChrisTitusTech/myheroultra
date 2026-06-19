@@ -1,0 +1,13 @@
+---
+interface Props {
+  label: string;
+  value: number;
+  max?: number;
+}
+const { label, value, max = 10 } = Astro.props;
+const width = Math.max(0, Math.min(100, (value / max) * 100));
+---
+<div class="stat-bar">
+  <div class="stat-bar__label"><span>{label}</span><strong>{value}</strong></div>
+  <div class="stat-bar__track" aria-hidden="true"><span style={`width: ${width}%`}></span></div>
+</div>

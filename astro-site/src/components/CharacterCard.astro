@@ -1,0 +1,14 @@
+---
+import RoleBadge from './RoleBadge.astro';
+import type { CharacterRecord } from '../data/characters';
+
+interface Props {
+  character: CharacterRecord;
+}
+const { character } = Astro.props;
+---
+<article class="card">
+  <h2><a href={`/characters/${character.slug}`}>{character.name}</a></h2>
+  <RoleBadge role={character.role} />
+  <p>Damage {character.stats.damage} · HP {character.stats.hp} · Beginner {character.beginnerRating}/10</p>
+</article>

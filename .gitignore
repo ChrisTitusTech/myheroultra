@@ -1,0 +1,8 @@
+.DS_Store
+
+astro-site/.astro/
+astro-site/dist/
+astro-site/node_modules/
+astro-site/.wrangler/
+astro-site/.env
+
