@@ -1,5 +1,6 @@
 ---
 import RoleBadge from './RoleBadge.astro';
+import CharacterArtwork from './CharacterArtwork.astro';
 import type { CharacterRecord } from '../data/characters';
 
 interface Props {
@@ -8,9 +9,12 @@ interface Props {
 const { character } = Astro.props;
 ---
 <article class="card">
+  <a class="card__artwork-link" href={`/characters/${character.slug}`} tabindex="-1" aria-hidden="true">
+    <CharacterArtwork character={character} />
+  </a>
   <div class="card__topline">
     <RoleBadge role={character.role} />
-    <span class="difficulty">Difficulty {character.stats.difficulty}/10</span>
+    <span class="difficulty">{character.isAlternative ? character.battleStyle : `Difficulty ${character.stats.difficulty}/10`}</span>
   </div>
   <h2><a href={`/characters/${character.slug}`}>{character.name}</a></h2>
   <p>{character.summary}</p>

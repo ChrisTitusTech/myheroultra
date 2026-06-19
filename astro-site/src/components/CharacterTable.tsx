@@ -5,6 +5,7 @@ import type { CharacterRole } from '../data/characters';
 type SortKey = 'name' | 'hp' | 'damage' | 'mobility' | 'range' | 'teamUtility' | 'difficulty';
 type SortDirection = 'ascending' | 'descending';
 type DifficultyFilter = 'All' | 'beginner' | 'intermediate' | 'advanced';
+type StyleFilter = 'All' | 'original' | 'alternative';
 
 interface Props {
   characters: readonly CharacterTableEntry[];
@@ -55,6 +56,7 @@ export default function CharacterTable({ characters }: Props) {
   const [sortDirection, setSortDirection] = useState<SortDirection>('descending');
   const [role, setRole] = useState<'All' | CharacterRole>('All');
   const [difficulty, setDifficulty] = useState<DifficultyFilter>('All');
+  const [style, setStyle] = useState<StyleFilter>('All');
   const [tag, setTag] = useState('All');
   const [beginnerOnly, setBeginnerOnly] = useState(false);
 
@@ -67,6 +69,10 @@ export default function CharacterTable({ characters }: Props) {
     return [...characters]
       .filter((character) => role === 'All' || character.role === role)
       .filter((character) => matchesDifficulty(character, difficulty))
+      .filter((character) =>
+        style === 'All' ||
+        (style === 'alternative' ? character.isAlternative : !character.isAlternative)
+      )
       .filter((character) => tag === 'All' || character.tags.includes(tag))
       .filter((character) => !beginnerOnly || character.stats.difficulty <= 5)
       .sort((a, b) => {
@@ -78,17 +84,19 @@ export default function CharacterTable({ characters }: Props) {
 
         return sortDirection === 'ascending' ? comparison : -comparison;
       });
-  }, [characters, role, difficulty, tag, beginnerOnly, sortKey, sortDirection]);
+  }, [characters, role, difficulty, style, tag, beginnerOnly, sortKey, sortDirection]);
 
   const filtersAreActive =
     role !== 'All' ||
     difficulty !== 'All' ||
+    style !== 'All' ||
     tag !== 'All' ||
     beginnerOnly;
 
   const resetFilters = () => {
     setRole('All');
     setDifficulty('All');
+    setStyle('All');
     setTag('All');
     setBeginnerOnly(false);
   };
@@ -106,7 +114,7 @@ export default function CharacterTable({ characters }: Props) {
           <h2 id="character-browser-heading">Compare characters</h2>
         </div>
         <p className="result-count" aria-live="polite">
-          {visibleCharacters.length} of {characters.length} characters
+          {visibleCharacters.length} of {characters.length} roster entries
         </p>
       </div>
 
@@ -147,6 +155,14 @@ export default function CharacterTable({ characters }: Props) {
           </select>
         </label>
         <label>
+          Battle style
+          <select value={style} onChange={(event) => setStyle(event.target.value as StyleFilter)}>
+            <option value="All">All styles</option>
+            <option value="original">Originals</option>
+            <option value="alternative">Alternatives</option>
+          </select>
+        </label>
+        <label>
           Playstyle tag
           <select value={tag} onChange={(event) => setTag(event.target.value)}>
             <option value="All">All tags</option>
@@ -183,11 +199,12 @@ export default function CharacterTable({ characters }: Props) {
       ) : (
         <div className="table-scroll" tabIndex={0} aria-label="Character comparison table">
           <table>
-            <caption className="sr-only">Character role, health, and editorial ratings</caption>
+            <caption className="sr-only">Character and battle-style role, health, and editorial ratings</caption>
             <thead>
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Role</th>
+                <th scope="col">Battle style</th>
                 <th scope="col">HP</th>
                 <th scope="col">Damage</th>
                 <th scope="col">Mobility</th>
@@ -201,6 +218,7 @@ export default function CharacterTable({ characters }: Props) {
                 <tr key={character.id}>
                   <td data-label="Name"><a href={`/characters/${character.slug}`}>{character.name}</a></td>
                   <td data-label="Role">{character.role}</td>
+                  <td data-label="Battle style">{character.battleStyle}</td>
                   <td data-label="HP">{character.stats.hp}</td>
                   <td data-label="Damage">{character.stats.damage}</td>
                   <td data-label="Mobility">{character.stats.mobility}</td>

@@ -459,9 +459,40 @@ main {
 
 .card {
   display: flex;
-  min-height: 285px;
+  min-height: 420px;
   flex-direction: column;
   padding: 1.25rem;
+  overflow: hidden;
+}
+
+.card__artwork-link {
+  display: block;
+  margin: -1.25rem -1.25rem 1rem;
+  border-bottom: 1px solid #2c3654;
+  background:
+    radial-gradient(circle at 50% 42%, rgb(111 131 255 / 22%), transparent 58%),
+    #0f1528;
+}
+
+.character-artwork {
+  display: grid;
+  place-items: center;
+}
+
+.character-artwork img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.character-artwork--card {
+  aspect-ratio: 16 / 10;
+}
+
+.character-artwork--card img {
+  max-height: 220px;
+  padding: 0.75rem;
 }
 
 .card h2 {
@@ -727,8 +758,33 @@ td:first-child {
 }
 
 .character-hero {
-  max-width: 860px;
   padding: clamp(2.5rem, 8vw, 6rem) 0 3rem;
+}
+
+.character-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.character-hero__content {
+  min-width: 0;
+}
+
+.character-artwork--hero {
+  min-height: 320px;
+  border: 1px solid #2c3654;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 50% 45%, rgb(189 140 255 / 25%), transparent 58%),
+    #11182b;
+  overflow: hidden;
+}
+
+.character-artwork--hero img {
+  max-height: 460px;
+  padding: 1rem;
 }
 
 .breadcrumb {
@@ -1091,6 +1147,15 @@ td:first-child {
 
   .character-page__grid {
     grid-template-columns: 1fr;
+  }
+
+  .character-hero__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .character-artwork--hero {
+    min-height: 240px;
+    order: -1;
   }
 
   .character-page__sidebar {

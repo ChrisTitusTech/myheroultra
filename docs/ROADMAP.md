@@ -202,3 +202,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Centralized site metadata, added sitemap and robots generation, expanded Open Graph metadata, added 404 no-index handling and active navigation state, improved keyboard accessibility, standardized index routes, passed character data to static paths as typed props, and reduced the React island payload to table-only fields.
+
+## Maintenance — Full Roster and Battle Styles
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Expanded the character browser from four samples to 59 roster records: 38 original entries and 21 alternate battle styles, including the source-listed upcoming Flow Runner style. Each record has a static route, sourced role/HP/skill names, battle-style metadata, locally optimized WebP artwork, an asset-source manifest entry, and an explicit verification state. The browser now filters originals and alternatives separately.

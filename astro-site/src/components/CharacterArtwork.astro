@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { CharacterRecord } from '../data/characters';
+
+interface Props {
+  character: CharacterRecord;
+  priority?: boolean;
+  variant?: 'card' | 'hero';
+}
+
+const {
+  character,
+  priority = false,
+  variant = 'card',
+} = Astro.props;
+
+const artworkModules = import.meta.glob<{ default: ImageMetadata }>(
+  '../assets/characters/*.webp',
+  { eager: true },
+);
+const artwork = artworkModules[`../assets/characters/${character.imageFile}`]?.default;
+
+if (!artwork) {
+  throw new Error(`Missing local artwork for ${character.name}: ${character.imageFile}`);
+}
+---
+
+<div class:list={['character-artwork', `character-artwork--${variant}`]}>
+  <Image
+    src={artwork}
+    alt={`${character.name} character artwork`}
+    widths={variant === 'hero' ? [320, 480, 640] : [240, 360, 480]}
+    sizes={variant === 'hero' ? '(max-width: 680px) 70vw, 360px' : '(max-width: 680px) 100vw, 320px'}
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : 'auto'}
+  />
+</div>

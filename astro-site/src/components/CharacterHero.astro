@@ -1,5 +1,6 @@
 ---
 import type { CharacterRecord } from '../data/characters';
+import CharacterArtwork from './CharacterArtwork.astro';
 import RoleBadge from './RoleBadge.astro';
 
 interface Props {
@@ -16,13 +17,19 @@ const { character } = Astro.props;
       <li aria-current="page">{character.name}</li>
     </ol>
   </nav>
-  <div class="character-hero__badges">
-    <RoleBadge role={character.role} />
-    <span class="difficulty">Difficulty {character.stats.difficulty}/10</span>
+  <div class="character-hero__layout">
+    <div class="character-hero__content">
+      <div class="character-hero__badges">
+        <RoleBadge role={character.role} />
+        <span class="difficulty">{character.isAlternative ? `${character.battleStyle} battle style` : 'Original battle style'}</span>
+        <span class="difficulty">Difficulty {character.stats.difficulty}/10</span>
+      </div>
+      <h1>{character.name}</h1>
+      <p class="character-hero__summary">{character.summary}</p>
+      <ul class="tag-list" aria-label="Character tags">
+        {character.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    </div>
+    <CharacterArtwork character={character} priority variant="hero" />
   </div>
-  <h1>{character.name}</h1>
-  <p class="character-hero__summary">{character.summary}</p>
-  <ul class="tag-list" aria-label="Character tags">
-    {character.tags.map((tag) => <li>{tag}</li>)}
-  </ul>
 </header>

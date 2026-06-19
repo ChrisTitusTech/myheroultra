@@ -1,3 +1,5 @@
+import { characterRoster } from './characterRoster';
+
 export type CharacterRole = 'Assault' | 'Strike' | 'Rapid' | 'Technical' | 'Support';
 export type SkillSlot = 'alpha' | 'beta' | 'gamma' | 'special';
 
@@ -28,6 +30,10 @@ export interface CharacterRecord {
   id: string;
   slug: string;
   name: string;
+  combatant: string;
+  battleStyle: string;
+  isAlternative: boolean;
+  imageFile: string;
   role: CharacterRole;
   summary: string;
   playstyle: string;
@@ -43,11 +49,15 @@ export interface CharacterRecord {
   needsVerification: boolean;
 }
 
-export const characters = [
+const featuredCharacters = [
   {
     id: 'star-and-stripe',
     slug: 'star-and-stripe',
     name: 'Star and Stripe',
+    combatant: 'Star and Stripe',
+    battleStyle: 'Original',
+    isAlternative: false,
+    imageFile: 'star-and-stripe.webp',
     role: 'Strike',
     summary: 'A ranged damage dealer built around space control, vacuum setups, and decisive chase tools.',
     playstyle: 'Create a favorable fight with Zero Air, then convert the opening with ranged pressure or Keraunos.',
@@ -106,6 +116,10 @@ export const characters = [
     id: 'all-might',
     slug: 'all-might',
     name: 'All Might',
+    combatant: 'All Might',
+    battleStyle: 'Original',
+    isAlternative: false,
+    imageFile: 'all-might.webp',
     role: 'Assault',
     summary: 'A durable all-rounder with ranged pressure, vertical mobility, and tools for disrupting close fights.',
     playstyle: 'Take strong positions early, pressure from mid-range, and use mobility to engage or rescue teammates.',
@@ -170,6 +184,10 @@ export const characters = [
     id: 'hawks',
     slug: 'hawks',
     name: 'Hawks',
+    combatant: 'Hawks',
+    battleStyle: 'Original',
+    isAlternative: false,
+    imageFile: 'hawks.webp',
     role: 'Rapid',
     summary: 'A highly mobile scout and skirmisher who pressures from the air and chooses when fights begin.',
     playstyle: 'Use flight and tracking information to isolate targets, poke safely, and rotate before enemies can answer.',
@@ -234,6 +252,10 @@ export const characters = [
     id: 'mt-lady',
     slug: 'mt-lady',
     name: 'Mt. Lady',
+    combatant: 'Mt. Lady',
+    battleStyle: 'Original',
+    isAlternative: false,
+    imageFile: 'mt-lady.webp',
     role: 'Assault',
     summary: 'A straightforward brawler who controls close space and can become enormous for late-fight disruption.',
     playstyle: 'Stay near cover at normal size, punish enemies who enter your range, and save Gigantification for open team fights.',
@@ -281,7 +303,7 @@ export const characters = [
     ],
     tags: ['brawler', 'area-control', 'frontline'],
     source: {
-      sourceUrl: 'https://ultrarumble.com/character/10',
+      sourceUrl: 'https://ultrarumble.com/character/100',
       sourceName: 'UltraRumble.com',
       sourceNote: 'Role, HP, and skill names checked against the public character database. Guide ratings and advice are editorial.',
       lastChecked: '2026-06-19',
@@ -289,3 +311,126 @@ export const characters = [
     needsVerification: true,
   },
 ] satisfies CharacterRecord[];
+
+const featuredIds = new Set(featuredCharacters.map(({ id }) => id));
+
+const roleDefaults: Record<
+  CharacterRole,
+  Omit<CharacterStatRatings, 'hp'>
+> = {
+  Assault: { damage: 7, mobility: 5, range: 5, teamUtility: 7, difficulty: 5 },
+  Strike: { damage: 8, mobility: 5, range: 6, teamUtility: 4, difficulty: 6 },
+  Rapid: { damage: 6, mobility: 9, range: 5, teamUtility: 5, difficulty: 7 },
+  Technical: { damage: 6, mobility: 6, range: 6, teamUtility: 7, difficulty: 8 },
+  Support: { damage: 5, mobility: 5, range: 6, teamUtility: 9, difficulty: 6 },
+};
+
+const roleNotes: Record<CharacterRole, {
+  summary: string;
+  strengths: string[];
+  weaknesses: string[];
+  tags: string[];
+}> = {
+  Assault: {
+    summary: 'A durable frontline style built to contest space and absorb pressure.',
+    strengths: ['Frontline durability', 'Reliable space control'],
+    weaknesses: ['Mobility and range vary by matchup', 'Detailed matchup notes need editorial review'],
+    tags: ['frontline', 'durable'],
+  },
+  Strike: {
+    summary: 'A damage-focused style built to convert openings into direct pressure.',
+    strengths: ['Strong damage pressure', 'Clear offensive win condition'],
+    weaknesses: ['Defensive options vary by kit', 'Detailed matchup notes need editorial review'],
+    tags: ['damage', 'pressure'],
+  },
+  Rapid: {
+    summary: 'A mobility-focused style built for rotations, pursuit, and disengagement.',
+    strengths: ['High mobility', 'Strong repositioning potential'],
+    weaknesses: ['Often punishing when movement resources are spent', 'Detailed matchup notes need editorial review'],
+    tags: ['mobility', 'skirmisher'],
+  },
+  Technical: {
+    summary: 'A specialist style whose value depends on timing, setup, and matchup knowledge.',
+    strengths: ['Flexible tactical tools', 'High outplay potential'],
+    weaknesses: ['Higher learning curve', 'Detailed matchup notes need editorial review'],
+    tags: ['setup', 'specialist'],
+  },
+  Support: {
+    summary: 'A team-oriented style built to create safer fights and enable allies.',
+    strengths: ['Strong team utility', 'Useful fight control'],
+    weaknesses: ['Solo pressure varies by kit', 'Detailed matchup notes need editorial review'],
+    tags: ['team-utility', 'support'],
+  },
+};
+
+function skillId(slot: SkillSlot, name: string) {
+  return `${slot}-${name}`
+    .toLowerCase()
+    .replace(/[’']/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+const remainingCharacters = characterRoster
+  .filter(({ id }) => !featuredIds.has(id))
+  .map((seed): CharacterRecord => {
+    const notes = roleNotes[seed.role];
+    const isUpcoming = seed.id === 'shota-aizawa-flow-runner';
+    const styleLabel = seed.isAlternative
+      ? `${seed.battleStyle} alternate battle style`
+      : 'original battle style';
+
+    return {
+      id: seed.id,
+      slug: seed.slug,
+      name: seed.name,
+      combatant: seed.combatant,
+      battleStyle: seed.battleStyle,
+      isAlternative: seed.isAlternative,
+      imageFile: seed.imageFile,
+      role: seed.role,
+      summary: `${isUpcoming ? 'Upcoming: ' : ''}${seed.combatant}'s ${styleLabel}. ${notes.summary}`,
+      playstyle: `${notes.summary} This roster entry has verified role, HP, and skill names; a full editorial strategy pass is still pending.`,
+      unlockMethod: seed.unlockMethod,
+      stats: {
+        hp: seed.hp,
+        ...roleDefaults[seed.role],
+      },
+      skills: seed.skills.map(([slot, name]) => ({
+        id: skillId(slot, name),
+        slot,
+        name,
+        summary: `${name} is this style's ${slot === 'special' ? 'special action' : `${slot} skill`}. Behavior details need an editorial verification pass.`,
+      })),
+      recommendedLevelOrder: ['Level-up order needs editorial review'],
+      strengths: notes.strengths,
+      weaknesses: notes.weaknesses,
+      beginnerNotes: [
+        `Learn the timing and resource limits of ${seed.skills[0]?.[1] ?? 'the alpha skill'} before committing to long chases.`,
+        'Treat the displayed ratings as a provisional role baseline until this guide receives a dedicated editorial pass.',
+      ],
+      tags: [
+        ...notes.tags,
+        seed.role.toLowerCase(),
+        ...(isUpcoming ? ['upcoming'] : []),
+        ...(seed.isAlternative ? ['alternative-battle-style'] : ['original-battle-style']),
+      ],
+      source: {
+        sourceUrl: seed.sourceUrl,
+        sourceName: 'UltraRumble.com',
+        sourceNote: 'Role, HP, unlock note, artwork, and skill names checked against the public character database. Ratings and general advice are provisional editorial baselines.',
+        lastChecked: '2026-06-19',
+      },
+      needsVerification: true,
+    };
+  });
+
+export const characters: CharacterRecord[] = [
+  ...featuredCharacters,
+  ...remainingCharacters,
+].sort((a, b) => {
+  const combatantOrder = a.combatant.localeCompare(b.combatant);
+  if (combatantOrder !== 0) return combatantOrder;
+  if (a.isAlternative !== b.isAlternative) return a.isAlternative ? 1 : -1;
+  return a.battleStyle.localeCompare(b.battleStyle);
+});

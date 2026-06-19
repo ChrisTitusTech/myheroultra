@@ -51,6 +51,10 @@ export interface CharacterRecord {
   id: string;
   slug: string;
   name: string;
+  combatant: string;
+  battleStyle: string;
+  isAlternative: boolean;
+  imageFile: string;
   role: CharacterRole;
   unlockMethod: string | null;
   stats: CharacterStatRatings;
@@ -122,7 +126,7 @@ Sections:
 Purpose: Roster browser.
 Sections:
 - Sortable/filterable character table
-- Character cards
+- Character and alternate-battle-style cards with local artwork
 - Role explanations
 
 ### `/characters/[slug]`

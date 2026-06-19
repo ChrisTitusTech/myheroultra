@@ -5,6 +5,8 @@ export interface CharacterTableEntry {
   id: string;
   slug: string;
   name: string;
+  battleStyle: string;
+  isAlternative: boolean;
   role: CharacterRole;
   tags: string[];
   stats: {
@@ -18,10 +20,12 @@ export interface CharacterTableEntry {
 }
 
 export const characterTableEntries: CharacterTableEntry[] = characters.map(
-  ({ id, slug, name, role, tags, stats }) => ({
+  ({ id, slug, name, battleStyle, isAlternative, role, tags, stats }) => ({
     id,
     slug,
     name,
+    battleStyle,
+    isAlternative,
     role,
     tags,
     stats,
