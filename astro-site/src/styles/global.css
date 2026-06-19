@@ -512,6 +512,11 @@ main {
   transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
 
+.guide-card[hidden],
+.guide-filter-empty[hidden] {
+  display: none;
+}
+
 .guide-card:hover {
   border-color: var(--cyan);
   box-shadow: 7px 7px 0 rgb(57 217 255 / 30%);
