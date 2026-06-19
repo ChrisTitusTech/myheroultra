@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import type { CharacterRecord, CharacterRole } from '../data/characters';
 
-type SortKey = 'name' | 'hp' | 'damage' | 'mobility' | 'range' | 'defense' | 'difficulty' | 'beginnerRating';
+type SortKey = 'name' | 'hp' | 'damage' | 'mobility' | 'range' | 'teamUtility' | 'difficulty' | 'beginnerRating';
 
 interface Props {
   characters: CharacterRecord[];
@@ -42,7 +42,7 @@ export default function CharacterTable({ characters }: Props) {
             <option value="hp">HP</option>
             <option value="mobility">Mobility</option>
             <option value="range">Range</option>
-            <option value="defense">Defense</option>
+            <option value="teamUtility">Team Utility</option>
             <option value="difficulty">Difficulty</option>
             <option value="beginnerRating">Beginner Rating</option>
             <option value="name">Name</option>
@@ -71,6 +71,7 @@ export default function CharacterTable({ characters }: Props) {
               <th>HP</th>
               <th>Damage</th>
               <th>Mobility</th>
+              <th>Utility</th>
               <th>Difficulty</th>
               <th>Beginner</th>
             </tr>
@@ -83,6 +84,7 @@ export default function CharacterTable({ characters }: Props) {
                 <td>{character.stats.hp}</td>
                 <td>{character.stats.damage}</td>
                 <td>{character.stats.mobility}</td>
+                <td>{character.stats.teamUtility}</td>
                 <td>{character.stats.difficulty}</td>
                 <td>{character.beginnerRating}</td>
               </tr>

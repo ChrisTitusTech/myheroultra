@@ -1,0 +1,23 @@
+---
+import type { CharacterSource } from '../data/characters';
+
+interface Props {
+  source: CharacterSource;
+  needsVerification?: boolean;
+}
+
+const { source, needsVerification = false } = Astro.props;
+---
+
+<aside class="source-note" aria-label="Data source">
+  <div>
+    <strong>Source checked {source.lastChecked}</strong>
+    <p>{source.sourceNote}</p>
+  </div>
+  <div class="source-note__actions">
+    {needsVerification && <span class="verification-badge">Patch-sensitive</span>}
+    <a href={source.sourceUrl} rel="noreferrer" target="_blank">
+      {source.sourceName}<span class="sr-only"> (opens in a new tab)</span>
+    </a>
+  </div>
+</aside>

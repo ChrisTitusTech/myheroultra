@@ -1,0 +1,26 @@
+---
+import type { CharacterSkill } from '../data/characters';
+
+interface Props {
+  skills: CharacterSkill[];
+}
+
+const { skills } = Astro.props;
+
+const slotLabels = {
+  alpha: 'Alpha',
+  beta: 'Beta',
+  gamma: 'Gamma',
+  special: 'Special Action',
+};
+---
+
+<div class="skill-grid">
+  {skills.map((skill) => (
+    <article class="skill-card">
+      <p class:list={['skill-card__slot', `skill-card__slot--${skill.slot}`]}>{slotLabels[skill.slot]}</p>
+      <h3>{skill.name}</h3>
+      <p>{skill.summary}</p>
+    </article>
+  ))}
+</div>

@@ -5,4 +5,7 @@ export default defineConfig({
   integrations: [react()],
   output: 'static',
   site: process.env.SITE_URL ?? 'https://myheroultra.com',
+  redirects: {
+    '/characters/stars-and-stripe': '/characters/star-and-stripe',
+  },
 });

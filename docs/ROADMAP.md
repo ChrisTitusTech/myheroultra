@@ -55,19 +55,52 @@ Goal: Create the Astro foundation.
 ## Phase 1 — Data Model and Static Pages
 Goal: Establish reusable character and guide content structure.
 
-Tasks:
-- Create typed character data file.
-- Add sample character records.
-- Create CharacterCard component.
-- Create StatBar component.
-- Create RoleBadge component.
-- Generate character detail pages.
-- Create guide content collection or guide data model.
+### Task: Normalize character and skill records
 
-Acceptance criteria:
-- Character data is imported from a central source.
-- `/characters/[slug]` generates pages from character data.
-- Character pages show stats, role, skills, and level order.
+**User story:** As a maintainer, I can update factual game data separately from editorial guide ratings and advice.
+
+**Files affected:**
+- `astro-site/src/data/characters.ts`
+- `astro-site/src/components/CharacterTable.tsx`
+
+**Acceptance criteria:**
+- The sample roster includes Star and Stripe, All Might, Hawks, and Mt. Lady.
+- Character IDs, roles, skill slots, ratings, sources, and verification status are type-safe.
+- Exact role, HP, and skill-name claims include source metadata and a `lastChecked` date.
+- Editorial ratings and recommendations are identified as editorial.
+
+### Task: Generate reusable static character guides
+
+**User story:** As a player, I can open a polished guide for every sample character without requiring client-side JavaScript.
+
+**Files affected:**
+- `astro-site/src/layouts/CharacterLayout.astro`
+- `astro-site/src/components/CharacterHero.astro`
+- `astro-site/src/components/SkillTable.astro`
+- `astro-site/src/components/SourceBadge.astro`
+- `astro-site/src/pages/characters/[slug].astro`
+
+**Acceptance criteria:**
+- `/characters/[slug]` generates from the shared typed data.
+- Pages show role, HP, editorial ratings, skills, level order, strengths, weaknesses, beginner notes, and source status.
+- Character detail pages remain fully static.
+- Desktop and mobile layouts do not overflow.
+
+### Task: Establish the guide content schema
+
+**User story:** As a writer, I can add guide Markdown with validated metadata before it is published.
+
+**Files affected:**
+- `astro-site/src/content.config.ts`
+- `astro-site/src/content/guides/`
+
+**Acceptance criteria:**
+- Guide entries validate title, description, category, tags, difficulty, update date, patch status, source URLs, verification status, and draft status.
+- A draft schema example validates during the build but is not published.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Phase 1 added four sourced sample character records, reusable static guide components, responsive character detail pages, an exercised Astro Content Collection schema for guides, and a compatibility redirect for the earlier pluralized Star and Stripe slug.
 
 ## Phase 2 — Interactive Character Browser
 Goal: Add sortable and filterable roster UI.

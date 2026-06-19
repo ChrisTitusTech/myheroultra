@@ -1,7 +1,10 @@
 ---
+import type { CharacterRole } from '../data/characters';
+
 interface Props {
-  role: string;
+  role: CharacterRole;
 }
 const { role } = Astro.props;
+const roleClass = role.toLowerCase();
 ---
-<span class="role-badge">{role}</span>
+<span class:list={['role-badge', `role-badge--${roleClass}`]}>{role}</span>

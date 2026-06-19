@@ -1,0 +1,89 @@
+---
+import CharacterHero from '../components/CharacterHero.astro';
+import SkillTable from '../components/SkillTable.astro';
+import SourceBadge from '../components/SourceBadge.astro';
+import StatBar from '../components/StatBar.astro';
+import type { CharacterRecord } from '../data/characters';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  character: CharacterRecord;
+}
+
+const { character } = Astro.props;
+---
+
+<BaseLayout
+  title={`${character.name} Guide | Ultra Rumble Field Notes`}
+  description={`${character.summary} View ${character.name} skills, ratings, strengths, weaknesses, and beginner notes.`}
+>
+  <article class="character-page">
+    <CharacterHero character={character} />
+
+    <div class="character-page__grid">
+      <div class="character-page__main">
+        <section class="content-section" aria-labelledby="playstyle-heading">
+          <p class="section-kicker">Game plan</p>
+          <h2 id="playstyle-heading">How {character.name} plays</h2>
+          <p class="section-lede">{character.playstyle}</p>
+        </section>
+
+        <section class="content-section" aria-labelledby="skills-heading">
+          <p class="section-kicker">Kit overview</p>
+          <h2 id="skills-heading">Skills and special actions</h2>
+          <SkillTable skills={character.skills} />
+        </section>
+
+        <section class="content-section split-section" aria-label="Strengths and weaknesses">
+          <div>
+            <p class="section-kicker">What works</p>
+            <h2>Strengths</h2>
+            <ul class="check-list">
+              {character.strengths.map((strength) => <li>{strength}</li>)}
+            </ul>
+          </div>
+          <div>
+            <p class="section-kicker">Watch for</p>
+            <h2>Weaknesses</h2>
+            <ul class="warning-list">
+              {character.weaknesses.map((weakness) => <li>{weakness}</li>)}
+            </ul>
+          </div>
+        </section>
+
+        <section class="content-section" aria-labelledby="beginner-heading">
+          <p class="section-kicker">First matches</p>
+          <h2 id="beginner-heading">Beginner notes</h2>
+          <ol class="numbered-notes">
+            {character.beginnerNotes.map((note) => <li>{note}</li>)}
+          </ol>
+        </section>
+      </div>
+
+      <aside class="character-page__sidebar" aria-label={`${character.name} quick reference`}>
+        <section class="stat-panel">
+          <p class="section-kicker">Quick read</p>
+          <h2>Guide ratings</h2>
+          <p class="panel-note">HP is sourced game data. The 1–10 ratings are editorial guide scores.</p>
+          <div class="hp-stat"><span>HP</span><strong>{character.stats.hp}</strong></div>
+          <StatBar label="Damage" value={character.stats.damage} />
+          <StatBar label="Mobility" value={character.stats.mobility} />
+          <StatBar label="Range" value={character.stats.range} />
+          <StatBar label="Team utility" value={character.stats.teamUtility} />
+          <StatBar label="Difficulty" value={character.stats.difficulty} />
+        </section>
+
+        <section class="level-panel">
+          <p class="section-kicker">Suggested start</p>
+          <h2>Level-up order</h2>
+          <ol>
+            {character.recommendedLevelOrder.map((step) => <li>{step}</li>)}
+          </ol>
+          <p class="panel-note">Editorial baseline; adapt it to team composition and balance changes.</p>
+        </section>
+
+        <SourceBadge source={character.source} needsVerification={character.needsVerification} />
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

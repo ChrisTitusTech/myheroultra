@@ -1,0 +1,23 @@
+---
+import type { CharacterRecord } from '../data/characters';
+import RoleBadge from './RoleBadge.astro';
+
+interface Props {
+  character: CharacterRecord;
+}
+
+const { character } = Astro.props;
+---
+
+<header class="character-hero">
+  <p class="breadcrumb"><a href="/characters">Characters</a> / {character.name}</p>
+  <div class="character-hero__badges">
+    <RoleBadge role={character.role} />
+    <span class="difficulty">Beginner rating {character.beginnerRating}/10</span>
+  </div>
+  <h1>{character.name}</h1>
+  <p class="character-hero__summary">{character.summary}</p>
+  <ul class="tag-list" aria-label="Character tags">
+    {character.tags.map((tag) => <li>{tag}</li>)}
+  </ul>
+</header>
