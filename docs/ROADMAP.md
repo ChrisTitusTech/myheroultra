@@ -258,6 +258,12 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Files affected:**
 - `astro-site/src/content/guides/beginner-match-survival-guide.md`
 - `astro-site/src/content/guides/revive-cards-team-recovery-guide.md`
+
+## Maintenance — Intermediate and Expert Guide Expansion
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Added four original guides based on recurring, high-engagement Reddit and YouTube topics: combat movement and escape economy, team-fight focus fire and knockdown discipline, i-frame and wake-up decision-making, and 1v3 endgame isolation. The set includes two intermediate and two expert guides, cites representative community sources, avoids patch-fragile damage claims, and marks mechanical details for verification.
 - `astro-site/src/content/guides/roll-points-pity-guide.md`
 - `astro-site/src/content/guides/solo-queue-ranked-guide.md`
 - `docs/ROADMAP.md`
