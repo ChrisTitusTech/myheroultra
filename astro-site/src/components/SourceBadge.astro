@@ -3,11 +3,11 @@ import type { CharacterSource } from '../data/characters';
 
 interface Props {
   source: CharacterSource;
-  seasonCreated: number;
+  releaseSeason: number;
   needsVerification?: boolean;
 }
 
-const { source, seasonCreated, needsVerification = false } = Astro.props;
+const { source, releaseSeason, needsVerification = false } = Astro.props;
 ---
 
 <section class="source-note" aria-label="Data source">
@@ -17,7 +17,7 @@ const { source, seasonCreated, needsVerification = false } = Astro.props;
   </div>
   <div class="source-note__actions">
     <div class="content-badges">
-      <span class="season-badge">S{seasonCreated}</span>
+      <span class="season-badge">S{releaseSeason}</span>
       {needsVerification && <span class="verification-badge">Patch-sensitive</span>}
     </div>
     <a href={source.sourceUrl} rel="noreferrer" target="_blank">

@@ -247,7 +247,7 @@ Do not start this phase until static content workflow becomes a bottleneck.
 
 **Status:** Complete as of June 19, 2026.
 
-**Implementation note:** Added explicit typed `seasonCreated` metadata to guides and characters. Current content is labeled S17 beside patch-sensitivity indicators so visitors can immediately see which game season informed the page, while future seasons can retain their original provenance.
+**Implementation note:** Guide content retains typed `seasonCreated` provenance metadata. Character records use typed `releaseSeason` metadata derived from sourced release information, so roster and character-page badges show the season each character or alternate battle style debuted.
 
 ## Maintenance — Reddit Question Guide Expansion
 

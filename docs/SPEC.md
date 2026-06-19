@@ -61,7 +61,7 @@ export interface CharacterRecord {
   skills: CharacterSkill[];
   recommendedLevelOrder: string[];
   tags: string[];
-  seasonCreated: number;
+  releaseSeason: number;
   source: {
     sourceUrl: string;
     sourceName: string;

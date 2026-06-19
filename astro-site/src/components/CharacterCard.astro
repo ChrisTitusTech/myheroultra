@@ -15,7 +15,7 @@ const { character } = Astro.props;
   <div class="card__topline">
     <div class="content-badges">
       <RoleBadge role={character.role} />
-      <span class="season-badge">S{character.seasonCreated}</span>
+      <span class="season-badge">S{character.releaseSeason}</span>
     </div>
     <span class="difficulty">{character.isAlternative ? character.battleStyle : `Difficulty ${character.stats.difficulty}/10`}</span>
   </div>
