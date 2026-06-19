@@ -59,6 +59,7 @@ export default function CharacterTable({ characters }: Props) {
   const [style, setStyle] = useState<StyleFilter>('All');
   const [tag, setTag] = useState('All');
   const [beginnerOnly, setBeginnerOnly] = useState(false);
+  const [goldTicketOnly, setGoldTicketOnly] = useState(false);
 
   const tags = useMemo(
     () => [...new Set(characters.flatMap((character) => character.tags))].sort(),
@@ -75,6 +76,7 @@ export default function CharacterTable({ characters }: Props) {
       )
       .filter((character) => tag === 'All' || character.tags.includes(tag))
       .filter((character) => !beginnerOnly || character.stats.difficulty <= 5)
+      .filter((character) => !goldTicketOnly || character.isTicketRedeemable)
       .sort((a, b) => {
         const aValue = getSortValue(a, sortKey);
         const bValue = getSortValue(b, sortKey);
@@ -84,14 +86,15 @@ export default function CharacterTable({ characters }: Props) {
 
         return sortDirection === 'ascending' ? comparison : -comparison;
       });
-  }, [characters, role, difficulty, style, tag, beginnerOnly, sortKey, sortDirection]);
+  }, [characters, role, difficulty, style, tag, beginnerOnly, goldTicketOnly, sortKey, sortDirection]);
 
   const filtersAreActive =
     role !== 'All' ||
     difficulty !== 'All' ||
     style !== 'All' ||
     tag !== 'All' ||
-    beginnerOnly;
+    beginnerOnly ||
+    goldTicketOnly;
 
   const resetFilters = () => {
     setRole('All');
@@ -99,6 +102,7 @@ export default function CharacterTable({ characters }: Props) {
     setStyle('All');
     setTag('All');
     setBeginnerOnly(false);
+    setGoldTicketOnly(false);
   };
 
   const updateSortKey = (nextSortKey: SortKey) => {
@@ -175,6 +179,10 @@ export default function CharacterTable({ characters }: Props) {
           <input type="checkbox" checked={beginnerOnly} onChange={(event) => setBeginnerOnly(event.target.checked)} />
           Beginner
         </label>
+        <label className="checkbox-label">
+          <input type="checkbox" checked={goldTicketOnly} onChange={(event) => setGoldTicketOnly(event.target.checked)} />
+          Gold Ticket
+        </label>
       </div>
 
       <div className="filter-actions">
@@ -190,7 +198,7 @@ export default function CharacterTable({ characters }: Props) {
         <div className="browser-empty-state">
           <div role="status">
             <strong>No characters match these filters.</strong>
-            <p>Try another role, difficulty, or playstyle tag.</p>
+            <p>Try another role, difficulty, unlock method, or playstyle tag.</p>
           </div>
           <button className="reset-button" type="button" onClick={resetFilters}>
             Clear filters

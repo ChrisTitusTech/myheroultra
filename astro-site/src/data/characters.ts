@@ -62,7 +62,7 @@ const featuredCharacters = [
     role: 'Strike',
     summary: 'A ranged damage dealer built around space control, vacuum setups, and decisive chase tools.',
     playstyle: 'Create a favorable fight with Zero Air, then convert the opening with ranged pressure or Keraunos.',
-    unlockMethod: null,
+    unlockMethod: 'Obtained from Rolls Season 16 Release2026-03-25 13:00:00 (JST)',
     stats: {
       hp: 350,
       damage: 9,
@@ -125,7 +125,7 @@ const featuredCharacters = [
     role: 'Assault',
     summary: 'A durable all-rounder with ranged pressure, vertical mobility, and tools for disrupting close fights.',
     playstyle: 'Take strong positions early, pressure from mid-range, and use mobility to engage or rescue teammates.',
-    unlockMethod: null,
+    unlockMethod: 'Obtained from the Special License. Season 1 Release2023-09-28 13:00:00 (JST)',
     stats: {
       hp: 350,
       damage: 8,
@@ -194,7 +194,7 @@ const featuredCharacters = [
     role: 'Rapid',
     summary: 'A highly mobile scout and skirmisher who pressures from the air and chooses when fights begin.',
     playstyle: 'Use flight and tracking information to isolate targets, poke safely, and rotate before enemies can answer.',
-    unlockMethod: null,
+    unlockMethod: 'Purchase with a Ticket Season 7 Release2024-09-25 13:00:00 (JST)',
     stats: {
       hp: 250,
       damage: 7,
@@ -263,7 +263,7 @@ const featuredCharacters = [
     role: 'Assault',
     summary: 'A straightforward brawler who controls close space and can become enormous for late-fight disruption.',
     playstyle: 'Stay near cover at normal size, punish enemies who enter your range, and save Gigantification for open team fights.',
-    unlockMethod: null,
+    unlockMethod: 'Starter Character Season 1 Release2023-09-28 13:00:00 (JST)',
     stats: {
       hp: 350,
       damage: 8,

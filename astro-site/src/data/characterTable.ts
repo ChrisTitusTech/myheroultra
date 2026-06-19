@@ -7,6 +7,7 @@ export interface CharacterTableEntry {
   name: string;
   battleStyle: string;
   isAlternative: boolean;
+  isTicketRedeemable: boolean;
   role: CharacterRole;
   tags: string[];
   stats: {
@@ -20,12 +21,13 @@ export interface CharacterTableEntry {
 }
 
 export const characterTableEntries: CharacterTableEntry[] = characters.map(
-  ({ id, slug, name, battleStyle, isAlternative, role, tags, stats }) => ({
+  ({ id, slug, name, battleStyle, isAlternative, unlockMethod, role, tags, stats }) => ({
     id,
     slug,
     name,
     battleStyle,
     isAlternative,
+    isTicketRedeemable: unlockMethod?.startsWith('Purchase with a Ticket') ?? false,
     role,
     tags,
     stats,

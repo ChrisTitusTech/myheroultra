@@ -97,6 +97,7 @@ The character index should include a sortable/filterable table.
 Required filters:
 - Role
 - Beginner-friendly
+- Gold Ticket eligibility
 - Difficulty
 - Tags
 
@@ -115,6 +116,7 @@ Behavior:
 - Sorting direction must be explicit and reversible.
 - Active filters must provide a visible result count and reset action.
 - Beginner-friendly filtering includes characters with a difficulty rating of 5 or lower.
+- Gold Ticket filtering includes roster entries whose verified unlock method is “Purchase with a Ticket.”
 - The base page must still render useful static content without JavaScript.
 - URL query params are optional for v1, recommended for v2.
 

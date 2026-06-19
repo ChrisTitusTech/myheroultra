@@ -122,7 +122,7 @@ Acceptance criteria:
 
 **Status:** Complete as of June 19, 2026.
 
-**Implementation note:** Phase 2 completed the React roster island with explicit sort direction, role/difficulty/tag filters, a beginner-friendly filter defined as difficulty 5 or lower, live result counts, reset actions, an actionable no-results state, and a mobile card presentation that preserves the semantic table on larger screens. The redundant numeric beginner rating was removed in favor of difficulty plus practical beginner notes.
+**Implementation note:** Phase 2 completed the React roster island with explicit sort direction, role/difficulty/tag filters, a beginner-friendly filter defined as difficulty 5 or lower, a Gold Ticket filter derived from verified “Purchase with a Ticket” unlock data, live result counts, reset actions, an actionable no-results state, and a mobile card presentation that preserves the semantic table on larger screens. The redundant numeric beginner rating was removed in favor of difficulty plus practical beginner notes.
 
 ## Phase 3 — Guide System
 Goal: Publish useful player guides.
