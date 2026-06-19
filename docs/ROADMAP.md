@@ -186,6 +186,34 @@ Acceptance criteria:
 - Interactive components are isolated islands.
 - Shared data remains normalized.
 
+### Task: Publish the Season 17 editorial tier list
+
+**User story:** As a ranked player, I can scan a complete Season 17 battle-style ranking, understand the criteria, and open the recent community sources that informed it.
+
+**Files affected:**
+- `astro-site/src/data/tierLists.ts`
+- `astro-site/src/pages/tier-list.astro`
+- `astro-site/src/components/TierCharacterCard.astro`
+- `astro-site/src/components/CharacterArtwork.astro`
+- `astro-site/src/styles/global.css`
+- `docs/SPEC.md`
+
+**Acceptance criteria:**
+- Every roster entry appears exactly once, with unreleased styles placed in an unranked watch section.
+- The ranking is stored separately from factual character data.
+- The page explains format, criteria, caveats, and contested placements.
+- Reddit and YouTube sources are dated on or after May 27, 2026.
+- Character art remains local and links to the corresponding static guide.
+- The page is fully static, responsive, and introduces no client hydration.
+
+**Test notes:**
+- Run `npm run build`, `npm run check`, and `npm run lint`.
+- Smoke-test `/tier-list` at desktop and mobile widths.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Replaced the placeholder route with a complete 59-style Season 17 ranked-trios board, a typed and date-bounded Reddit/YouTube source set, methodology and caveat panels, live controversy notes, local character artwork, and a separate watch section for the unreleased Flow Runner style.
+
 ## Phase 6 — Optional Backend/CMS
 Goal: Add managed content only if manual Markdown/data files become too limiting.
 

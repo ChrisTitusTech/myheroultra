@@ -161,6 +161,9 @@ Rules:
 - Tier list data must be separate from base character stats.
 - Include date/patch reviewed.
 - Explain criteria.
+- Cite the community reference set and its publication window.
+- Rank battle styles independently rather than collapsing alternate styles into one combatant.
+- Keep unreleased styles outside the competitive tiers.
 
 ## 5. Content Rules
 - Keep patch-sensitive claims marked with `lastReviewedPatch`.

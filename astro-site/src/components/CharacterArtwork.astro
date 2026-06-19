@@ -6,7 +6,7 @@ import type { CharacterRecord } from '../data/characters';
 interface Props {
   character: CharacterRecord;
   priority?: boolean;
-  variant?: 'card' | 'hero';
+  variant?: 'card' | 'hero' | 'tier';
 }
 
 const {
@@ -20,6 +20,13 @@ const artworkModules = import.meta.glob<{ default: ImageMetadata }>(
   { eager: true },
 );
 const artwork = artworkModules[`../assets/characters/${character.imageFile}`]?.default;
+const imageWidths = variant === 'hero' ? [320, 480, 640] : variant === 'tier' ? [96, 144, 192] : [240, 360, 480];
+const imageSizes =
+  variant === 'hero'
+    ? '(max-width: 680px) 70vw, 360px'
+    : variant === 'tier'
+      ? '(max-width: 680px) 112px, 140px'
+      : '(max-width: 680px) 100vw, 320px';
 
 if (!artwork) {
   throw new Error(`Missing local artwork for ${character.name}: ${character.imageFile}`);
@@ -30,8 +37,8 @@ if (!artwork) {
   <Image
     src={artwork}
     alt={`${character.name} character artwork`}
-    widths={variant === 'hero' ? [320, 480, 640] : [240, 360, 480]}
-    sizes={variant === 'hero' ? '(max-width: 680px) 70vw, 360px' : '(max-width: 680px) 100vw, 320px'}
+    widths={imageWidths}
+    sizes={imageSizes}
     loading={priority ? 'eager' : 'lazy'}
     fetchpriority={priority ? 'high' : 'auto'}
   />

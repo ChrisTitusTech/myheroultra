@@ -1,18 +1,156 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TierCharacterCard from '../components/TierCharacterCard.astro';
+import {
+  season17Sources,
+  season17TierList,
+  season17TierRows,
+} from '../data/tierLists';
+
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  timeZone: 'UTC',
+});
+const formatDate = (date: string) => dateFormatter.format(new Date(`${date}T00:00:00Z`));
+const title = 'Season 17 Tier List | Ultra Rumble Field Notes';
+const description =
+  'A sourced My Hero Ultra Rumble Season 17 ranked-trios tier list informed by recent Reddit discussion and YouTube rankings.';
+const structuredData = {
+  '@type': 'Article',
+  '@id': `${Astro.site}tier-list/#article`,
+  headline: season17TierList.title,
+  description,
+  datePublished: season17TierList.reviewedAt,
+  dateModified: season17TierList.reviewedAt,
+  author: {
+    '@id': `${Astro.site}#organization`,
+  },
+  mainEntityOfPage: `${Astro.site}tier-list/`,
+};
 ---
 <BaseLayout
-  title="Tier Lists | Ultra Rumble Field Notes"
-  description="Patch-dated My Hero Ultra Rumble tier lists with clear ranking criteria."
+  title={title}
+  description={description}
+  ogType="article"
+  publishedAt={new Date(`${season17TierList.reviewedAt}T00:00:00Z`)}
+  modifiedAt={new Date(`${season17TierList.reviewedAt}T00:00:00Z`)}
+  structuredData={structuredData}
 >
-  <header class="page-heading">
-    <p class="eyebrow">Editorial rankings</p>
-    <h1>Tier Lists</h1>
-    <p>Patch-dated rankings will live separately from factual character data and explain their criteria.</p>
+  <header class="tier-hero">
+    <div>
+      <p class="eyebrow">Editorial synthesis · Season {season17TierList.season}</p>
+      <h1>Who controls the Season 17 lobby?</h1>
+      <p class="tier-hero__lede">
+        A complete ranked-trios board built from recent Reddit lists, creator videos, and the arguments
+        players raised around them.
+      </p>
+      <div class="tier-hero__meta" aria-label="Tier list details">
+        <span>Reviewed {formatDate(season17TierList.reviewedAt)}</span>
+        <span>{season17TierList.format}</span>
+        <span>{season17Sources.length} community sources</span>
+      </div>
+    </div>
+    <aside class="tier-hero__stamp" aria-label="Season 17 field ranking">
+      <strong>S17</strong>
+      <span>Field<br />ranking</span>
+    </aside>
   </header>
-  <section class="empty-state">
-    <h2>Rankings are coming later</h2>
-    <p>The roster guides are available now; formal tier lists begin after the core guide library is established.</p>
-    <a class="button" href="/characters">Browse characters</a>
+
+  <section class="tier-method" aria-labelledby="method-title">
+    <div>
+      <p class="section-kicker">How to read this board</p>
+      <h2 id="method-title">Strong opinion, visible receipts</h2>
+      <p>{season17TierList.methodology}</p>
+    </div>
+    <dl>
+      <div>
+        <dt>Source window</dt>
+        <dd>{formatDate(season17TierList.sourceWindowStart)}–{formatDate(season17TierList.reviewedAt)}</dd>
+      </div>
+      <div>
+        <dt>Platform scope</dt>
+        <dd>{season17TierList.platformNote}</dd>
+      </div>
+      <div>
+        <dt>Important caveat</dt>
+        <dd>{season17TierList.caveat}</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="tier-board" aria-labelledby="board-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="section-kicker">The board</p>
+        <h2 id="board-title">Season 17 rankings</h2>
+      </div>
+      <p>Styles are ordered inside each tier. “Watch” is unranked, not last place.</p>
+    </div>
+
+    {season17TierRows.map((tier) => (
+      <section class:list={['tier-row', `tier-row--${tier.grade.toLowerCase()}`]} aria-labelledby={`tier-${tier.grade}`}>
+        <header class="tier-row__label">
+          <span>{tier.grade}</span>
+          <div>
+            <h3 id={`tier-${tier.grade}`}>{tier.label}</h3>
+            <p>{tier.summary}</p>
+          </div>
+        </header>
+        <div class="tier-row__characters">
+          {tier.characters.map((character) => (
+            <TierCharacterCard character={character} />
+          ))}
+        </div>
+      </section>
+    ))}
+  </section>
+
+  <section class="tier-debates" aria-labelledby="debates-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="section-kicker">Where the list can break</p>
+        <h2 id="debates-title">Four live Season 17 debates</h2>
+      </div>
+      <p>The fun part: reasonable players are absolutely not done arguing.</p>
+    </div>
+    <div class="tier-debates__grid">
+      {season17TierList.controversies.map((controversy, index) => (
+        <article>
+          <span>0{index + 1}</span>
+          <h3>{controversy.title}</h3>
+          <p>{controversy.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="tier-sources" aria-labelledby="sources-title">
+    <div class="section-heading-row">
+      <div>
+        <p class="section-kicker">Community reference set</p>
+        <h2 id="sources-title">Reddit threads and YouTube rankings</h2>
+      </div>
+      <p>Only sources published on or after {formatDate(season17TierList.sourceWindowStart)} were used.</p>
+    </div>
+    <div class="tier-sources__grid">
+      {season17Sources.map((source) => (
+        <article class="tier-source">
+          <div class="tier-source__meta">
+            <span class:list={['tier-source__kind', `tier-source__kind--${source.kind.toLowerCase()}`]}>
+              {source.kind}
+            </span>
+            <time datetime={source.publishedAt}>{formatDate(source.publishedAt)}</time>
+          </div>
+          <h3><a href={source.url} rel="noreferrer">{source.title}</a></h3>
+          <p class="tier-source__creator">{source.creator}</p>
+          <p>{source.sourceNote}</p>
+          <a class="tier-source__link" href={source.url} rel="noreferrer">
+            Open source <span aria-hidden="true">↗</span>
+          </a>
+        </article>
+      ))}
+    </div>
   </section>
 </BaseLayout>

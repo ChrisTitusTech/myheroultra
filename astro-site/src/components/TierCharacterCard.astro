@@ -1,0 +1,22 @@
+---
+import CharacterArtwork from './CharacterArtwork.astro';
+import RoleBadge from './RoleBadge.astro';
+import type { CharacterRecord } from '../data/characters';
+
+interface Props {
+  character: CharacterRecord;
+}
+
+const { character } = Astro.props;
+---
+
+<article class="tier-character">
+  <a class="tier-character__art" href={`/characters/${character.slug}`}>
+    <CharacterArtwork character={character} variant="tier" />
+  </a>
+  <div class="tier-character__body">
+    <p>{character.battleStyle}</p>
+    <h3><a href={`/characters/${character.slug}`}>{character.combatant}</a></h3>
+    <RoleBadge role={character.role} />
+  </div>
+</article>
