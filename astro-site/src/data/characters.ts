@@ -45,6 +45,7 @@ export interface CharacterRecord {
   weaknesses: string[];
   beginnerNotes: string[];
   tags: string[];
+  seasonCreated: number;
   source: CharacterSource;
   needsVerification: boolean;
 }
@@ -104,6 +105,7 @@ const featuredCharacters = [
       'Keep one Keraunos charge available when possible so you still have an exit.',
     ],
     tags: ['ranged', 'setup', 'burst', 'teamfight'],
+    seasonCreated: 17,
     source: {
       sourceUrl: 'https://ultrarumble.com/character/114',
       sourceName: 'UltraRumble.com',
@@ -172,6 +174,7 @@ const featuredCharacters = [
       'Do not spend every movement option entering a fight. Keep a route out.',
     ],
     tags: ['mobility', 'frontline', 'rescue'],
+    seasonCreated: 17,
     source: {
       sourceUrl: 'https://ultrarumble.com/character/12',
       sourceName: 'UltraRumble.com',
@@ -240,6 +243,7 @@ const featuredCharacters = [
       'Use height to gather information, not only to chase damage.',
     ],
     tags: ['airborne', 'scout', 'tracking', 'high-mobility'],
+    seasonCreated: 17,
     source: {
       sourceUrl: 'https://ultrarumble.com/character/43',
       sourceName: 'UltraRumble.com',
@@ -302,6 +306,7 @@ const featuredCharacters = [
       'Gigantification is strongest in open space where enemies cannot immediately hide indoors.',
     ],
     tags: ['brawler', 'area-control', 'frontline'],
+    seasonCreated: 17,
     source: {
       sourceUrl: 'https://ultrarumble.com/character/100',
       sourceName: 'UltraRumble.com',
@@ -415,6 +420,7 @@ const remainingCharacters = characterRoster
         ...(isUpcoming ? ['upcoming'] : []),
         ...(seed.isAlternative ? ['alternative-battle-style'] : ['original-battle-style']),
       ],
+      seasonCreated: 17,
       source: {
         sourceUrl: seed.sourceUrl,
         sourceName: 'UltraRumble.com',

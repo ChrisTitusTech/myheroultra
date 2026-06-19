@@ -29,6 +29,9 @@ const Heading = headingLevel;
     <time datetime={guide.data.lastUpdated.toISOString()}>
       Updated {formatGuideDate(guide.data.lastUpdated)}
     </time>
-    {guide.data.needsVerification && <span class="verification-badge">Patch-sensitive</span>}
+    <div class="content-badges">
+      <span class="season-badge">S{guide.data.seasonCreated}</span>
+      {guide.data.needsVerification && <span class="verification-badge">Patch-sensitive</span>}
+    </div>
   </div>
 </article>

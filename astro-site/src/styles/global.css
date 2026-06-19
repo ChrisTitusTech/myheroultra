@@ -533,7 +533,7 @@ main {
 }
 
 .guide-card__meta span,
-.guide-hero__badges > span:not(.verification-badge) {
+.guide-hero__badges > span:not(.verification-badge, .season-badge) {
   color: var(--yellow);
   font-size: 0.72rem;
   font-weight: 800;
@@ -564,6 +564,13 @@ main {
   padding-top: 1.5rem;
   color: #98a3c2;
   font-size: 0.76rem;
+}
+
+.content-badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .guide-article {
@@ -1304,6 +1311,21 @@ td:first-child {
   color: #ffbd8b;
   font-size: 0.7rem;
   font-weight: 750;
+}
+
+.season-badge {
+  display: inline-flex;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--cyan);
+  border-radius: 0.25rem;
+  background: rgb(57 217 255 / 12%);
+  color: var(--cyan);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transform: skew(-3deg);
 }
 
 .gameplay-showcase {

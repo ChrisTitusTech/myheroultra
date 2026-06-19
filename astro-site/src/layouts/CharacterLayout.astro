@@ -118,7 +118,11 @@ const structuredData = [
           <p class="panel-note">Editorial baseline; adapt it to team composition and balance changes.</p>
         </section>
 
-        <SourceBadge source={character.source} needsVerification={character.needsVerification} />
+        <SourceBadge
+          source={character.source}
+          seasonCreated={character.seasonCreated}
+          needsVerification={character.needsVerification}
+        />
       </aside>
     </div>
   </article>

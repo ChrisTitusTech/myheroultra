@@ -214,3 +214,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Reworked the site into a brighter battle-guide identity using an original yellow/cyan/magenta palette, angular hazard accents, stronger navigation and cards, a responsive official-art home banner, gameplay showcase panels, and locally optimized source-tracked artwork. The composition remains distinct from both approved reference sites and retains the visible unofficial-site disclaimer.
+
+## Maintenance — Season Provenance Tags
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Added explicit typed `seasonCreated` metadata to guides and characters. Current content is labeled S17 beside patch-sensitivity indicators so visitors can immediately see which game season informed the page, while future seasons can retain their original provenance.

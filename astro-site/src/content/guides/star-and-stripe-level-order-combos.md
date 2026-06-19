@@ -13,6 +13,7 @@ tags:
 difficulty: intermediate
 publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
+seasonCreated: 17
 patchReviewed: Data Update v1.15.0-Rc129
 sourceUrls:
   - https://ultrarumble.com/character/114

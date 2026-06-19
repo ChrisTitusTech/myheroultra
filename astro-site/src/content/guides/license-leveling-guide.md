@@ -11,6 +11,7 @@ tags:
 difficulty: beginner
 publishedAt: 2026-06-19
 lastUpdated: 2026-06-19
+seasonCreated: 17
 patchReviewed: null
 sourceUrls:
   - https://ultrarumble.com/guide?file=licensemissionnotebook.md

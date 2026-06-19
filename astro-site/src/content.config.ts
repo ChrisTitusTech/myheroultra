@@ -16,6 +16,7 @@ const guides = defineCollection({
     difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
     publishedAt: z.coerce.date(),
     lastUpdated: z.coerce.date(),
+    seasonCreated: z.number().int().positive(),
     patchReviewed: z.string().nullable(),
     sourceUrls: z.array(z.url()).default([]),
     needsVerification: z.boolean().default(false),
