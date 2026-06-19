@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  formatGuideDate,
+  getGuideSlug,
+  guideCategoryLabels,
+  guideDifficultyLabels,
+} from '../data/guides';
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+  compact?: boolean;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { guide, compact = false, headingLevel = 'h2' } = Astro.props;
+const slug = getGuideSlug(guide);
+const Heading = headingLevel;
+---
+
+<article class:list={['guide-card', { 'guide-card--compact': compact }]}>
+  <div class="guide-card__meta">
+    <span>{guideCategoryLabels[guide.data.category]}</span>
+    <span>{guideDifficultyLabels[guide.data.difficulty]}</span>
+  </div>
+  <Heading><a href={`/guides/${slug}`}>{guide.data.title}</a></Heading>
+  <p>{guide.data.description}</p>
+  <div class="guide-card__footer">
+    <time datetime={guide.data.lastUpdated.toISOString()}>
+      Updated {formatGuideDate(guide.data.lastUpdated)}
+    </time>
+    {guide.data.needsVerification && <span class="verification-badge">Patch-sensitive</span>}
+  </div>
+</article>

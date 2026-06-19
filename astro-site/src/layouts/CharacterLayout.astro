@@ -1,5 +1,7 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import CharacterHero from '../components/CharacterHero.astro';
+import GuideCard from '../components/GuideCard.astro';
 import SkillGrid from '../components/SkillGrid.astro';
 import SourceBadge from '../components/SourceBadge.astro';
 import StatBar from '../components/StatBar.astro';
@@ -8,9 +10,10 @@ import BaseLayout from './BaseLayout.astro';
 
 interface Props {
   character: CharacterRecord;
+  relatedGuides?: CollectionEntry<'guides'>[];
 }
 
-const { character } = Astro.props;
+const { character, relatedGuides = [] } = Astro.props;
 ---
 
 <BaseLayout
@@ -87,4 +90,14 @@ const { character } = Astro.props;
       </aside>
     </div>
   </article>
+
+  {relatedGuides.length > 0 && (
+    <section class="related-guides" aria-labelledby="character-related-guides-heading">
+      <p class="section-kicker">Character resources</p>
+      <h2 id="character-related-guides-heading">More {character.name} guides</h2>
+      <div class="guide-grid">
+        {relatedGuides.map((guide) => <GuideCard guide={guide} compact headingLevel="h3" />)}
+      </div>
+    </section>
+  )}
 </BaseLayout>

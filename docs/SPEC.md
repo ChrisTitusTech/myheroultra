@@ -77,6 +77,8 @@ Guide pages should support:
 - Last updated date
 - Patch reviewed field
 - Body content in Markdown/MDX
+- Featured state
+- Source URLs and verification status
 
 ### Interactive Character Table
 The character index should include a sortable/filterable table.
@@ -138,11 +140,15 @@ Sections:
 ### `/guides`
 Purpose: Guide library.
 Sections:
-- Search/filter later
-- Guide cards by category
+- Guide cards with category, difficulty, update date, and verification state
 
 ### `/guides/[slug]`
 Purpose: Guide article.
+Sections:
+- Article metadata
+- Patch-sensitive warning where needed
+- Source trail
+- Related guides
 
 ### `/tier-list`
 Purpose: Opinionated ranking article.

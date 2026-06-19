@@ -1,0 +1,92 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import GuideCard from '../components/GuideCard.astro';
+import { characters } from '../data/characters';
+import {
+  formatGuideDate,
+  guideCategoryLabels,
+  guideDifficultyLabels,
+} from '../data/guides';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+  relatedGuides: CollectionEntry<'guides'>[];
+}
+
+const { guide, relatedGuides } = Astro.props;
+const character = guide.data.characterId
+  ? characters.find((entry) => entry.id === guide.data.characterId)
+  : undefined;
+---
+
+<BaseLayout
+  title={`${guide.data.title} | Ultra Rumble Field Notes`}
+  description={guide.data.description}
+  ogType="article"
+>
+  <article class="guide-article">
+    <header class="guide-hero">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/guides">Guides</a></li>
+          <li aria-current="page">{guide.data.title}</li>
+        </ol>
+      </nav>
+      <div class="guide-hero__badges">
+        <span>{guideCategoryLabels[guide.data.category]}</span>
+        <span>{guideDifficultyLabels[guide.data.difficulty]}</span>
+        {guide.data.needsVerification && <span class="verification-badge">Patch-sensitive</span>}
+      </div>
+      <h1>{guide.data.title}</h1>
+      <p>{guide.data.description}</p>
+      <div class="guide-byline">
+        <time datetime={guide.data.lastUpdated.toISOString()}>
+          Updated {formatGuideDate(guide.data.lastUpdated)}
+        </time>
+        {guide.data.patchReviewed && <span>Reviewed for {guide.data.patchReviewed}</span>}
+        {character && <a href={`/characters/${character.slug}`}>{character.name} field guide</a>}
+      </div>
+    </header>
+
+    {guide.data.needsVerification && (
+      <aside class="guide-alert">
+        <strong>Verify before spending.</strong>
+        <p>Unlock pools, banners, license rewards, and prices can change. Check the current in-game screen before using currency or tickets.</p>
+      </aside>
+    )}
+
+    <div class="guide-prose">
+      <slot />
+    </div>
+
+    {guide.data.sourceUrls.length > 0 && (
+      <section class="guide-sources" aria-labelledby="sources-heading">
+        <p class="section-kicker">Reference trail</p>
+        <h2 id="sources-heading">Sources checked</h2>
+        <ul>
+          {guide.data.sourceUrls.map((sourceUrl) => {
+            const url = new URL(sourceUrl);
+            return (
+              <li>
+                <a href={sourceUrl} target="_blank" rel="noreferrer">
+                  {url.hostname}<span class="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    )}
+  </article>
+
+  {relatedGuides.length > 0 && (
+    <section class="related-guides" aria-labelledby="related-guides-heading">
+      <p class="section-kicker">Keep reading</p>
+      <h2 id="related-guides-heading">Related guides</h2>
+      <div class="guide-grid">
+        {relatedGuides.map((relatedGuide) => <GuideCard guide={relatedGuide} compact headingLevel="h3" />)}
+      </div>
+    </section>
+  )}
+</BaseLayout>

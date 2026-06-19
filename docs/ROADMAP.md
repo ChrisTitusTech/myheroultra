@@ -129,8 +129,8 @@ Goal: Publish useful player guides.
 
 Initial guide targets:
 - Best crystal spending guide.
-- Beginner gold ticket unlock guide.
-- Stars and Stripe level-up and combo guide.
+- Beginner Character Ticket guide that clarifies Gold is a separate resource.
+- Star and Stripe level-up and combo guide.
 - All Might unlock route.
 - License leveling guide.
 
@@ -145,6 +145,10 @@ Acceptance criteria:
 - At least 5 guide pages exist.
 - Guide listing links correctly.
 - Metadata is populated for every guide.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Phase 3 added five sourced Markdown guides, reusable guide cards and article layouts, static `/guides/[slug]` generation, featured guides on the home page, source and patch-sensitivity displays, tag-based related-guide selection, and character-to-guide links for Star and Stripe and All Might.
 
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.

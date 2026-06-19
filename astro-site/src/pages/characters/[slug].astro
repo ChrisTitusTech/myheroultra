@@ -1,19 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import CharacterLayout from '../../layouts/CharacterLayout.astro';
 import { characters } from '../../data/characters';
 import type { CharacterRecord } from '../../data/characters';
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', ({ data }) => !data.draft);
+
   return characters.map((character) => ({
     params: { slug: character.slug },
-    props: { character },
+    props: {
+      character,
+      relatedGuides: guides.filter((guide) => guide.data.characterId === character.id),
+    },
   }));
 }
 
 interface Props {
   character: CharacterRecord;
+  relatedGuides: CollectionEntry<'guides'>[];
 }
 
-const { character } = Astro.props;
+const { character, relatedGuides } = Astro.props;
 ---
-<CharacterLayout character={character} />
+<CharacterLayout character={character} relatedGuides={relatedGuides} />

@@ -1,6 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
+import GuideCard from '../components/GuideCard.astro';
+import { sortGuides } from '../data/guides';
 import { site } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featuredGuides = sortGuides(
+  await getCollection('guides', ({ data }) => !data.draft && data.featured),
+).slice(0, 3);
 ---
 <BaseLayout title={site.title} description={site.description}>
   <section class="hero">
@@ -9,4 +16,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="hero__lede">Clear character breakdowns, practical guides, and beginner resources built for quick answers between matches.</p>
     <a class="button" href="/characters">Browse Characters</a>
   </section>
+
+  {featuredGuides.length > 0 && (
+    <section class="home-section" aria-labelledby="featured-guides-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Start here</p>
+          <h2 id="featured-guides-heading">Featured guides</h2>
+        </div>
+        <a href="/guides">View all guides →</a>
+      </div>
+      <div class="guide-grid">
+        {featuredGuides.map((guide) => <GuideCard guide={guide} headingLevel="h3" />)}
+      </div>
+    </section>
+  )}
 </BaseLayout>

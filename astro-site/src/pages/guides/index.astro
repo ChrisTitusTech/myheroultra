@@ -1,8 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
+import GuideCard from '../../components/GuideCard.astro';
+import { guideCategoryLabels, sortGuides } from '../../data/guides';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const guides = await getCollection('guides', ({ data }) => !data.draft);
+const guides = sortGuides(await getCollection('guides', ({ data }) => !data.draft));
+const categories = [...new Set(guides.map((guide) => guide.data.category))];
 ---
 <BaseLayout
   title="Guides | Ultra Rumble Field Notes"
@@ -14,7 +17,16 @@ const guides = await getCollection('guides', ({ data }) => !data.draft);
     <p>Practical routes, unlock advice, and character strategy written for quick reference.</p>
   </header>
 
-  {guides.length === 0 && (
+  {guides.length > 0 ? (
+    <>
+      <ul class="guide-category-list" aria-label="Available guide categories">
+        {categories.map((category) => <li>{guideCategoryLabels[category]}</li>)}
+      </ul>
+      <section class="guide-grid" aria-label="Published guides">
+        {guides.map((guide) => <GuideCard guide={guide} />)}
+      </section>
+    </>
+  ) : (
     <section class="empty-state">
       <h2>Guides are being prepared</h2>
       <p>The guide library arrives in Phase 3. Character field guides are available now.</p>
