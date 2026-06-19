@@ -101,10 +101,7 @@ const tierRows: TierRow[] = [
       'tomura-shigaraki-thousand-hand-break',
       'mirio-togata-sheer-counter',
       'shota-aizawa',
-      'itsuka-kendo',
-      'mirio-togata',
       'eijiro-kirishima-red-drive',
-      'ochaco-uraraka-zero-satellites',
     ],
   },
   {
@@ -119,6 +116,9 @@ const tierRows: TierRow[] = [
       'all-for-one-factor-fusion',
       'fumikage-tokoyami',
       'tsuyu-asui',
+      'itsuka-kendo',
+      'ochaco-uraraka-zero-satellites',
+      'mirio-togata',
       'armored-all-might',
       'overhaul-blighted-precipice',
       'katsuki-bakugo-cluster',
@@ -244,7 +244,7 @@ export const season17TierList = {
     },
     {
       title: 'Kendo is the Season 17 riser',
-      body: 'Assault Kendo received the clearest upward re-evaluation after her buffs. She lands in S here; Twin Palm Strike remains in B until its output translates more reliably across lobbies.',
+      body: 'Assault Kendo received the clearest upward re-evaluation after her buffs. She lands in A here: meaningfully improved, but not yet supported as a consistent meta setter. Twin Palm Strike remains in B until its output translates more reliably across lobbies.',
     },
     {
       title: 'Mirko remains provisional',
