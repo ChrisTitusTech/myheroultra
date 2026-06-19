@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#251535"/>
+      <stop offset=".48" stop-color="#111735"/>
+      <stop offset="1" stop-color="#08111f"/>
+    </linearGradient>
+    <pattern id="slashes" width="30" height="30" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="8" height="30" fill="#ffffff" opacity=".025"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="5" dy="6" stdDeviation="0" flood-color="#080b1c"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#slashes)"/>
+  <circle cx="90" cy="80" r="280" fill="#ff3f64" opacity=".14"/>
+  <circle cx="1110" cy="570" r="340" fill="#39d9ff" opacity=".1"/>
+
+  <rect x="26" y="24" width="1148" height="582" rx="26" fill="none" stroke="#fff8df" stroke-width="3"/>
+  <rect x="41" y="39" width="1118" height="552" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".16"/>
+
+  <g transform="translate(86 70)">
+    <text fill="#39d9ff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="4">ULTRA RUMBLE FIELD NOTES</text>
+    <text y="58" fill="#ffd83d" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900" letter-spacing="2">SEASON 17 · RANKED TRIOS</text>
+    <text y="145" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="70" font-style="italic" font-weight="900" letter-spacing="-3" filter="url(#shadow)">TIER LIST</text>
+    <text y="190" fill="#cbd3ed" font-family="Arial, Helvetica, sans-serif" font-size="25">Community-informed editorial ranking</text>
+
+    <g transform="translate(0 244)">
+      <rect width="360" height="62" rx="10" fill="#11152c" stroke="#3a4575"/>
+      <rect width="74" height="62" rx="10" fill="#ff3f64"/>
+      <text x="37" y="44" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="39" font-style="italic" font-weight="900">S</text>
+      <text x="94" y="27" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">META SETTERS</text>
+      <text x="94" y="48" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="14">10 battle styles</text>
+    </g>
+
+    <g transform="translate(0 319)">
+      <rect width="360" height="62" rx="10" fill="#11152c" stroke="#3a4575"/>
+      <rect width="74" height="62" rx="10" fill="#ff7138"/>
+      <text x="37" y="44" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="39" font-style="italic" font-weight="900">A</text>
+      <text x="94" y="27" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">HIGH IMPACT</text>
+      <text x="94" y="48" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="14">15 battle styles</text>
+    </g>
+
+    <g transform="translate(0 394)">
+      <rect width="360" height="62" rx="10" fill="#11152c" stroke="#3a4575"/>
+      <rect width="74" height="62" rx="10" fill="#ffd83d"/>
+      <text x="37" y="44" text-anchor="middle" fill="#080b1c" font-family="Arial, Helvetica, sans-serif" font-size="39" font-style="italic" font-weight="900">B</text>
+      <text x="94" y="27" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">STRONG WITH A PLAN</text>
+      <text x="94" y="48" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="14">21 battle styles</text>
+    </g>
+  </g>
+
+  <g transform="translate(512 68)">
+    <rect width="606" height="494" rx="20" fill="#0d1228" stroke="#3a4575" stroke-width="2"/>
+    <text x="28" y="43" fill="#fff8df" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="900" letter-spacing="2">CONDENSED BOARD</text>
+
+    <g transform="translate(24 64)">
+      <rect width="558" height="126" rx="13" fill="#171d3d" stroke="#ff3f64" stroke-width="2"/>
+      <rect width="82" height="126" rx="13" fill="#ff3f64"/>
+      <text x="41" y="78" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">S</text>
+      <text x="104" y="31" fill="#39d9ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">META SETTERS</text>
+      <text x="104" y="62" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Nagant · OFA Deku · Fairy Nejire</text>
+      <text x="104" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Tech Shigaraki · Tech Mirio</text>
+      <text x="104" y="116" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="15">+ Aizawa, Kendo, Rapid Mirio and more</text>
+    </g>
+
+    <g transform="translate(24 204)">
+      <rect width="558" height="112" rx="13" fill="#171d3d" stroke="#ff7138" stroke-width="2"/>
+      <rect width="82" height="112" rx="13" fill="#ff7138"/>
+      <text x="41" y="71" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">A</text>
+      <text x="104" y="30" fill="#ffd83d" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">HIGH-IMPACT CONTENDERS</text>
+      <text x="104" y="61" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Gatling All Might · Tech AFO · Tokoyami</text>
+      <text x="104" y="91" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="16">Mirko · Tech Bakugo · Assault Overhaul + more</text>
+    </g>
+
+    <g transform="translate(24 330)">
+      <rect width="558" height="112" rx="13" fill="#171d3d" stroke="#ffd83d" stroke-width="2"/>
+      <rect width="82" height="112" rx="13" fill="#ffd83d"/>
+      <text x="41" y="71" text-anchor="middle" fill="#080b1c" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">B</text>
+      <text x="104" y="30" fill="#39d9ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">STRONG WITH A PLAN</text>
+      <text x="104" y="61" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">All Might · Star and Stripe · Hawks</text>
+      <text x="104" y="91" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="16">Overhaul · Kurogiri · Toga · Denki + more</text>
+    </g>
+  </g>
+
+  <g transform="translate(917 35) rotate(5)">
+    <rect width="240" height="36" fill="#ffd83d"/>
+    <path d="M0 0h28L4 36H0Zm50 0h28L54 36H26Zm50 0h28l-24 36H76Zm50 0h28l-24 36h-28Zm50 0h28l-24 36h-28Z" fill="#080b1c"/>
+  </g>
+
+  <text x="1114" y="590" text-anchor="end" fill="#98a3c2" font-family="Arial, Helvetica, sans-serif" font-size="17">myheroultra.com/tier-list</text>
+</svg>

@@ -212,7 +212,7 @@ Acceptance criteria:
 
 **Status:** Complete as of June 19, 2026.
 
-**Implementation note:** Replaced the placeholder route with a complete 59-style Season 17 ranked-trios board, a typed and date-bounded Reddit/YouTube source set, methodology and caveat panels, live controversy notes, local character artwork, and a separate watch section for the unreleased Flow Runner style.
+**Implementation note:** Replaced the placeholder route with a complete 59-style Season 17 ranked-trios board, a typed and date-bounded Reddit/YouTube source set, methodology and caveat panels, live controversy notes, local character artwork, a separate watch section for the unreleased Flow Runner style, and a dedicated condensed tier-board social preview for shared links.
 
 ## Phase 6 — Optional Backend/CMS
 Goal: Add managed content only if manual Markdown/data files become too limiting.
