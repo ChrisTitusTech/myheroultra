@@ -573,6 +573,42 @@ main {
   margin-top: 1rem;
 }
 
+.guide-difficulty-filter {
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: box-shadow 150ms ease, filter 150ms ease, transform 150ms ease;
+}
+
+.guide-difficulty-filter:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.guide-difficulty-filter[aria-pressed='true'] {
+  box-shadow: 0 0 0 2px var(--ink), 0 0 0 4px currentcolor;
+}
+
+.guide-difficulty-filter:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.guide-filter-status {
+  display: flex;
+  min-height: 2.4rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.guide-filter-empty {
+  margin-top: 1rem;
+}
+
 .guide-card h2,
 .guide-card h3 {
   margin: 0.7rem 0 0.45rem;

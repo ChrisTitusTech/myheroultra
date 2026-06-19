@@ -15,20 +15,54 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
     <p class="eyebrow">Player resources</p>
     <h1>Guides</h1>
     <p>Practical routes, unlock advice, and character strategy written for quick reference.</p>
-    <div class="guide-difficulty-legend" aria-label="Guide difficulty levels">
-      <span class="guide-difficulty guide-difficulty--beginner">Beginner</span>
-      <span class="guide-difficulty guide-difficulty--intermediate">Intermediate</span>
-      <span class="guide-difficulty guide-difficulty--expert">Expert</span>
+    <div class="guide-difficulty-legend" aria-label="Filter guides by difficulty">
+      <button
+        class="guide-difficulty guide-difficulty--beginner guide-difficulty-filter"
+        type="button"
+        data-guide-filter="beginner"
+        aria-pressed="false"
+      >
+        Beginner
+      </button>
+      <button
+        class="guide-difficulty guide-difficulty--intermediate guide-difficulty-filter"
+        type="button"
+        data-guide-filter="intermediate"
+        aria-pressed="false"
+      >
+        Intermediate
+      </button>
+      <button
+        class="guide-difficulty guide-difficulty--expert guide-difficulty-filter"
+        type="button"
+        data-guide-filter="expert"
+        aria-pressed="false"
+      >
+        Expert
+      </button>
     </div>
   </header>
 
   {guides.length > 0 ? (
     <>
+      <div class="guide-filter-status">
+        <p class="result-count" aria-live="polite">
+          Showing <strong data-guide-result-count>{guides.length}</strong> guides
+        </p>
+        <button class="reset-button" type="button" data-guide-filter-reset hidden>
+          Show all guides
+        </button>
+      </div>
       <ul class="guide-category-list" aria-label="Available guide categories">
         {categories.map((category) => <li>{guideCategoryLabels[category]}</li>)}
       </ul>
       <section class="guide-grid" aria-label="Published guides">
         {guides.map((guide) => <GuideCard guide={guide} />)}
+      </section>
+      <section class="empty-state guide-filter-empty" data-guide-filter-empty hidden>
+        <h2>No guides at this difficulty</h2>
+        <p>Choose another difficulty or show the full guide library.</p>
+        <button class="button" type="button" data-guide-filter-reset>Show all guides</button>
       </section>
     </>
   ) : (
@@ -39,3 +73,46 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
     </section>
   )}
 </BaseLayout>
+
+<script>
+  const filterButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-guide-filter]')];
+  const guideCards = [...document.querySelectorAll<HTMLElement>('[data-guide-difficulty]')];
+  const resetButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-guide-filter-reset]')];
+  const resultCount = document.querySelector<HTMLElement>('[data-guide-result-count]');
+  const emptyState = document.querySelector<HTMLElement>('[data-guide-filter-empty]');
+
+  let activeDifficulty: string | null = null;
+
+  const updateGuideFilter = (difficulty: string | null) => {
+    activeDifficulty = difficulty;
+    let visibleCount = 0;
+
+    guideCards.forEach((card) => {
+      const visible = difficulty === null || card.dataset.guideDifficulty === difficulty;
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    filterButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(button.dataset.guideFilter === difficulty));
+    });
+
+    resetButtons.forEach((button) => {
+      button.hidden = difficulty === null;
+    });
+
+    if (resultCount) resultCount.textContent = String(visibleCount);
+    if (emptyState) emptyState.hidden = visibleCount > 0;
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const difficulty = button.dataset.guideFilter ?? null;
+      updateGuideFilter(activeDifficulty === difficulty ? null : difficulty);
+    });
+  });
+
+  resetButtons.forEach((button) => {
+    button.addEventListener('click', () => updateGuideFilter(null));
+  });
+</script>

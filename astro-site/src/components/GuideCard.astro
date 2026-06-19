@@ -18,7 +18,10 @@ const slug = getGuideSlug(guide);
 const Heading = headingLevel;
 ---
 
-<article class:list={['guide-card', { 'guide-card--compact': compact }]}>
+<article
+  class:list={['guide-card', { 'guide-card--compact': compact }]}
+  data-guide-difficulty={guide.data.difficulty}
+>
   <div class="guide-card__meta">
     <span class="guide-category">{guideCategoryLabels[guide.data.category]}</span>
     <span class:list={['guide-difficulty', `guide-difficulty--${guide.data.difficulty}`]}>

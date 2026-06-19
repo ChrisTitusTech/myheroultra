@@ -264,6 +264,12 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Added four original guides based on recurring, high-engagement Reddit and YouTube topics: combat movement and escape economy, team-fight focus fire and knockdown discipline, i-frame and wake-up decision-making, and 1v3 endgame isolation. The set includes two intermediate and two expert guides, cites representative community sources, avoids patch-fragile damage claims, and marks mechanical details for verification.
+
+## Maintenance — Guide Difficulty Filters
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Converted the guide-page difficulty legend into accessible Beginner, Intermediate, and Expert filter buttons with pressed-state feedback, a live result count, reset controls, and a no-results state. The full static guide library remains visible when JavaScript is unavailable.
 - `astro-site/src/content/guides/roll-points-pity-guide.md`
 - `astro-site/src/content/guides/solo-queue-ranked-guide.md`
 - `docs/ROADMAP.md`
