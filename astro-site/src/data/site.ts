@@ -8,6 +8,7 @@ export const site = {
   socialImageAlt: 'Ultra Rumble Field Notes guide site title on a dark blue background',
   navigation: [
     { href: '/characters', label: 'Characters' },
+    { href: '/compare', label: 'Compare' },
     { href: '/guides', label: 'Guides' },
     { href: '/tier-list', label: 'Tier Lists' },
   ],

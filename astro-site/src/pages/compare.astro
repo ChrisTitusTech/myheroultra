@@ -1,0 +1,37 @@
+---
+import CharacterCompare from '../components/CharacterCompare';
+import { characterTableEntries } from '../data/characterTable';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const defaultCharacterIds = ['star-and-stripe', 'all-might', 'hawks'];
+const title = 'Character Stat Comparison | Ultra Rumble Field Notes';
+const description =
+  'Compare My Hero Ultra Rumble battle styles across HP, damage, mobility, range, team utility, and difficulty.';
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="page-heading compare-heading">
+    <p class="eyebrow">Phase 5 field tool</p>
+    <h1>Character comparison</h1>
+    <p>
+      Put battle styles side by side, find their clearest strengths, and share the exact comparison
+      with your team.
+    </p>
+  </header>
+
+  <CharacterCompare
+    characters={characterTableEntries}
+    defaultCharacterIds={defaultCharacterIds}
+    client:load
+  />
+
+  <noscript>
+    <section class="compare-noscript">
+      <h2>JavaScript is required for custom comparisons</h2>
+      <p>
+        The rest of the site remains static. Browse the full stat table on the
+        <a href="/characters"> character index</a>.
+      </p>
+    </section>
+  </noscript>
+</BaseLayout>

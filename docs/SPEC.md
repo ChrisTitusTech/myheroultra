@@ -21,6 +21,7 @@ The site must support:
 - Guide index
 - Individual guide pages
 - Tier-list article page
+- Character comparison tool
 - Crystal-spending guide
 - Unlock guide pages
 - Patch/update notes, optional later
@@ -125,6 +126,19 @@ Behavior:
 - The base page must still render useful static content without JavaScript.
 - URL query params are optional for v1, recommended for v2.
 
+### Character Comparison Tool
+The `/compare` route should provide a focused interactive island for comparing battle styles.
+
+Required behavior:
+- Compare two to four unique roster entries.
+- Reuse the normalized character-table projection of base character data.
+- Display HP plus damage, mobility, range, team utility, and difficulty ratings.
+- Distinguish sourced HP values from editorial ratings.
+- Highlight the strongest displayed value, treating lower difficulty as easier.
+- Persist selected character IDs in the `characters` URL query parameter.
+- Link each comparison column to its static character guide.
+- Keep the surrounding page static and provide a no-JavaScript path to the character index.
+
 ## 4. Pages
 
 ### `/`
@@ -216,6 +230,7 @@ The site uses Astro's default static generation mode. The Cloudflare adapter is 
 - Home page exists and links to all major sections.
 - Character index renders all 59 current roster and alternate-style records.
 - Character table sorts by every displayed rating and filters by role, difficulty, style, tag, beginner suitability, and Character Ticket eligibility.
+- Character comparison supports two to four unique roster entries with shareable URL state.
 - Every roster record has a static detail route, local artwork, source metadata, skill summaries, and a complete level-up order.
 - At least 9 sourced guide pages exist, with draft entries excluded from production routes.
 - The guide library includes intermediate and expert coverage for movement, coordinated team fights, recovery i-frames, and outnumbered endgames.

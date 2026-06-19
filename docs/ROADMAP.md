@@ -186,6 +186,36 @@ Acceptance criteria:
 - Interactive components are isolated islands.
 - Shared data remains normalized.
 
+### Task: Launch the character stat comparison tool
+
+**User story:** As a player choosing between battle styles, I can compare their HP and editorial ratings side by side and share the exact comparison with another player.
+
+**Files affected:**
+- `astro-site/src/components/CharacterCompare.tsx`
+- `astro-site/src/pages/compare.astro`
+- `astro-site/src/data/site.ts`
+- `astro-site/src/styles/global.css`
+- `docs/SPEC.md`
+
+**Acceptance criteria:**
+- Players can compare two to four unique roster entries.
+- The tool reuses normalized character-table data rather than duplicating stats.
+- HP is clearly distinguished from editorial 1–10 ratings.
+- Category leaders are visible, with lower difficulty treated as easier.
+- Selected character IDs persist in a shareable URL query parameter.
+- Every selected entry links to its static character guide.
+- The comparison UI is an isolated React island and adds no hydration to guide pages.
+- The route remains useful without JavaScript by linking to the static character index.
+
+**Test notes:**
+- Run `npm run build`, `npm run check`, and `npm run lint`.
+- Smoke-test `/compare` at desktop and mobile widths.
+- Confirm a copied comparison URL restores the same unique roster entries.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Added a dedicated `/compare` route with a single React island that compares two to four unique battle styles, highlights category leaders, distinguishes sourced HP from editorial ratings, links back to static character guides, and persists selections in a shareable `characters` query parameter. The tool reuses the normalized character-table projection and keeps all guide routes hydration-free.
+
 ### Task: Publish the Season 17 editorial tier list
 
 **User story:** As a ranked player, I can scan a complete Season 17 battle-style ranking, understand the criteria, and open the recent community sources that informed it.
