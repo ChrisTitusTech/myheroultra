@@ -228,11 +228,11 @@ export const season17TierList = {
   reviewedAt: '2026-06-19',
   sourceWindowStart: '2026-05-27',
   format: 'Ranked trios',
-  platformNote: 'Cross-platform community synthesis; aim and lobby differences can move individual styles.',
+  platformNote: 'Cross-platform synthesis; aim and lobby differences can shift placements.',
   methodology:
-    'Editorial synthesis of recent creator rankings and community debate. Placements weigh fight control, mobility, burst consistency, team utility, and how reliably a style converts an advantage in ranked trios.',
+    'Community rankings weighted by control, mobility, burst, team utility, and ranked consistency.',
   caveat:
-    'This is not a vote average or official ranking. Tuning builds, player mastery, platform, and team composition can move a style by a full tier.',
+    'Not an official ranking or vote average; mastery, builds, platform, and team composition can shift a style by a tier.',
   controversies: [
     {
       title: 'Strike All For One is the fault line',

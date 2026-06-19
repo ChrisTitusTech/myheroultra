@@ -244,6 +244,8 @@ Acceptance criteria:
 
 **Implementation note:** Replaced the placeholder route with a complete 59-style Season 17 ranked-trios board, a typed and date-bounded Reddit/YouTube source set, methodology and caveat panels, live controversy notes, local character artwork, a separate watch section for the unreleased Flow Runner style, and a dedicated condensed tier-board social preview for shared links.
 
+**Layout note:** Condensed the tier-list hero, methodology panel, tier labels, character tiles, debate cards, and source cards so the full article remains quickly scannable on desktop and mobile.
+
 ## Phase 6 — Optional Backend/CMS
 Goal: Add managed content only if manual Markdown/data files become too limiting.
 
