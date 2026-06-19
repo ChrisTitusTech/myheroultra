@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const guides = await getCollection('guides', ({ data }) => !data.draft);
+---
+<BaseLayout
+  title="Guides | Ultra Rumble Field Notes"
+  description="Browse My Hero Ultra Rumble beginner, character, combo, unlock, and currency guides."
+>
+  <header class="page-heading">
+    <p class="eyebrow">Player resources</p>
+    <h1>Guides</h1>
+    <p>Practical routes, unlock advice, and character strategy written for quick reference.</p>
+  </header>
+
+  {guides.length === 0 && (
+    <section class="empty-state">
+      <h2>Guides are being prepared</h2>
+      <p>The guide library arrives in Phase 3. Character field guides are available now.</p>
+      <a class="button" href="/characters">Browse characters</a>
+    </section>
+  )}
+</BaseLayout>

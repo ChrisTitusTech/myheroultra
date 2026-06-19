@@ -9,9 +9,9 @@ interface Props {
 const { source, needsVerification = false } = Astro.props;
 ---
 
-<aside class="source-note" aria-label="Data source">
+<section class="source-note" aria-label="Data source">
   <div>
-    <strong>Source checked {source.lastChecked}</strong>
+    <strong>Source checked <time datetime={source.lastChecked}>{source.lastChecked}</time></strong>
     <p>{source.sourceNote}</p>
   </div>
   <div class="source-note__actions">
@@ -20,4 +20,4 @@ const { source, needsVerification = false } = Astro.props;
       {source.sourceName}<span class="sr-only"> (opens in a new tab)</span>
     </a>
   </div>
-</aside>
+</section>

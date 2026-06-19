@@ -36,16 +36,15 @@ export interface CharacterStatRatings {
   damage: number;
   mobility: number;
   range: number;
-  defense: number;
+  teamUtility: number;
   difficulty: number;
 }
 
 export interface CharacterSkill {
-  key: 'alpha' | 'beta' | 'gamma' | 'special';
+  id: string;
+  slot: 'alpha' | 'beta' | 'gamma' | 'special';
   name: string;
-  displayName: string;
   summary: string;
-  levelPriority?: number;
 }
 
 export interface CharacterRecord {
@@ -53,13 +52,19 @@ export interface CharacterRecord {
   slug: string;
   name: string;
   role: CharacterRole;
-  unlockMethod?: string;
+  unlockMethod: string | null;
   beginnerRating: number;
   stats: CharacterStatRatings;
   skills: CharacterSkill[];
-  recommendedLevelOrder?: string[];
+  recommendedLevelOrder: string[];
   tags: string[];
-  lastReviewedPatch?: string;
+  source: {
+    sourceUrl: string;
+    sourceName: string;
+    sourceNote: string;
+    lastChecked: string;
+  };
+  needsVerification: boolean;
 }
 ```
 
@@ -158,7 +163,7 @@ Rules:
 - React only for sortable/filterable interactive widgets.
 - Static Astro output deployed from `astro-site/dist` with Cloudflare Workers Static Assets.
 - Node.js 22 for local development and Cloudflare builds.
-- `SITE_URL` environment variable for the production canonical origin.
+- Canonical production origin fixed to `https://myheroultra.com`.
 - Sitemap and robots.txt.
 - Responsive design.
 - Accessible controls and semantic HTML.
@@ -177,10 +182,10 @@ The site uses Astro's default static generation mode. The Cloudflare adapter is 
 
 ## 8. Acceptance Criteria for MVP
 - Home page exists and links to all major sections.
-- Character index renders at least 5 sample characters.
+- Character index renders the four required sample characters.
 - Character table sorts by damage, HP, mobility, difficulty, and name.
 - Character table filters by role.
 - At least 2 full character guide pages exist.
 - At least 3 guide pages exist.
 - Build passes with no TypeScript errors.
-- Site can deploy to Cloudflare Pages.
+- Site can deploy with Cloudflare Workers Static Assets.

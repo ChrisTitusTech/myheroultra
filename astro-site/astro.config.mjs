@@ -1,10 +1,19 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  integrations: [react()],
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) =>
+        !page.endsWith('/404/') &&
+        !page.endsWith('/404.html') &&
+        !page.includes('/characters/stars-and-stripe'),
+    }),
+  ],
   output: 'static',
-  site: process.env.SITE_URL ?? 'https://myheroultra.com',
+  site: 'https://myheroultra.com',
   redirects: {
     '/characters/stars-and-stripe': '/characters/star-and-stripe',
   },

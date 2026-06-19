@@ -1,6 +1,6 @@
 ---
 import CharacterHero from '../components/CharacterHero.astro';
-import SkillTable from '../components/SkillTable.astro';
+import SkillGrid from '../components/SkillGrid.astro';
 import SourceBadge from '../components/SourceBadge.astro';
 import StatBar from '../components/StatBar.astro';
 import type { CharacterRecord } from '../data/characters';
@@ -16,6 +16,7 @@ const { character } = Astro.props;
 <BaseLayout
   title={`${character.name} Guide | Ultra Rumble Field Notes`}
   description={`${character.summary} View ${character.name} skills, ratings, strengths, weaknesses, and beginner notes.`}
+  ogType="article"
 >
   <article class="character-page">
     <CharacterHero character={character} />
@@ -31,7 +32,7 @@ const { character } = Astro.props;
         <section class="content-section" aria-labelledby="skills-heading">
           <p class="section-kicker">Kit overview</p>
           <h2 id="skills-heading">Skills and special actions</h2>
-          <SkillTable skills={character.skills} />
+          <SkillGrid skills={character.skills} />
         </section>
 
         <section class="content-section split-section" aria-label="Strengths and weaknesses">

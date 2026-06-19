@@ -1,6 +1,6 @@
 # Ultra Rumble Field Notes
 
-An unofficial, static-first My Hero Ultra Rumble guide site built with Astro and deployed to Cloudflare Pages.
+An unofficial, static-first My Hero Ultra Rumble guide site built with Astro and deployed with Cloudflare Workers Static Assets.
 
 ## Local development
 
@@ -18,9 +18,7 @@ npm run dev
 Validation:
 
 ```bash
-npm run build
-npm run check
-npm run lint
+npm run validate
 ```
 
 ## Cloudflare Workers
@@ -35,7 +33,7 @@ Cloudflare build settings:
 - Version command: `npx wrangler versions upload`
 - Production branch: `main`
 
-The canonical production origin defaults to `https://myheroultra.com`. Set `SITE_URL` only when a different origin is needed for a build.
+The canonical production origin is `https://myheroultra.com`.
 
 The Worker configuration in `astro-site/wrangler.jsonc` publishes the generated `dist` directory as static assets.
 

@@ -10,7 +10,12 @@ const { character } = Astro.props;
 ---
 
 <header class="character-hero">
-  <p class="breadcrumb"><a href="/characters">Characters</a> / {character.name}</p>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/characters">Characters</a></li>
+      <li aria-current="page">{character.name}</li>
+    </ol>
+  </nav>
   <div class="character-hero__badges">
     <RoleBadge role={character.role} />
     <span class="difficulty">Beginner rating {character.beginnerRating}/10</span>

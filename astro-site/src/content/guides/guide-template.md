@@ -1,0 +1,15 @@
+---
+title: Guide Template
+description: A private draft that documents and validates the guide content schema.
+category: system
+tags:
+  - internal
+difficulty: beginner
+lastUpdated: 2026-06-19
+patchReviewed: null
+sourceUrls: []
+needsVerification: false
+draft: true
+---
+
+Duplicate this file when starting a guide, replace every metadata field, and keep `draft: true` until the guide is ready to publish.

@@ -1,12 +1,19 @@
 ---
 import CharacterLayout from '../../layouts/CharacterLayout.astro';
-import { characters, getCharacterBySlug } from '../../data/characters';
+import { characters } from '../../data/characters';
+import type { CharacterRecord } from '../../data/characters';
 
 export function getStaticPaths() {
-  return characters.map((character) => ({ params: { slug: character.slug } }));
+  return characters.map((character) => ({
+    params: { slug: character.slug },
+    props: { character },
+  }));
 }
 
-const character = getCharacterBySlug(Astro.params.slug ?? '');
-if (!character) throw new Error(`Character not found: ${Astro.params.slug}`);
+interface Props {
+  character: CharacterRecord;
+}
+
+const { character } = Astro.props;
 ---
 <CharacterLayout character={character} />

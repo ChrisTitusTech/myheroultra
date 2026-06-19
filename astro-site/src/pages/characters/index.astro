@@ -1,0 +1,18 @@
+---
+import CharacterCard from '../../components/CharacterCard.astro';
+import CharacterTable from '../../components/CharacterTable';
+import { characterTableEntries } from '../../data/characterTable';
+import { characters } from '../../data/characters';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Characters | Ultra Rumble Field Notes" description="Browse My Hero Ultra Rumble characters by role, HP, damage, mobility, and beginner rating.">
+  <header class="page-heading">
+    <p class="eyebrow">Roster field guides</p>
+    <h1>Characters</h1>
+    <p>Compare roles and editorial playstyle ratings, then open a static guide for skills, strengths, and beginner notes.</p>
+  </header>
+  <CharacterTable characters={characterTableEntries} client:load />
+  <section class="grid" aria-label="Character cards">
+    {characters.map((character) => <CharacterCard character={character} />)}
+  </section>
+</BaseLayout>

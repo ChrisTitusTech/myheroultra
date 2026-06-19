@@ -1,15 +1,16 @@
 import { useMemo, useState } from 'react';
-import type { CharacterRecord, CharacterRole } from '../data/characters';
+import type { CharacterTableEntry } from '../data/characterTable';
+import type { CharacterRole } from '../data/characters';
 
 type SortKey = 'name' | 'hp' | 'damage' | 'mobility' | 'range' | 'teamUtility' | 'difficulty' | 'beginnerRating';
 
 interface Props {
-  characters: CharacterRecord[];
+  characters: readonly CharacterTableEntry[];
 }
 
 const roles: Array<'All' | CharacterRole> = ['All', 'Assault', 'Strike', 'Rapid', 'Technical', 'Support'];
 
-function getSortValue(character: CharacterRecord, sortKey: SortKey): string | number {
+function getSortValue(character: CharacterTableEntry, sortKey: SortKey): string | number {
   if (sortKey === 'name') return character.name;
   if (sortKey === 'beginnerRating') return character.beginnerRating;
   return character.stats[sortKey];
@@ -27,7 +28,11 @@ export default function CharacterTable({ characters }: Props) {
       .sort((a, b) => {
         const aValue = getSortValue(a, sortKey);
         const bValue = getSortValue(b, sortKey);
-        if (typeof aValue === 'string' && typeof bValue === 'string') return aValue.localeCompare(bValue);
+
+        if (typeof aValue === 'string' && typeof bValue === 'string') {
+          return aValue.localeCompare(bValue);
+        }
+
         return Number(bValue) - Number(aValue);
       });
   }, [characters, role, beginnerOnly, sortKey]);
@@ -61,36 +66,39 @@ export default function CharacterTable({ characters }: Props) {
       </div>
 
       {visibleCharacters.length === 0 ? (
-        <p>No characters match the current filters.</p>
+        <p role="status">No characters match the current filters.</p>
       ) : (
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Role</th>
-              <th>HP</th>
-              <th>Damage</th>
-              <th>Mobility</th>
-              <th>Utility</th>
-              <th>Difficulty</th>
-              <th>Beginner</th>
-            </tr>
-          </thead>
-          <tbody>
-            {visibleCharacters.map((character) => (
-              <tr key={character.id}>
-                <td><a href={`/characters/${character.slug}`}>{character.name}</a></td>
-                <td>{character.role}</td>
-                <td>{character.stats.hp}</td>
-                <td>{character.stats.damage}</td>
-                <td>{character.stats.mobility}</td>
-                <td>{character.stats.teamUtility}</td>
-                <td>{character.stats.difficulty}</td>
-                <td>{character.beginnerRating}</td>
+        <div className="table-scroll" tabIndex={0} aria-label="Character comparison table">
+          <table>
+            <caption className="sr-only">Character role, health, and editorial ratings</caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">HP</th>
+                <th scope="col">Damage</th>
+                <th scope="col">Mobility</th>
+                <th scope="col">Utility</th>
+                <th scope="col">Difficulty</th>
+                <th scope="col">Beginner</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {visibleCharacters.map((character) => (
+                <tr key={character.id}>
+                  <td><a href={`/characters/${character.slug}`}>{character.name}</a></td>
+                  <td>{character.role}</td>
+                  <td>{character.stats.hp}</td>
+                  <td>{character.stats.damage}</td>
+                  <td>{character.stats.mobility}</td>
+                  <td>{character.stats.teamUtility}</td>
+                  <td>{character.stats.difficulty}</td>
+                  <td>{character.beginnerRating}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </section>
   );

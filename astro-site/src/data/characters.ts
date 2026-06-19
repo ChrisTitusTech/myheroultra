@@ -294,7 +294,3 @@ export const characters = [
     needsVerification: true,
   },
 ] satisfies CharacterRecord[];
-
-export function getCharacterBySlug(slug: string) {
-  return characters.find((character) => character.slug === slug);
-}

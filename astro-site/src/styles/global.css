@@ -6,6 +6,16 @@
   font-synthesis: none;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #0b1020;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -14,10 +24,20 @@ body {
     radial-gradient(circle at 15% 0%, rgb(70 91 183 / 20%), transparent 34rem),
     #0b1020;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 a {
   color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #98a8ff;
+  outline-offset: 3px;
 }
 
 .sr-only {
@@ -30,6 +50,24 @@ a {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.5rem;
+  background: #f7f8fc;
+  color: #0b1020;
+  font-weight: 800;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 main {
@@ -67,6 +105,14 @@ main {
 .site-header nav a:hover,
 .site-header nav a:focus-visible {
   color: #fff;
+}
+
+.site-header nav a[aria-current='page'] {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: #98a8ff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4rem;
 }
 
 .brand {
@@ -130,6 +176,10 @@ main {
   text-decoration: none;
 }
 
+.button:hover {
+  background: #dfe4f4;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -153,6 +203,25 @@ main {
   margin: 1rem 0 0;
   color: #cbd3ed;
   font-size: 1.1rem;
+}
+
+.empty-state {
+  max-width: 680px;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid #2c3654;
+  border-radius: 1rem;
+  background: #151c31;
+}
+
+.empty-state h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.1;
+}
+
+.empty-state p {
+  margin: 1rem 0 1.5rem;
+  color: #cbd3ed;
 }
 
 .card,
@@ -216,12 +285,6 @@ main {
 .card__stats dd {
   margin: 0;
   font-weight: 800;
-}
-
-.text-link {
-  color: #b7c2ff;
-  font-weight: 750;
-  text-decoration: none;
 }
 
 .role-badge {
@@ -291,6 +354,10 @@ table {
   border-collapse: collapse;
 }
 
+.table-scroll {
+  overflow-x: auto;
+}
+
 th,
 td {
   padding: 0.75rem;
@@ -339,6 +406,21 @@ td {
   margin: 0 0 2rem;
   color: #98a3c2;
   font-size: 0.9rem;
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb li + li::before {
+  margin-right: 0.35rem;
+  content: '/';
+  color: #56617e;
 }
 
 .breadcrumb a {
@@ -595,10 +677,6 @@ td {
   .site-header__inner {
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  .interactive-panel {
-    overflow-x: auto;
   }
 
   .card__stats,

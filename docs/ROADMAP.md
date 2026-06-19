@@ -3,7 +3,7 @@
 ## Phase 0 — Project Bootstrap
 Goal: Create the Astro foundation.
 
-### Task: Establish the static Astro and Cloudflare Pages baseline
+### Task: Establish the static Astro and Cloudflare Workers baseline
 
 **User story:** As the site maintainer, I can install, validate, preview, and deploy a typed static Astro site through Cloudflare Workers without introducing an Astro server runtime.
 
@@ -13,7 +13,6 @@ Goal: Create the Astro foundation.
 - `astro-site/tsconfig.json`
 - `astro-site/eslint.config.js`
 - `astro-site/.node-version`
-- `astro-site/.env.example`
 - `astro-site/wrangler.jsonc`
 
 **Acceptance criteria:**
@@ -25,7 +24,7 @@ Goal: Create the Astro foundation.
 
 **Test notes:**
 - Run the Phase 0 validation commands from `astro-site/`.
-- A real deployment requires Cloudflare authentication and a Pages project.
+- A real deployment requires Cloudflare authentication and a Worker project.
 
 ### Task: Create the shared shell and required source structure
 
@@ -76,7 +75,7 @@ Goal: Establish reusable character and guide content structure.
 **Files affected:**
 - `astro-site/src/layouts/CharacterLayout.astro`
 - `astro-site/src/components/CharacterHero.astro`
-- `astro-site/src/components/SkillTable.astro`
+- `astro-site/src/components/SkillGrid.astro`
 - `astro-site/src/components/SourceBadge.astro`
 - `astro-site/src/pages/characters/[slug].astro`
 
@@ -107,7 +106,7 @@ Goal: Add sortable and filterable roster UI.
 
 Tasks:
 - Add `CharacterTable.tsx` React component.
-- Support sorting by name, HP, damage, mobility, range, defense, difficulty, beginner rating.
+- Support sorting by name, HP, damage, mobility, range, team utility, difficulty, beginner rating.
 - Support filtering by role.
 - Add beginner-friendly toggle.
 - Add mobile-friendly card/table layout.
@@ -145,10 +144,8 @@ Acceptance criteria:
 Goal: Make the site discoverable and professional.
 
 Tasks:
-- Add sitemap.
-- Add robots.txt.
-- Add Open Graph metadata.
-- Add canonical URLs.
+- Maintain the sitemap and robots.txt added during the best-practices cleanup.
+- Maintain Open Graph and canonical metadata in the shared layout.
 - Add image optimization policy.
 - Add JSON-LD where appropriate.
 - Improve mobile layout.
@@ -185,3 +182,9 @@ Options:
 - Workers API for community submissions.
 
 Do not start this phase until static content workflow becomes a bottleneck.
+
+## Maintenance — Astro Best-Practices Cleanup
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Centralized site metadata, added sitemap and robots generation, expanded Open Graph metadata, added 404 no-index handling and active navigation state, improved keyboard accessibility, standardized index routes, passed character data to static paths as typed props, and reduced the React island payload to table-only fields.
