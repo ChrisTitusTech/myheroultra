@@ -173,7 +173,7 @@ export default function CharacterTable({ characters }: Props) {
         </label>
         <label className="checkbox-label">
           <input type="checkbox" checked={beginnerOnly} onChange={(event) => setBeginnerOnly(event.target.checked)} />
-          Beginner-friendly · difficulty 5 or lower
+          Beginner
         </label>
       </div>
 
