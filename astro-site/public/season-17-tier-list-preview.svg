@@ -61,9 +61,18 @@
       <rect width="82" height="126" rx="13" fill="#ff3f64"/>
       <text x="41" y="78" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">S</text>
       <text x="104" y="31" fill="#39d9ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">META SETTERS</text>
-      <text x="104" y="62" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Nagant · OFA Deku · Fairy Nejire</text>
-      <text x="104" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Tech Shigaraki · Tech Mirio</text>
-      <text x="104" y="116" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="15">+ Aizawa, Kendo, Rapid Mirio and more</text>
+      <g transform="translate(104 43)">
+        <rect width="68" height="68" rx="10" fill="#0b1024" stroke="#ff3f64"/>
+        <image href="../src/assets/characters/lady-nagant.webp" x="3" y="3" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="78" width="68" height="68" rx="10" fill="#0b1024" stroke="#ff3f64"/>
+        <image href="../src/assets/characters/izuku-midoriya-ofa.webp" x="81" y="3" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="156" width="68" height="68" rx="10" fill="#0b1024" stroke="#ff3f64"/>
+        <image href="../src/assets/characters/nejire-hado-fairy.webp" x="159" y="3" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="234" width="68" height="68" rx="10" fill="#0b1024" stroke="#ff3f64"/>
+        <image href="../src/assets/characters/tomura-shigaraki-thousand-hand-break.webp" x="237" y="3" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="312" width="68" height="68" rx="10" fill="#0b1024" stroke="#ff3f64"/>
+        <image href="../src/assets/characters/mirio-togata-sheer-counter.webp" x="315" y="3" width="62" height="62" preserveAspectRatio="xMidYMid meet"/>
+      </g>
     </g>
 
     <g transform="translate(24 204)">
@@ -71,8 +80,20 @@
       <rect width="82" height="112" rx="13" fill="#ff7138"/>
       <text x="41" y="71" text-anchor="middle" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">A</text>
       <text x="104" y="30" fill="#ffd83d" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">HIGH-IMPACT CONTENDERS</text>
-      <text x="104" y="61" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">Gatling All Might · Tech AFO · Tokoyami</text>
-      <text x="104" y="91" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="16">Mirko · Tech Bakugo · Assault Overhaul + more</text>
+      <g transform="translate(104 39)">
+        <rect width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/all-might-gatling.webp" x="3" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="68" width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/all-for-one.webp" x="71" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="136" width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/fumikage-tokoyami.webp" x="139" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="204" width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/mirko.webp" x="207" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="272" width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/katsuki-bakugo-cluster.webp" x="275" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="340" width="58" height="58" rx="9" fill="#0b1024" stroke="#ff7138"/>
+        <image href="../src/assets/characters/overhaul-blighted-precipice.webp" x="343" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+      </g>
     </g>
 
     <g transform="translate(24 330)">
@@ -80,8 +101,20 @@
       <rect width="82" height="112" rx="13" fill="#ffd83d"/>
       <text x="41" y="71" text-anchor="middle" fill="#080b1c" font-family="Arial, Helvetica, sans-serif" font-size="50" font-style="italic" font-weight="900">B</text>
       <text x="104" y="30" fill="#39d9ff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="800" letter-spacing="2">STRONG WITH A PLAN</text>
-      <text x="104" y="61" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800">All Might · Star and Stripe · Hawks</text>
-      <text x="104" y="91" fill="#aeb9d8" font-family="Arial, Helvetica, sans-serif" font-size="16">Overhaul · Kurogiri · Toga · Denki + more</text>
+      <g transform="translate(104 39)">
+        <rect width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/all-might.webp" x="3" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="68" width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/star-and-stripe.webp" x="71" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="136" width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/hawks.webp" x="139" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="204" width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/overhaul.webp" x="207" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="272" width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/kurogiri.webp" x="275" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+        <rect x="340" width="58" height="58" rx="9" fill="#0b1024" stroke="#ffd83d"/>
+        <image href="../src/assets/characters/himiko-toga.webp" x="343" y="3" width="52" height="52" preserveAspectRatio="xMidYMid meet"/>
+      </g>
     </g>
   </g>
 
