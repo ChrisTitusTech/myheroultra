@@ -51,7 +51,7 @@ Do not grind one awkward mission for hours when several easier objectives are av
 
 Special License progression also comes from matches. You do not need to turn the unlock into a separate job; steady play moves the permanent track forward.
 
-Use rental access or Training if you want to practice All Might before the permanent unlock. Learn High Jump routes, Detroit Smash timing, and when Carry to Safety can rescue a teammate.
+Use rental access or Training if you want to practice All Might before the permanent unlock. Learn High Jump routes, Texas Smash spacing, and when Carry to Safety can rescue a teammate.
 
 ## Step 4: Do not spend the wrong ticket
 
@@ -72,6 +72,6 @@ All Might has difficulty 5 in this site's editorial model, making him a reasonab
 1. Claiming high ground with High Jump.
 2. Keeping one movement option for disengaging.
 3. Using Carry to Safety when a revive is safer than chasing damage.
-4. Learning when United States of Smash can disrupt projectile pressure.
+4. Learning when Oklahoma Smash can disrupt projectile pressure.
 
 The unlock is only the beginning; movement discipline is what turns him into a dependable teammate.

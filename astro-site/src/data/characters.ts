@@ -1,4 +1,5 @@
 import { characterRoster } from './characterRoster';
+import { characterSkillBehaviors } from './characterSkillBehaviors';
 
 export type CharacterRole = 'Assault' | 'Strike' | 'Rapid' | 'Technical' | 'Support';
 export type SkillSlot = 'alpha' | 'beta' | 'gamma' | 'special';
@@ -116,7 +117,7 @@ const featuredCharacters = [
     source: {
       sourceUrl: 'https://ultrarumble.com/character/114',
       sourceName: 'UltraRumble.com',
-      sourceNote: 'Role, HP, and skill names checked against the public character database. Guide ratings and advice are editorial.',
+      sourceNote: 'Role, HP, skill names, and move behavior checked against the public character database. Guide ratings and advice are editorial.',
       lastChecked: '2026-06-19',
     },
     needsVerification: true,
@@ -192,7 +193,7 @@ const featuredCharacters = [
     source: {
       sourceUrl: 'https://ultrarumble.com/character/12',
       sourceName: 'UltraRumble.com',
-      sourceNote: 'Role, HP, and skill names checked against the public character database. Guide ratings and advice are editorial.',
+      sourceNote: 'Role, HP, skill names, and move behavior checked against the public character database. Guide ratings and advice are editorial.',
       lastChecked: '2026-06-19',
     },
     needsVerification: true,
@@ -268,7 +269,7 @@ const featuredCharacters = [
     source: {
       sourceUrl: 'https://ultrarumble.com/character/43',
       sourceName: 'UltraRumble.com',
-      sourceNote: 'Role, HP, and skill names checked against the public character database. Guide ratings and advice are editorial.',
+      sourceNote: 'Role, HP, skill names, and move behavior checked against the public character database. Guide ratings and advice are editorial.',
       lastChecked: '2026-06-19',
     },
     needsVerification: true,
@@ -338,7 +339,7 @@ const featuredCharacters = [
     source: {
       sourceUrl: 'https://ultrarumble.com/character/100',
       sourceName: 'UltraRumble.com',
-      sourceNote: 'Role, HP, and skill names checked against the public character database. Guide ratings and advice are editorial.',
+      sourceNote: 'Role, HP, skill names, and move behavior checked against the public character database. Guide ratings and advice are editorial.',
       lastChecked: '2026-06-19',
     },
     needsVerification: true,
@@ -493,26 +494,6 @@ function getRecommendedLevelOrder(
   ];
 }
 
-function getSkillSummary(
-  slot: SkillSlot,
-  name: string,
-  priority: LevelPriority,
-) {
-  if (slot === 'special') {
-    return `${name} is a special action rather than a card-level skill. Treat its charge, cooldown, or activation condition as a separate resource.`;
-  }
-
-  const priorityIndex = priority.indexOf(slot);
-  if (priorityIndex === 0) {
-    return `${name} is the core card-level skill for this style. Take its early breakpoint first, then make it the first skill you finish.`;
-  }
-  if (priorityIndex === 1) {
-    return `${name} is the second upgrade priority. Bring it online early, then finish it after the primary skill reaches Lv. 9.`;
-  }
-
-  return `${name} rounds out the kit. Take its Lv. 4 breakpoint after the first two skills are established, then finish it last.`;
-}
-
 function skillId(slot: SkillSlot, name: string) {
   return `${slot}-${name}`
     .toLowerCase()
@@ -536,8 +517,12 @@ const remainingCharacters = characterRoster
     const notes = roleNotes[seed.role];
     const isUpcoming = seed.id === 'shota-aizawa-flow-runner';
     const levelPriority = levelPriorities[seed.id];
+    const skillBehaviors = characterSkillBehaviors[seed.id];
     if (!levelPriority) {
       throw new Error(`Missing editorial level priority for ${seed.id}`);
+    }
+    if (!skillBehaviors || skillBehaviors.length !== seed.skills.length) {
+      throw new Error(`Missing skill behavior summaries for ${seed.id}`);
     }
     const styleLabel = seed.isAlternative
       ? `${seed.battleStyle} alternate battle style`
@@ -552,18 +537,18 @@ const remainingCharacters = characterRoster
       isAlternative: seed.isAlternative,
       imageFile: seed.imageFile,
       role: seed.role,
-      summary: `${isUpcoming ? 'Upcoming: ' : ''}${seed.combatant}'s ${styleLabel}. ${notes.summary}`,
-      playstyle: `${notes.summary} Build around ${getSkillName(seed.skills, levelPriority[0])} first, use ${getSkillName(seed.skills, levelPriority[1])} as the supporting upgrade, and preserve the kit's movement or defensive resources when committing.`,
+      summary: `${isUpcoming ? 'Upcoming: ' : ''}${seed.combatant}'s ${styleLabel}, centered on ${getSkillName(seed.skills, levelPriority[0])} with ${getSkillName(seed.skills, levelPriority[1])} as the supporting upgrade.`,
+      playstyle: `${notes.summary} ${getSkillName(seed.skills, levelPriority[0])} ${skillBehaviors[seed.skills.findIndex(([slot]) => slot === levelPriority[0])]?.replace(/^[A-Z]/, (letter) => letter.toLowerCase())} Use ${getSkillName(seed.skills, levelPriority[1])} to support that plan, and preserve movement or defensive resources when committing.`,
       unlockMethod: seed.unlockMethod,
       stats: {
         hp: seed.hp,
         ...roleDefaults[seed.role],
       },
-      skills: seed.skills.map(([slot, name]) => ({
+      skills: seed.skills.map(([slot, name], index) => ({
         id: skillId(slot, name),
         slot,
         name,
-        summary: getSkillSummary(slot, name, levelPriority),
+        summary: skillBehaviors[index]!,
       })),
       recommendedLevelOrder: getRecommendedLevelOrder(seed.id, seed.skills),
       strengths: notes.strengths,
@@ -582,7 +567,7 @@ const remainingCharacters = characterRoster
       source: {
         sourceUrl: seed.sourceUrl,
         sourceName: 'UltraRumble.com',
-        sourceNote: 'Role, HP, unlock note, artwork, and skill names checked against the public character database. Ratings, skill priorities, and strategy advice are editorial.',
+        sourceNote: 'Role, HP, unlock note, artwork, skill names, and move behavior checked against the public character database. Ratings, skill priorities, and strategy advice are editorial.',
         lastChecked: '2026-06-19',
       },
       needsVerification: true,

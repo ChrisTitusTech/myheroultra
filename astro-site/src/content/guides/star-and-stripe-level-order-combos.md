@@ -33,8 +33,9 @@ Start with:
 
 1. **Zero Air to level 4** for the early area upgrade.
 2. **Keraunos to level 4** for the additional charge.
-3. **Diffusion Laser to level 9** for stronger sustained ranged pressure.
-4. Finish Keraunos, then Zero Air.
+3. **Zero Air to level 9** to finish the setup tool first.
+4. **Diffusion Laser to level 4** for its early ranged breakpoint.
+5. Finish Keraunos, then Diffusion Laser.
 
 This is an editorial baseline. If your team already supplies reliable crowd control, prioritizing Diffusion Laser earlier can be reasonable.
 

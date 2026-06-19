@@ -289,3 +289,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Added an explicit level-up priority for every original character and alternate battle style, expanded each recommendation from early Lv. 4 breakpoints through the final Lv. 9 skill, replaced generated editorial placeholders with priority-aware skill guidance, and corrected the featured All Might and Hawks skill labels against the normalized roster data. The unreleased Flow Runner recommendation remains patch-sensitive through the existing verification badge.
+
+## Maintenance — Published Content Quality Audit
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Replaced generic upgrade-priority text in the full roster with concise, source-checked explanations of what every Quirk Skill and Special Action does. Character summaries and playstyle introductions now name the style’s actual core tools, while the All Might unlock guide and Star and Stripe guide were synchronized with the current character records and site-wide level recommendations.
