@@ -12,7 +12,7 @@ export const guideCategoryLabels = {
 export const guideDifficultyLabels = {
   beginner: 'Beginner',
   intermediate: 'Intermediate',
-  advanced: 'Advanced',
+  expert: 'Expert',
 } as const;
 
 export function getGuideSlug(guide: CollectionEntry<'guides'>) {

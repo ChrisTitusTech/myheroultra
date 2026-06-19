@@ -85,6 +85,11 @@ Guide pages should support:
 - Featured state
 - Source URLs and verification status
 
+Guide difficulty uses exactly three levels:
+- Beginner — green
+- Intermediate — yellow
+- Expert — red
+
 Guide topic selection should also consider recurring community questions. When Reddit is used to identify demand:
 - Cite representative question or discussion threads in `sourceUrls`.
 - Treat comments as player experience and editorial input, not authoritative game data.
@@ -97,7 +102,7 @@ The character index should include a sortable/filterable table.
 Required filters:
 - Role
 - Beginner-friendly
-- Gold Ticket eligibility
+- Character Ticket eligibility
 - Difficulty
 - Tags
 
@@ -116,7 +121,7 @@ Behavior:
 - Sorting direction must be explicit and reversible.
 - Active filters must provide a visible result count and reset action.
 - Beginner-friendly filtering includes characters with a difficulty rating of 5 or lower.
-- Gold Ticket filtering includes roster entries whose verified unlock method is “Purchase with a Ticket.”
+- Character Ticket filtering includes roster entries whose verified unlock method is “Purchase with a Ticket.”
 - The base page must still render useful static content without JavaScript.
 - URL query params are optional for v1, recommended for v2.
 
@@ -207,12 +212,13 @@ The site uses Astro's default static generation mode. The Cloudflare adapter is 
 - Damage calculator with frame-perfect values
 - Real-time game API integration
 
-## 8. Acceptance Criteria for MVP
+## 8. Current Release Acceptance Criteria
 - Home page exists and links to all major sections.
-- Character index renders the four required sample characters.
-- Character table sorts by damage, HP, mobility, difficulty, and name.
-- Character table filters by role.
-- At least 2 full character guide pages exist.
-- At least 3 guide pages exist.
+- Character index renders all 59 current roster and alternate-style records.
+- Character table sorts by every displayed rating and filters by role, difficulty, style, tag, beginner suitability, and Character Ticket eligibility.
+- Every roster record has a static detail route, local artwork, source metadata, skill summaries, and a complete level-up order.
+- At least 9 sourced guide pages exist, with draft entries excluded from production routes.
+- The Season 17 tier list covers every roster record exactly once, with unreleased styles outside competitive tiers.
+- Every external asset has a matching source-manifest entry and production pages do not hotlink imagery.
 - Build passes with no TypeScript errors.
 - Site can deploy with Cloudflare Workers Static Assets.

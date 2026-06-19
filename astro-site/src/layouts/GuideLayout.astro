@@ -76,8 +76,10 @@ const structuredData = [
         </ol>
       </nav>
       <div class="guide-hero__badges">
-        <span>{guideCategoryLabels[guide.data.category]}</span>
-        <span>{guideDifficultyLabels[guide.data.difficulty]}</span>
+        <span class="guide-category">{guideCategoryLabels[guide.data.category]}</span>
+        <span class:list={['guide-difficulty', `guide-difficulty--${guide.data.difficulty}`]}>
+          {guideDifficultyLabels[guide.data.difficulty]}
+        </span>
         <span class="season-badge">S{guide.data.seasonCreated}</span>
         {guide.data.needsVerification && <span class="verification-badge">Patch-sensitive</span>}
       </div>

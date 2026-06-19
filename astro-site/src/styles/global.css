@@ -532,13 +532,45 @@ main {
   gap: 0.5rem 0.85rem;
 }
 
-.guide-card__meta span,
-.guide-hero__badges > span:not(.verification-badge, .season-badge) {
+.guide-category {
   color: var(--yellow);
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.guide-difficulty {
+  padding: 0.18rem 0.48rem;
+  border: 1px solid currentcolor;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.guide-difficulty--beginner {
+  color: #84e2a8;
+  background: rgb(132 226 168 / 10%);
+}
+
+.guide-difficulty--intermediate {
+  color: var(--yellow);
+  background: rgb(255 224 92 / 10%);
+}
+
+.guide-difficulty--expert {
+  color: #ff6b76;
+  background: rgb(255 107 118 / 10%);
+}
+
+.guide-difficulty-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
 }
 
 .guide-card h2,

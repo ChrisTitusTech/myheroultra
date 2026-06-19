@@ -15,6 +15,11 @@ const categories = [...new Set(guides.map((guide) => guide.data.category))];
     <p class="eyebrow">Player resources</p>
     <h1>Guides</h1>
     <p>Practical routes, unlock advice, and character strategy written for quick reference.</p>
+    <div class="guide-difficulty-legend" aria-label="Guide difficulty levels">
+      <span class="guide-difficulty guide-difficulty--beginner">Beginner</span>
+      <span class="guide-difficulty guide-difficulty--intermediate">Intermediate</span>
+      <span class="guide-difficulty guide-difficulty--expert">Expert</span>
+    </div>
   </header>
 
   {guides.length > 0 ? (

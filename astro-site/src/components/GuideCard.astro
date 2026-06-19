@@ -20,8 +20,10 @@ const Heading = headingLevel;
 
 <article class:list={['guide-card', { 'guide-card--compact': compact }]}>
   <div class="guide-card__meta">
-    <span>{guideCategoryLabels[guide.data.category]}</span>
-    <span>{guideDifficultyLabels[guide.data.difficulty]}</span>
+    <span class="guide-category">{guideCategoryLabels[guide.data.category]}</span>
+    <span class:list={['guide-difficulty', `guide-difficulty--${guide.data.difficulty}`]}>
+      {guideDifficultyLabels[guide.data.difficulty]}
+    </span>
   </div>
   <Heading><a href={`/guides/${slug}`}>{guide.data.title}</a></Heading>
   <p>{guide.data.description}</p>

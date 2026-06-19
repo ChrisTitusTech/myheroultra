@@ -122,7 +122,7 @@ Acceptance criteria:
 
 **Status:** Complete as of June 19, 2026.
 
-**Implementation note:** Phase 2 completed the React roster island with explicit sort direction, role/difficulty/tag filters, a beginner-friendly filter defined as difficulty 5 or lower, a Gold Ticket filter derived from verified “Purchase with a Ticket” unlock data, live result counts, reset actions, an actionable no-results state, and a mobile card presentation that preserves the semantic table on larger screens. The redundant numeric beginner rating was removed in favor of difficulty plus practical beginner notes.
+**Implementation note:** Phase 2 completed the React roster island with explicit sort direction, role/difficulty/tag filters, a beginner-friendly filter defined as difficulty 5 or lower, a Character Ticket filter derived from verified “Purchase with a Ticket” unlock data, live result counts, reset actions, an actionable no-results state, and a mobile card presentation that preserves the semantic table on larger screens. The redundant numeric beginner rating was removed in favor of difficulty plus practical beginner notes.
 
 ## Phase 3 — Guide System
 Goal: Publish useful player guides.
@@ -295,3 +295,15 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Replaced generic upgrade-priority text in the full roster with concise, source-checked explanations of what every Quirk Skill and Special Action does. Character summaries and playstyle introductions now name the style’s actual core tools, while the All Might unlock guide and Star and Stripe guide were synchronized with the current character records and site-wide level recommendations.
+
+## Maintenance — Current-Phase Release Gate
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Completed a final structural and visual QA sweep across the current static release. Aligned beginner difficulty bands and Character Ticket terminology, expanded guide-to-character validation to the full roster, required sources on every published guide, verified local asset-manifest coverage, crawled generated routes and internal links, and confirmed Cloudflare Static Assets compatibility.
+
+## Maintenance — Guide Difficulty Tiers
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Standardized guide difficulty to three validated tiers—Beginner, Intermediate, and Expert—and added consistent green, yellow, and red badges on guide cards and article headers.

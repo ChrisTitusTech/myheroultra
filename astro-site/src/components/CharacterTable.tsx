@@ -25,8 +25,8 @@ const sortOptions: Array<{ label: string; value: SortKey }> = [
 
 const difficultyOptions: Array<{ label: string; value: DifficultyFilter }> = [
   { label: 'All difficulties', value: 'All' },
-  { label: 'Beginner · 1–4', value: 'beginner' },
-  { label: 'Intermediate · 5–7', value: 'intermediate' },
+  { label: 'Beginner · 1–5', value: 'beginner' },
+  { label: 'Intermediate · 6–7', value: 'intermediate' },
   { label: 'Advanced · 8–10', value: 'advanced' },
 ];
 
@@ -39,8 +39,8 @@ function matchesDifficulty(character: CharacterTableEntry, difficulty: Difficult
   if (difficulty === 'All') return true;
 
   const rating = character.stats.difficulty;
-  if (difficulty === 'beginner') return rating <= 4;
-  if (difficulty === 'intermediate') return rating >= 5 && rating <= 7;
+  if (difficulty === 'beginner') return rating <= 5;
+  if (difficulty === 'intermediate') return rating >= 6 && rating <= 7;
   return rating >= 8;
 }
 
@@ -59,7 +59,7 @@ export default function CharacterTable({ characters }: Props) {
   const [style, setStyle] = useState<StyleFilter>('All');
   const [tag, setTag] = useState('All');
   const [beginnerOnly, setBeginnerOnly] = useState(false);
-  const [goldTicketOnly, setGoldTicketOnly] = useState(false);
+  const [characterTicketOnly, setCharacterTicketOnly] = useState(false);
 
   const tags = useMemo(
     () => [...new Set(characters.flatMap((character) => character.tags))].sort(),
@@ -76,7 +76,7 @@ export default function CharacterTable({ characters }: Props) {
       )
       .filter((character) => tag === 'All' || character.tags.includes(tag))
       .filter((character) => !beginnerOnly || character.stats.difficulty <= 5)
-      .filter((character) => !goldTicketOnly || character.isTicketRedeemable)
+      .filter((character) => !characterTicketOnly || character.isTicketRedeemable)
       .sort((a, b) => {
         const aValue = getSortValue(a, sortKey);
         const bValue = getSortValue(b, sortKey);
@@ -86,7 +86,7 @@ export default function CharacterTable({ characters }: Props) {
 
         return sortDirection === 'ascending' ? comparison : -comparison;
       });
-  }, [characters, role, difficulty, style, tag, beginnerOnly, goldTicketOnly, sortKey, sortDirection]);
+  }, [characters, role, difficulty, style, tag, beginnerOnly, characterTicketOnly, sortKey, sortDirection]);
 
   const filtersAreActive =
     role !== 'All' ||
@@ -94,7 +94,7 @@ export default function CharacterTable({ characters }: Props) {
     style !== 'All' ||
     tag !== 'All' ||
     beginnerOnly ||
-    goldTicketOnly;
+    characterTicketOnly;
 
   const resetFilters = () => {
     setRole('All');
@@ -102,7 +102,7 @@ export default function CharacterTable({ characters }: Props) {
     setStyle('All');
     setTag('All');
     setBeginnerOnly(false);
-    setGoldTicketOnly(false);
+    setCharacterTicketOnly(false);
   };
 
   const updateSortKey = (nextSortKey: SortKey) => {
@@ -180,8 +180,12 @@ export default function CharacterTable({ characters }: Props) {
           Beginner
         </label>
         <label className="checkbox-label">
-          <input type="checkbox" checked={goldTicketOnly} onChange={(event) => setGoldTicketOnly(event.target.checked)} />
-          Gold Ticket
+          <input
+            type="checkbox"
+            checked={characterTicketOnly}
+            onChange={(event) => setCharacterTicketOnly(event.target.checked)}
+          />
+          Character Ticket
         </label>
       </div>
 
