@@ -85,6 +85,12 @@ Guide pages should support:
 - Featured state
 - Source URLs and verification status
 
+Guide topic selection should also consider recurring community questions. When Reddit is used to identify demand:
+- Cite representative question or discussion threads in `sourceUrls`.
+- Treat comments as player experience and editorial input, not authoritative game data.
+- Verify factual mechanics against the live game or approved game-data references where practical.
+- Avoid exact ranked scoring, reward totals, or banner behavior when the current season has not been independently confirmed.
+
 ### Interactive Character Table
 The character index should include a sortable/filterable table.
 

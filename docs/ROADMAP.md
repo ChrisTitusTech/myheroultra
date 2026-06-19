@@ -248,3 +248,32 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Added explicit typed `seasonCreated` metadata to guides and characters. Current content is labeled S17 beside patch-sensitivity indicators so visitors can immediately see which game season informed the page, while future seasons can retain their original provenance.
+
+## Maintenance — Reddit Question Guide Expansion
+
+**Task title:** Publish guides for recurring community questions
+
+**User story:** As a new or solo player, I can find direct answers to the questions that repeatedly appear in the My Hero Ultra Rumble subreddit without piecing together old comment threads.
+
+**Files affected:**
+- `astro-site/src/content/guides/beginner-match-survival-guide.md`
+- `astro-site/src/content/guides/revive-cards-team-recovery-guide.md`
+- `astro-site/src/content/guides/roll-points-pity-guide.md`
+- `astro-site/src/content/guides/solo-queue-ranked-guide.md`
+- `docs/ROADMAP.md`
+- `docs/SPEC.md`
+
+**Acceptance criteria:**
+- The guide library includes dedicated answers for beginner match flow, skill cards, revives, banner pity, and solo-queue ranked play.
+- Each guide cites the Reddit threads that demonstrate recurring demand.
+- Patch-sensitive mechanics and ranked scoring avoid unsupported exact claims and remain marked for verification.
+- New pages use the existing static Content Collection and introduce no hydration.
+- Build, Astro check, and lint succeed.
+
+**Test notes:**
+- Run `npm run build`, `npm run check`, and `npm run lint` from `astro-site/`.
+- Confirm each new guide route is generated and included in the sitemap.
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Added four static, original-language guides based on recurring subreddit questions. The expansion covers match fundamentals and colored cards, team recovery, Roll Point pity planning, and solo-queue ranked decision-making, with Reddit demand sources and patch-sensitivity warnings attached to each article.
