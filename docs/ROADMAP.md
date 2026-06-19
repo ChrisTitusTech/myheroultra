@@ -351,3 +351,38 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Standardized guide difficulty to three validated tiers—Beginner, Intermediate, and Expert—and added consistent green, yellow, and red badges on guide cards and article headers.
+
+## Maintenance — Community Voting and Feedback Intake
+
+**Status:** Not started.
+
+### Task: Add GitHub-authenticated voting for guides and characters
+
+**User story:** As a reader, I can upvote accurate content and downvote inaccurate content on guide and character pages, and when I downvote I can submit actionable feedback that opens a GitHub issue for maintainer review.
+
+**Files affected:**
+- `astro-site/src/components/VoteWidget.tsx`
+- `astro-site/src/components/DownvoteFeedbackModal.tsx`
+- `astro-site/src/pages/characters/[slug].astro`
+- `astro-site/src/pages/guides/[slug].astro`
+- `astro-site/src/data/site.ts`
+- `astro-site/src/styles/global.css`
+- `docs/SPEC.md`
+
+**Acceptance criteria:**
+- Voting is available on every published guide and character detail page through an isolated React island.
+- Users authenticate with GitHub Sign-In before casting votes.
+- Each user can cast at most one active vote per content item (guide or character), with vote updates replacing prior votes rather than duplicating counts.
+- Upvote control uses a green arrow and downvote control uses a red arrow.
+- The UI displays total score and underlying upvote/downvote counts.
+- Selecting downvote opens a required feedback prompt before submission.
+- Submitting a downvote creates a GitHub issue containing page URL, content type, content ID/slug, vote direction, feedback text, and timestamp.
+- Voting totals are persisted in a backend datastore and reloaded on page visit.
+- The static page remains readable without JavaScript; only the vote widget hydrates.
+
+**Test notes:**
+- Run `npm run build`, `npm run check`, and `npm run lint` from `astro-site/`.
+- Verify unauthenticated users are prompted to sign in with GitHub before voting.
+- Verify one-vote-per-user-per-item behavior for both guides and characters.
+- Verify downvote always requires feedback and creates a GitHub issue with the expected fields.
+- Verify vote totals update correctly after upvote/downvote changes and page reload.
