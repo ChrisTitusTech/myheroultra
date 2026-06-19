@@ -283,3 +283,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Tightened the shared layout rhythm across navigation, heroes, cards, tables, character guides, articles, tier-list sections, and mobile views. Reduced oversized minimum heights and vertical gaps while preserving readable type, touch-friendly controls, responsive stacking, and the existing visual identity.
+
+## Maintenance — Full Roster Editorial Skill Pass
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Added an explicit level-up priority for every original character and alternate battle style, expanded each recommendation from early Lv. 4 breakpoints through the final Lv. 9 skill, replaced generated editorial placeholders with priority-aware skill guidance, and corrected the featured All Might and Hawks skill labels against the normalized roster data. The unreleased Flow Runner recommendation remains patch-sensitive through the existing verification badge.

@@ -97,7 +97,14 @@ const featuredCharacters = [
         summary: 'Creates a team utility zone that can protect and sustain allies during a fight.',
       },
     ],
-    recommendedLevelOrder: ['Zero Air to Lv. 4', 'Keraunos to Lv. 4', 'Diffusion Laser to Lv. 9'],
+    recommendedLevelOrder: [
+      'Zero Air to Lv. 4',
+      'Keraunos to Lv. 4',
+      'Zero Air to Lv. 9',
+      'Diffusion Laser to Lv. 4',
+      'Keraunos to Lv. 9',
+      'Diffusion Laser to Lv. 9',
+    ],
     strengths: ['Strong ranged pressure', 'Reliable setup for coordinated teams', 'Useful chase and repositioning'],
     weaknesses: ['Setup timing takes practice', 'Mistimed mobility can leave her exposed', 'Best value depends on clean follow-ups'],
     beginnerNotes: [
@@ -136,21 +143,21 @@ const featuredCharacters = [
     },
     skills: [
       {
-        id: 'detroit-smash',
+        id: 'texas-smash',
         slot: 'alpha',
-        name: 'Detroit Smash',
+        name: 'Texas Smash',
         summary: 'A ranged punch that sends a shock wave forward and can pressure enemies from the air.',
       },
       {
-        id: 'oklahoma-smash',
+        id: 'united-states-of-smash',
         slot: 'beta',
-        name: 'Oklahoma Smash',
+        name: 'United States of Smash',
         summary: 'A forward rush that closes distance and hits with a powerful punch.',
       },
       {
-        id: 'united-states-of-smash',
+        id: 'oklahoma-smash',
         slot: 'gamma',
-        name: 'United States of Smash',
+        name: 'Oklahoma Smash',
         summary: 'A spinning area attack that can deflect incoming projectiles while active.',
       },
       {
@@ -166,7 +173,14 @@ const featuredCharacters = [
         summary: 'Carries a downed ally and revives them after setting them down.',
       },
     ],
-    recommendedLevelOrder: ['Detroit Smash to Lv. 4', 'Oklahoma Smash to Lv. 4', 'Detroit Smash to Lv. 9'],
+    recommendedLevelOrder: [
+      'Texas Smash to Lv. 4',
+      'United States of Smash to Lv. 4',
+      'Texas Smash to Lv. 9',
+      'Oklahoma Smash to Lv. 4',
+      'United States of Smash to Lv. 9',
+      'Oklahoma Smash to Lv. 9',
+    ],
     strengths: ['Flexible at multiple ranges', 'Excellent vertical mobility', 'Can rescue downed teammates'],
     weaknesses: ['Large silhouette is easy to track', 'Mobility cooldowns are important defensive resources', 'Aggressive dives can separate him from the team'],
     beginnerNotes: [
@@ -223,19 +237,26 @@ const featuredCharacters = [
         summary: 'Creates a wind vortex that reveals affected enemies to the team.',
       },
       {
-        id: 'fierce-wings',
+        id: 'fierce-wings-transport',
         slot: 'special',
-        name: 'Fierce Wings',
-        summary: 'Enables flight and can carry a teammate during a rotation.',
+        name: 'Fierce Wings / Transport',
+        summary: 'Carries a teammate during a fast aerial rotation.',
       },
       {
-        id: 'special-action-escape',
+        id: 'fierce-wings-flight',
         slot: 'special',
-        name: 'Special Action Escape',
-        summary: 'Uses remaining special-action charge to recover from a knockback and reposition.',
+        name: 'Fierce Wings / Flight',
+        summary: 'Enables sustained flight for scouting, pursuit, and disengagement.',
       },
     ],
-    recommendedLevelOrder: ['Wingbeat to Lv. 4', 'Wind Cross to Lv. 4', 'Wingbeat to Lv. 9'],
+    recommendedLevelOrder: [
+      'Wingbeat to Lv. 4',
+      'Wind Cross to Lv. 4',
+      'Wingbeat to Lv. 9',
+      'Storm Wings to Lv. 4',
+      'Wind Cross to Lv. 9',
+      'Storm Wings to Lv. 9',
+    ],
     strengths: ['Exceptional map mobility', 'Strong scouting and target tracking', 'Can transport a teammate'],
     weaknesses: ['Low HP leaves little room for mistakes', 'Flight management has a high skill ceiling', 'Can drift too far from team support'],
     beginnerNotes: [
@@ -298,7 +319,14 @@ const featuredCharacters = [
         summary: 'Temporarily becomes giant, changing her attacks and making her a major team-fight threat.',
       },
     ],
-    recommendedLevelOrder: ['Spike Knuckle to Lv. 4', 'Caldera Stomp to Lv. 4', 'Spike Knuckle to Lv. 9'],
+    recommendedLevelOrder: [
+      'Spike Knuckle to Lv. 4',
+      'Caldera Stomp to Lv. 4',
+      'Spike Knuckle to Lv. 9',
+      'Canyon Cannon to Lv. 4',
+      'Caldera Stomp to Lv. 9',
+      'Canyon Cannon to Lv. 9',
+    ],
     strengths: ['Simple core game plan', 'Strong close-range control', 'Gigantification can reshape an open fight'],
     weaknesses: ['Limited safe pressure at long range', 'Giant form is highly visible', 'Buildings and tight terrain can reduce her special-action value'],
     beginnerNotes: [
@@ -339,34 +367,151 @@ const roleNotes: Record<CharacterRole, {
   Assault: {
     summary: 'A durable frontline style built to contest space and absorb pressure.',
     strengths: ['Frontline durability', 'Reliable space control'],
-    weaknesses: ['Mobility and range vary by matchup', 'Detailed matchup notes need editorial review'],
+    weaknesses: ['Mobility and range vary by matchup', 'Can be punished when frontline resources are spent carelessly'],
     tags: ['frontline', 'durable'],
   },
   Strike: {
     summary: 'A damage-focused style built to convert openings into direct pressure.',
     strengths: ['Strong damage pressure', 'Clear offensive win condition'],
-    weaknesses: ['Defensive options vary by kit', 'Detailed matchup notes need editorial review'],
+    weaknesses: ['Defensive options vary by kit', 'Loses value when attacks are forced without a clean opening'],
     tags: ['damage', 'pressure'],
   },
   Rapid: {
     summary: 'A mobility-focused style built for rotations, pursuit, and disengagement.',
     strengths: ['High mobility', 'Strong repositioning potential'],
-    weaknesses: ['Often punishing when movement resources are spent', 'Detailed matchup notes need editorial review'],
+    weaknesses: ['Often punishing when movement resources are spent', 'Extended fights can expose limited staying power'],
     tags: ['mobility', 'skirmisher'],
   },
   Technical: {
     summary: 'A specialist style whose value depends on timing, setup, and matchup knowledge.',
     strengths: ['Flexible tactical tools', 'High outplay potential'],
-    weaknesses: ['Higher learning curve', 'Detailed matchup notes need editorial review'],
+    weaknesses: ['Higher learning curve', 'Mistimed setup tools can leave the kit without a clear follow-up'],
     tags: ['setup', 'specialist'],
   },
   Support: {
     summary: 'A team-oriented style built to create safer fights and enable allies.',
     strengths: ['Strong team utility', 'Useful fight control'],
-    weaknesses: ['Solo pressure varies by kit', 'Detailed matchup notes need editorial review'],
+    weaknesses: ['Solo pressure varies by kit', 'Works best when teammates are close enough to use the created opening'],
     tags: ['team-utility', 'support'],
   },
 };
+
+type LevelPriority = ['alpha' | 'beta' | 'gamma', 'alpha' | 'beta' | 'gamma', 'alpha' | 'beta' | 'gamma'];
+
+const levelPriorities: Record<string, LevelPriority> = {
+  'izuku-midoriya': ['alpha', 'beta', 'gamma'],
+  'izuku-midoriya-full-bullet': ['beta', 'alpha', 'gamma'],
+  'izuku-midoriya-ofa': ['gamma', 'beta', 'alpha'],
+  'katsuki-bakugo': ['alpha', 'beta', 'gamma'],
+  'katsuki-bakugo-machine-gun': ['alpha', 'beta', 'gamma'],
+  'katsuki-bakugo-cluster': ['alpha', 'beta', 'gamma'],
+  'ochaco-uraraka': ['beta', 'alpha', 'gamma'],
+  'ochaco-uraraka-zero-satellites': ['beta', 'gamma', 'alpha'],
+  'tenya-iida': ['beta', 'alpha', 'gamma'],
+  'shoto-todoroki': ['alpha', 'gamma', 'beta'],
+  'shoto-todoroki-ice-fang-wind-flame': ['gamma', 'alpha', 'beta'],
+  'tsuyu-asui': ['beta', 'alpha', 'gamma'],
+  'eijiro-kirishima': ['beta', 'gamma', 'alpha'],
+  'eijiro-kirishima-red-drive': ['alpha', 'beta', 'gamma'],
+  'momo-yaoyorozu': ['alpha', 'beta', 'gamma'],
+  'fumikage-tokoyami': ['alpha', 'gamma', 'beta'],
+  'denki-kaminari': ['gamma', 'alpha', 'beta'],
+  'denki-kaminari-lightning': ['beta', 'alpha', 'gamma'],
+  'neito-monoma': ['gamma', 'alpha', 'beta'],
+  'itsuka-kendo': ['alpha', 'beta', 'gamma'],
+  'itsuka-kendo-twin-palm-strike': ['beta', 'alpha', 'gamma'],
+  'ibara-shiozaki': ['alpha', 'gamma', 'beta'],
+  'mirio-togata': ['alpha', 'beta', 'gamma'],
+  'mirio-togata-sheer-counter': ['gamma', 'alpha', 'beta'],
+  'tamaki-amajiki': ['alpha', 'gamma', 'beta'],
+  'nejire-hado': ['beta', 'alpha', 'gamma'],
+  'nejire-hado-fairy': ['beta', 'gamma', 'alpha'],
+  'hitoshi-shinso': ['gamma', 'alpha', 'beta'],
+  'all-might': ['alpha', 'beta', 'gamma'],
+  'all-might-gatling': ['alpha', 'gamma', 'beta'],
+  'armored-all-might': ['gamma', 'alpha', 'beta'],
+  'shota-aizawa': ['alpha', 'gamma', 'beta'],
+  'shota-aizawa-flow-runner': ['beta', 'alpha', 'gamma'],
+  'present-mic': ['alpha', 'beta', 'gamma'],
+  'present-mic-d-j-board': ['beta', 'alpha', 'gamma'],
+  cementoss: ['alpha', 'beta', 'gamma'],
+  endeavor: ['alpha', 'beta', 'gamma'],
+  'endeavor-inferno-fist': ['beta', 'alpha', 'gamma'],
+  hawks: ['alpha', 'beta', 'gamma'],
+  'hawks-slicing-wind': ['beta', 'alpha', 'gamma'],
+  mirko: ['beta', 'alpha', 'gamma'],
+  'star-and-stripe': ['beta', 'gamma', 'alpha'],
+  'mt-lady': ['alpha', 'beta', 'gamma'],
+  'tomura-shigaraki': ['alpha', 'beta', 'gamma'],
+  'tomura-shigaraki-catastrophe': ['gamma', 'alpha', 'beta'],
+  'tomura-shigaraki-thousand-hand-break': ['alpha', 'beta', 'gamma'],
+  'all-for-one': ['alpha', 'gamma', 'beta'],
+  'all-for-one-factor-fusion': ['alpha', 'beta', 'gamma'],
+  'all-for-one-youth-age': ['alpha', 'beta', 'gamma'],
+  dabi: ['alpha', 'gamma', 'beta'],
+  'dabi-crazy-torch': ['beta', 'alpha', 'gamma'],
+  'himiko-toga': ['beta', 'gamma', 'alpha'],
+  'himiko-toga-sting-dance': ['beta', 'alpha', 'gamma'],
+  twice: ['beta', 'gamma', 'alpha'],
+  'mr-compress': ['alpha', 'gamma', 'beta'],
+  kurogiri: ['beta', 'gamma', 'alpha'],
+  'lady-nagant': ['alpha', 'gamma', 'beta'],
+  overhaul: ['gamma', 'alpha', 'beta'],
+  'overhaul-blighted-precipice': ['beta', 'alpha', 'gamma'],
+};
+
+function getSkillName(
+  skills: Array<[SkillSlot, string]>,
+  slot: LevelPriority[number],
+) {
+  const skill = skills.find(([skillSlot]) => skillSlot === slot);
+  if (!skill) {
+    throw new Error(`Missing ${slot} skill in roster data`);
+  }
+
+  return skill[1];
+}
+
+function getRecommendedLevelOrder(
+  id: string,
+  skills: Array<[SkillSlot, string]>,
+) {
+  const priority = levelPriorities[id];
+  if (!priority) {
+    throw new Error(`Missing level-up priority for ${id}`);
+  }
+
+  const [primary, secondary, tertiary] = priority.map((slot) => getSkillName(skills, slot));
+
+  return [
+    `${primary} to Lv. 4`,
+    `${secondary} to Lv. 4`,
+    `${primary} to Lv. 9`,
+    `${tertiary} to Lv. 4`,
+    `${secondary} to Lv. 9`,
+    `${tertiary} to Lv. 9`,
+  ];
+}
+
+function getSkillSummary(
+  slot: SkillSlot,
+  name: string,
+  priority: LevelPriority,
+) {
+  if (slot === 'special') {
+    return `${name} is a special action rather than a card-level skill. Treat its charge, cooldown, or activation condition as a separate resource.`;
+  }
+
+  const priorityIndex = priority.indexOf(slot);
+  if (priorityIndex === 0) {
+    return `${name} is the core card-level skill for this style. Take its early breakpoint first, then make it the first skill you finish.`;
+  }
+  if (priorityIndex === 1) {
+    return `${name} is the second upgrade priority. Bring it online early, then finish it after the primary skill reaches Lv. 9.`;
+  }
+
+  return `${name} rounds out the kit. Take its Lv. 4 breakpoint after the first two skills are established, then finish it last.`;
+}
 
 function skillId(slot: SkillSlot, name: string) {
   return `${slot}-${name}`
@@ -390,6 +535,10 @@ const remainingCharacters = characterRoster
   .map((seed): CharacterRecord => {
     const notes = roleNotes[seed.role];
     const isUpcoming = seed.id === 'shota-aizawa-flow-runner';
+    const levelPriority = levelPriorities[seed.id];
+    if (!levelPriority) {
+      throw new Error(`Missing editorial level priority for ${seed.id}`);
+    }
     const styleLabel = seed.isAlternative
       ? `${seed.battleStyle} alternate battle style`
       : 'original battle style';
@@ -404,7 +553,7 @@ const remainingCharacters = characterRoster
       imageFile: seed.imageFile,
       role: seed.role,
       summary: `${isUpcoming ? 'Upcoming: ' : ''}${seed.combatant}'s ${styleLabel}. ${notes.summary}`,
-      playstyle: `${notes.summary} This roster entry has verified role, HP, and skill names; a full editorial strategy pass is still pending.`,
+      playstyle: `${notes.summary} Build around ${getSkillName(seed.skills, levelPriority[0])} first, use ${getSkillName(seed.skills, levelPriority[1])} as the supporting upgrade, and preserve the kit's movement or defensive resources when committing.`,
       unlockMethod: seed.unlockMethod,
       stats: {
         hp: seed.hp,
@@ -414,14 +563,14 @@ const remainingCharacters = characterRoster
         id: skillId(slot, name),
         slot,
         name,
-        summary: `${name} is this style's ${slot === 'special' ? 'special action' : `${slot} skill`}. Behavior details need an editorial verification pass.`,
+        summary: getSkillSummary(slot, name, levelPriority),
       })),
-      recommendedLevelOrder: ['Level-up order needs editorial review'],
+      recommendedLevelOrder: getRecommendedLevelOrder(seed.id, seed.skills),
       strengths: notes.strengths,
       weaknesses: notes.weaknesses,
       beginnerNotes: [
         `Learn the timing and resource limits of ${seed.skills[0]?.[1] ?? 'the alpha skill'} before committing to long chases.`,
-        'Treat the displayed ratings as a provisional role baseline until this guide receives a dedicated editorial pass.',
+        `Follow the suggested early breakpoints before spending cards on ${getSkillName(seed.skills, levelPriority[2])}, the final upgrade priority.`,
       ],
       tags: [
         ...notes.tags,
@@ -433,7 +582,7 @@ const remainingCharacters = characterRoster
       source: {
         sourceUrl: seed.sourceUrl,
         sourceName: 'UltraRumble.com',
-        sourceNote: 'Role, HP, unlock note, artwork, and skill names checked against the public character database. Ratings and general advice are provisional editorial baselines.',
+        sourceNote: 'Role, HP, unlock note, artwork, and skill names checked against the public character database. Ratings, skill priorities, and strategy advice are editorial.',
         lastChecked: '2026-06-19',
       },
       needsVerification: true,
