@@ -208,3 +208,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Expanded the character browser from four samples to 59 roster records: 38 original entries and 21 alternate battle styles, including the source-listed upcoming Flow Runner style. Each record has a static route, sourced role/HP/skill names, battle-style metadata, locally optimized WebP artwork, an asset-source manifest entry, and an explicit verification state. The browser now filters originals and alternatives separately.
+
+## Maintenance — Vibrant Visual Refresh
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Reworked the site into a brighter battle-guide identity using an original yellow/cyan/magenta palette, angular hazard accents, stronger navigation and cards, a responsive official-art home banner, gameplay showcase panels, and locally optimized source-tracked artwork. The composition remains distinct from both approved reference sites and retains the visible unofficial-site disclaimer.

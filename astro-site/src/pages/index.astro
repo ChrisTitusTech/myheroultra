@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import heroArtwork from '../assets/banners/ultra-rumble-hero.webp';
+import teamBattleArtwork from '../assets/ui/team-battle.webp';
+import allMightArtwork from '../assets/ui/all-might-charge.webp';
+import itemArtwork from '../assets/ui/item-upgrade.webp';
 import GuideCard from '../components/GuideCard.astro';
 import { sortGuides } from '../data/guides';
 import { site } from '../data/site';
@@ -11,10 +16,36 @@ const featuredGuides = sortGuides(
 ---
 <BaseLayout title={site.title} description={site.description}>
   <section class="hero">
-    <p class="eyebrow">Unofficial player field notes</p>
-    <h1>{site.title}</h1>
-    <p class="hero__lede">Clear character breakdowns, practical guides, and beginner resources built for quick answers between matches.</p>
-    <a class="button" href="/characters">Browse Characters</a>
+    <Image
+      class="hero__artwork"
+      src={heroArtwork}
+      alt="Izuku Midoriya, Katsuki Bakugo, and Shoto Todoroki ready for battle"
+      widths={[960, 1440, 1920]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero__scrim"></div>
+    <div class="hero__content">
+      <p class="eyebrow">Unofficial player field notes</p>
+      <h1>Build your <em>Plus Ultra</em> game plan.</h1>
+      <p class="hero__lede">Fast character breakdowns, battle-style comparisons, practical guides, and beginner routes built for the next match.</p>
+      <div class="hero__actions">
+        <a class="button" href="/characters">Explore 59 roster entries</a>
+        <a class="button button--secondary" href="/guides">Read field guides</a>
+      </div>
+    </div>
+    <div class="hero__stamp" aria-hidden="true">
+      <span>59</span>
+      <small>characters<br />+ styles</small>
+    </div>
+  </section>
+
+  <section class="field-strip" aria-label="Site highlights">
+    <div><strong>38</strong><span>Original fighters</span></div>
+    <div><strong>21</strong><span>Alternative styles</span></div>
+    <div><strong>5</strong><span>Combat roles</span></div>
+    <div><strong>0</strong><span>Paywalls. Just notes.</span></div>
   </section>
 
   {featuredGuides.length > 0 && (
@@ -31,4 +62,28 @@ const featuredGuides = sortGuides(
       </div>
     </section>
   )}
+
+  <section class="gameplay-showcase" aria-labelledby="gameplay-heading">
+    <div class="section-heading-row">
+      <div>
+        <p class="section-kicker">Read the fight</p>
+        <h2 id="gameplay-heading">From first drop to final team</h2>
+      </div>
+      <p>Learn the roster, build around your role, and turn chaotic fights into repeatable decisions.</p>
+    </div>
+    <div class="gameplay-grid">
+      <article class="gameplay-card gameplay-card--wide">
+        <Image src={teamBattleArtwork} alt="Dabi and All Might clashing during a team battle" widths={[640, 960, 1280]} sizes="(max-width: 680px) 100vw, 66vw" loading="lazy" />
+        <div><span>01</span><h3>Know the matchup</h3><p>Spot threat ranges, escape tools, and punish windows before the brawl starts.</p></div>
+      </article>
+      <article class="gameplay-card">
+        <Image src={allMightArtwork} alt="All Might charging through a ruined city street" widths={[480, 720]} sizes="(max-width: 680px) 100vw, 33vw" loading="lazy" />
+        <div><span>02</span><h3>Own your role</h3><p>Build a plan around Strike, Assault, Rapid, Technical, or Support.</p></div>
+      </article>
+      <article class="gameplay-card">
+        <Image src={itemArtwork} alt="Izuku Midoriya finding an upgrade item during a match" widths={[480, 720]} sizes="(max-width: 680px) 100vw, 33vw" loading="lazy" />
+        <div><span>03</span><h3>Level with purpose</h3><p>Spend cards and resources around the skills that define your style.</p></div>
+      </article>
+    </div>
+  </section>
 </BaseLayout>

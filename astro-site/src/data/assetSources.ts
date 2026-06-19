@@ -546,5 +546,41 @@ export const assetSources: AssetSource[] = [
     "assetType": "character-image",
     "lastChecked": "2026-06-19",
     "usageNote": "Overhaul — Blighted Precipice roster artwork for an unofficial fan guide"
+  },
+  {
+    "id": "ultra-rumble-home-hero",
+    "file": "/src/assets/banners/ultra-rumble-hero.webp",
+    "sourceUrl": "https://static.bandainamcoent.eu/high/my-hero-academia/my-hero-ultra-rumble/00-page-setup/MHUR-new-header-desktop.jpg",
+    "sourceName": "Bandai Namco Entertainment Europe",
+    "assetType": "banner-image",
+    "lastChecked": "2026-06-19",
+    "usageNote": "Cropped home-page atmosphere art for an unofficial fan guide"
+  },
+  {
+    "id": "team-battle-showcase",
+    "file": "/src/assets/ui/team-battle.webp",
+    "sourceUrl": "https://static.bandainamcoent.eu/high/my-hero-academia/my-hero-ultra-rumble/02-screenshots/MHUR_KF_1.png",
+    "sourceName": "Bandai Namco Entertainment Europe",
+    "assetType": "ui-image",
+    "lastChecked": "2026-06-19",
+    "usageNote": "Gameplay showcase image for an unofficial fan guide"
+  },
+  {
+    "id": "all-might-charge-showcase",
+    "file": "/src/assets/ui/all-might-charge.webp",
+    "sourceUrl": "https://static.bandainamcoent.eu/high/my-hero-academia/my-hero-ultra-rumble/02-screenshots/MHUR_KF_2.png",
+    "sourceName": "Bandai Namco Entertainment Europe",
+    "assetType": "ui-image",
+    "lastChecked": "2026-06-19",
+    "usageNote": "Gameplay showcase image for an unofficial fan guide"
+  },
+  {
+    "id": "item-upgrade-showcase",
+    "file": "/src/assets/ui/item-upgrade.webp",
+    "sourceUrl": "https://static.bandainamcoent.eu/high/my-hero-academia/my-hero-ultra-rumble/02-screenshots/MHUR_KF_3.png",
+    "sourceName": "Bandai Namco Entertainment Europe",
+    "assetType": "ui-image",
+    "lastChecked": "2026-06-19",
+    "usageNote": "Gameplay showcase image for an unofficial fan guide"
   }
 ];
