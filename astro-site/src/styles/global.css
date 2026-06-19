@@ -37,7 +37,7 @@ body {
     radial-gradient(circle at 8% 8%, rgb(255 63 100 / 20%), transparent 30rem),
     radial-gradient(circle at 92% 18%, rgb(57 217 255 / 16%), transparent 32rem),
     var(--ink-deep);
-  line-height: 1.6;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
 
@@ -87,7 +87,7 @@ select:focus-visible,
 main {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2rem 0 4rem;
+  padding: 1.25rem 0 2.5rem;
 }
 
 .site-header {
@@ -111,8 +111,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.8rem 0;
+  gap: 0.75rem;
+  padding: 0.55rem 0;
 }
 
 .site-header nav {
@@ -122,7 +122,7 @@ main {
 }
 
 .site-header nav a {
-  padding: 0.48rem 0.8rem;
+  padding: 0.4rem 0.68rem;
   border: 1px solid transparent;
   border-radius: 0.35rem;
   color: #dce5ff;
@@ -151,14 +151,14 @@ main {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.6rem;
   text-decoration: none;
 }
 
 .brand__mark {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  width: 2.55rem;
+  height: 2.55rem;
   place-items: center;
   border: 3px solid var(--ink-deep);
   outline: 2px solid var(--yellow);
@@ -192,8 +192,8 @@ main {
 
 .hero {
   position: relative;
-  min-height: clamp(520px, 70vw, 680px);
-  margin-top: 1.5rem;
+  min-height: clamp(420px, 52vw, 540px);
+  margin-top: 0.75rem;
   border: 2px solid var(--cream);
   border-radius: 1.25rem;
   background: var(--panel);
@@ -248,7 +248,7 @@ main {
   position: relative;
   z-index: 2;
   width: min(650px, 65%);
-  padding: clamp(3.5rem, 8vw, 7rem) clamp(2rem, 6vw, 5rem);
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
 }
 
 .error-page {
@@ -293,7 +293,7 @@ main {
 
 .hero__lede {
   max-width: 650px;
-  margin: 1.5rem 0 2rem;
+  margin: 1rem 0 1.4rem;
   color: #eef4ff;
   font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
@@ -307,8 +307,8 @@ main {
 .hero__stamp {
   position: absolute;
   z-index: 4;
-  right: 2.4rem;
-  bottom: 2.4rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.55rem;
@@ -335,7 +335,7 @@ main {
 }
 
 .eyebrow {
-  margin: 0 0 1rem;
+  margin: 0 0 0.65rem;
   color: var(--cyan);
   font-size: 0.8rem;
   font-weight: 800;
@@ -345,7 +345,7 @@ main {
 
 .button {
   display: inline-flex;
-  padding: 0.8rem 1rem;
+  padding: 0.65rem 0.85rem;
   border: 2px solid var(--ink-deep);
   border-radius: 0.35rem;
   background: var(--yellow);
@@ -370,14 +370,14 @@ main {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 .page-heading {
   max-width: 760px;
-  padding: 3rem 0 2rem;
+  padding: 1.5rem 0 1.25rem;
 }
 
 .page-heading h1 {
@@ -390,7 +390,7 @@ main {
 }
 
 .page-heading > p:last-child {
-  margin: 1rem 0 0;
+  margin: 0.65rem 0 0;
   color: #cbd3ed;
   font-size: 1.1rem;
 }
@@ -415,14 +415,14 @@ main {
 }
 
 .home-section {
-  padding: 2rem 0 4rem;
+  padding: 1.5rem 0 2.5rem;
 }
 
 .field-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
-  margin: 3.2rem 0 1rem;
+  margin: 2rem 0 0.5rem;
   border: 2px solid var(--yellow);
   background: var(--yellow);
   box-shadow: 8px 8px 0 rgb(57 217 255 / 35%);
@@ -431,16 +431,16 @@ main {
 
 .field-strip div {
   display: flex;
-  min-height: 88px;
+  min-height: 70px;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem;
+  padding: 0.75rem;
   background: var(--panel);
 }
 
 .field-strip strong {
   color: var(--yellow);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-style: italic;
   font-weight: 950;
   line-height: 1;
@@ -460,7 +460,7 @@ main {
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
 }
 
 .section-heading-row h2 {
@@ -479,7 +479,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   padding: 0;
   list-style: none;
 }
@@ -495,14 +495,14 @@ main {
 .guide-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .guide-card {
   display: flex;
-  min-height: 285px;
+  min-height: 230px;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.75rem;
   background:
@@ -519,7 +519,7 @@ main {
 }
 
 .guide-card--compact {
-  min-height: 240px;
+  min-height: 205px;
 }
 
 .guide-card__meta,
@@ -543,8 +543,8 @@ main {
 
 .guide-card h2,
 .guide-card h3 {
-  margin: 1rem 0 0.6rem;
-  font-size: 1.4rem;
+  margin: 0.7rem 0 0.45rem;
+  font-size: 1.25rem;
   line-height: 1.15;
 }
 
@@ -561,7 +561,7 @@ main {
 .guide-card__footer {
   justify-content: space-between;
   margin-top: auto;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   color: #98a3c2;
   font-size: 0.76rem;
 }
@@ -579,11 +579,11 @@ main {
 }
 
 .guide-hero {
-  padding: clamp(2.5rem, 8vw, 6rem) 0 2.5rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem) 0 1.5rem;
 }
 
 .guide-hero h1 {
-  margin: 1rem 0;
+  margin: 0.7rem 0;
   font-size: clamp(2.8rem, 8vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
@@ -597,7 +597,7 @@ main {
 }
 
 .guide-byline {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #98a3c2;
   font-size: 0.82rem;
 }
@@ -607,8 +607,8 @@ main {
 }
 
 .guide-alert {
-  margin-bottom: 2rem;
-  padding: 1rem 1.15rem;
+  margin-bottom: 1.25rem;
+  padding: 0.8rem 1rem;
   border: 1px solid #80614c;
   border-radius: 0.8rem;
   background: rgb(128 97 76 / 12%);
@@ -625,11 +625,11 @@ main {
 
 .guide-prose {
   color: #d7ddf1;
-  font-size: 1.03rem;
+  font-size: 1rem;
 }
 
 .guide-prose h2 {
-  margin: 3rem 0 0.8rem;
+  margin: 2rem 0 0.6rem;
   color: #f7f8fc;
   font-size: clamp(1.6rem, 4vw, 2.25rem);
   line-height: 1.1;
@@ -637,18 +637,18 @@ main {
 }
 
 .guide-prose h3 {
-  margin: 2rem 0 0.6rem;
+  margin: 1.4rem 0 0.45rem;
   color: #f7f8fc;
 }
 
 .guide-prose p,
 .guide-prose ul,
 .guide-prose ol {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.9rem;
 }
 
 .guide-prose li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .guide-prose strong {
@@ -660,7 +660,7 @@ main {
 }
 
 .guide-prose blockquote {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   padding: 0.75rem 1rem;
   border-left: 3px solid #98a8ff;
   background: #11182b;
@@ -668,8 +668,8 @@ main {
 
 .guide-sources,
 .related-guides {
-  margin-top: 4rem;
-  padding-top: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid #2c3654;
 }
 
@@ -691,7 +691,7 @@ main {
 }
 
 .related-guides {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .card,
@@ -704,9 +704,9 @@ main {
 
 .card {
   display: flex;
-  min-height: 420px;
+  min-height: 350px;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1rem;
   overflow: hidden;
   box-shadow: 5px 5px 0 rgb(255 63 100 / 14%);
   transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
@@ -720,7 +720,7 @@ main {
 
 .card__artwork-link {
   display: block;
-  margin: -1.25rem -1.25rem 1rem;
+  margin: -1rem -1rem 0.75rem;
   border-bottom: 1px solid #2c3654;
   background:
     linear-gradient(145deg, rgb(255 216 61 / 25%), transparent 35%),
@@ -745,8 +745,8 @@ main {
 }
 
 .character-artwork--card img {
-  max-height: 220px;
-  padding: 0.75rem;
+  max-height: 180px;
+  padding: 0.55rem;
 }
 
 .character-artwork--tier {
@@ -762,8 +762,8 @@ main {
 }
 
 .card h2 {
-  margin: 1.2rem 0 0.5rem;
-  font-size: 1.6rem;
+  margin: 0.8rem 0 0.4rem;
+  font-size: 1.4rem;
   line-height: 1.1;
 }
 
@@ -791,12 +791,12 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
-  margin: auto 0 1rem;
-  padding-top: 1.5rem;
+  margin: auto 0 0;
+  padding-top: 1rem;
 }
 
 .card__stats div {
-  padding: 0.65rem;
+  padding: 0.5rem;
   border: 1px solid #2c3654;
   border-radius: 0.65rem;
   background: var(--ink);
@@ -854,8 +854,8 @@ main {
 .controls {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 
 .controls label {
@@ -899,7 +899,7 @@ main {
 }
 
 .browser-heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.85rem;
 }
 
 .browser-heading h2 {
@@ -917,7 +917,7 @@ main {
 
 .filter-actions {
   min-height: 2.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .filter-actions p {
@@ -945,7 +945,7 @@ main {
 }
 
 .browser-empty-state {
-  padding: 2rem;
+  padding: 1.25rem;
   border: 1px dashed #56617e;
   border-radius: 0.75rem;
   text-align: center;
@@ -973,7 +973,7 @@ table {
 
 th,
 td {
-  padding: 0.75rem;
+  padding: 0.58rem 0.65rem;
   border-bottom: 1px solid #2c3654;
   text-align: left;
 }
@@ -999,7 +999,7 @@ td:first-child {
 }
 
 .stat-bar {
-  margin: 0.75rem 0;
+  margin: 0.55rem 0;
 }
 
 .stat-bar__label {
@@ -1027,17 +1027,17 @@ td:first-child {
 }
 
 .character-page {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .character-hero {
-  padding: clamp(2.5rem, 8vw, 6rem) 0 3rem;
+  padding: clamp(1.25rem, 4vw, 3rem) 0 2rem;
 }
 
 .character-hero__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: center;
 }
 
@@ -1046,7 +1046,7 @@ td:first-child {
 }
 
 .character-artwork--hero {
-  min-height: 320px;
+  min-height: 270px;
   border: 1px solid #2c3654;
   border-radius: 1.5rem;
   background:
@@ -1060,12 +1060,12 @@ td:first-child {
 }
 
 .character-artwork--hero img {
-  max-height: 460px;
-  padding: 1rem;
+  max-height: 400px;
+  padding: 0.75rem;
 }
 
 .breadcrumb {
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   color: #98a3c2;
   font-size: 0.9rem;
 }
@@ -1091,12 +1091,13 @@ td:first-child {
 
 .character-hero__badges {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 0.55rem;
 }
 
 .character-hero h1 {
-  margin: 1rem 0;
+  margin: 0.65rem 0;
   font-size: clamp(3rem, 9vw, 6.5rem);
   line-height: 0.9;
   letter-spacing: -0.055em;
@@ -1115,7 +1116,7 @@ td:first-child {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -1132,13 +1133,13 @@ td:first-child {
 .character-page__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
-  gap: clamp(2rem, 6vw, 5rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
 }
 
 .character-page__main {
   display: grid;
-  gap: 3.5rem;
+  gap: 2rem;
 }
 
 .character-page__sidebar {
@@ -1151,14 +1152,14 @@ td:first-child {
 .content-section h2,
 .stat-panel h2,
 .level-panel h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.7rem;
   font-size: clamp(1.6rem, 3vw, 2.25rem);
   line-height: 1.1;
   letter-spacing: -0.025em;
 }
 
 .section-kicker {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.35rem;
   color: var(--cyan);
   font-size: 0.75rem;
   font-weight: 800;
@@ -1176,12 +1177,12 @@ td:first-child {
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
+  gap: 0.65rem;
 }
 
 .skill-card {
-  min-height: 150px;
-  padding: 1rem;
+  min-height: 130px;
+  padding: 0.85rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background:
@@ -1220,7 +1221,7 @@ td:first-child {
 }
 
 .split-section > div {
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background: var(--panel);
@@ -1230,7 +1231,7 @@ td:first-child {
 .warning-list,
 .numbered-notes {
   display: grid;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin: 0;
   padding-left: 1.25rem;
   color: #cbd3ed;
@@ -1252,7 +1253,7 @@ td:first-child {
 .stat-panel,
 .level-panel,
 .source-note {
-  padding: 1.2rem;
+  padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.9rem;
   background: var(--panel);
@@ -1269,8 +1270,8 @@ td:first-child {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
-  padding: 0.8rem;
+  margin-bottom: 0.85rem;
+  padding: 0.65rem;
   border-radius: 0.65rem;
   background: var(--ink);
 }
@@ -1285,8 +1286,8 @@ td:first-child {
 
 .level-panel ol {
   display: grid;
-  gap: 0.65rem;
-  margin: 0 0 1rem;
+  gap: 0.45rem;
+  margin: 0 0 0.75rem;
   padding-left: 1.25rem;
 }
 
@@ -1344,10 +1345,10 @@ td:first-child {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2rem;
+  gap: 1.25rem;
   align-items: end;
-  margin: 1.5rem 0 3rem;
-  padding: clamp(2rem, 7vw, 5rem);
+  margin: 0.75rem 0 2rem;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
   border: 2px solid var(--cream);
   border-radius: 1.2rem;
   background:
@@ -1389,7 +1390,7 @@ td:first-child {
 
 .tier-hero__lede {
   max-width: 750px;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   color: #e5ebff;
   font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
@@ -1416,7 +1417,7 @@ td:first-child {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 1rem;
+  padding: 0.8rem;
   border: 3px solid var(--ink-deep);
   outline: 2px solid var(--cream);
   background: var(--red);
@@ -1441,9 +1442,9 @@ td:first-child {
 .tier-method {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(1.5rem, 5vw, 4rem);
-  margin: 0 0 4rem;
-  padding: clamp(1.3rem, 4vw, 2rem);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin: 0 0 2.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
   border: 1px solid var(--line);
   border-radius: 1rem;
   background: var(--panel);
@@ -1466,12 +1467,12 @@ td:first-child {
 
 .tier-method dl {
   display: grid;
-  gap: 0.8rem;
+  gap: 0.55rem;
   margin: 0;
 }
 
 .tier-method dl div {
-  padding: 0.85rem 1rem;
+  padding: 0.65rem 0.8rem;
   border-left: 3px solid var(--cyan);
   background: var(--ink);
 }
@@ -1493,7 +1494,7 @@ td:first-child {
 .tier-board,
 .tier-debates,
 .tier-sources {
-  margin-top: 4rem;
+  margin-top: 2.5rem;
 }
 
 .tier-board .section-heading-row > p,
@@ -1517,8 +1518,8 @@ td:first-child {
 .tier-row__label {
   display: grid;
   align-content: start;
-  gap: 1rem;
-  padding: 1.2rem;
+  gap: 0.75rem;
+  padding: 0.9rem;
   border-right: 1px solid var(--line);
   background: linear-gradient(145deg, rgb(255 255 255 / 8%), transparent 60%);
 }
@@ -1526,14 +1527,14 @@ td:first-child {
 .tier-row__label > span {
   --tier-color: var(--yellow);
   display: grid;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.8rem;
+  height: 3.8rem;
   place-items: center;
   border: 3px solid var(--ink-deep);
   outline: 2px solid var(--tier-color);
   background: var(--tier-color);
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 2.15rem;
   font-style: italic;
   font-weight: 950;
   line-height: 1;
@@ -1592,8 +1593,8 @@ td:first-child {
 .tier-row__characters {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-  gap: 0.7rem;
-  padding: 0.9rem;
+  gap: 0.55rem;
+  padding: 0.65rem;
 }
 
 .tier-character {
@@ -1658,13 +1659,13 @@ td:first-child {
 .tier-sources__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .tier-debates__grid article {
   position: relative;
-  min-height: 210px;
-  padding: 1.3rem;
+  min-height: 170px;
+  padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background:
@@ -1701,9 +1702,9 @@ td:first-child {
 
 .tier-source {
   display: flex;
-  min-height: 290px;
+  min-height: 235px;
   flex-direction: column;
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid var(--line);
   border-radius: 0.8rem;
   background: var(--panel);
@@ -1740,7 +1741,7 @@ td:first-child {
 }
 
 .tier-source h3 {
-  margin: 1rem 0 0.25rem;
+  margin: 0.7rem 0 0.25rem;
   font-size: 1.3rem;
   line-height: 1.15;
 }
@@ -1754,7 +1755,7 @@ td:first-child {
 }
 
 .tier-source__creator {
-  margin: 0 0 1rem;
+  margin: 0 0 0.65rem;
   color: var(--cyan);
   font-size: 0.8rem;
   font-weight: 750;
@@ -1767,14 +1768,14 @@ td:first-child {
 
 .tier-source__link {
   margin-top: auto;
-  padding-top: 1.25rem;
+  padding-top: 0.85rem;
   color: var(--yellow);
   font-size: 0.82rem;
   font-weight: 800;
 }
 
 .gameplay-showcase {
-  padding: 2rem 0 5rem;
+  padding: 1.5rem 0 3rem;
 }
 
 .gameplay-showcase .section-heading-row > p {
@@ -1786,12 +1787,12 @@ td:first-child {
 .gameplay-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
-  gap: 1rem;
+  gap: 0.75rem;
 }
 
 .gameplay-card {
   position: relative;
-  min-height: 260px;
+  min-height: 220px;
   border: 2px solid var(--cream);
   border-radius: 0.8rem;
   background: var(--panel);
@@ -1801,7 +1802,7 @@ td:first-child {
 
 .gameplay-card--wide {
   grid-row: span 2;
-  min-height: 540px;
+  min-height: 455px;
   box-shadow: 7px 7px 0 var(--red);
 }
 
@@ -1819,7 +1820,7 @@ td:first-child {
 .gameplay-card > div {
   position: absolute;
   inset: auto 0 0;
-  padding: 1.2rem;
+  padding: 0.9rem;
   background: linear-gradient(0deg, rgb(8 11 28 / 98%), rgb(8 11 28 / 82%) 65%, transparent);
 }
 
@@ -1849,7 +1850,7 @@ td:first-child {
 .site-footer {
   width: min(1180px, calc(100% - 2rem));
   margin: 0 auto;
-  padding: 2rem 0 3rem;
+  padding: 1.5rem 0 2rem;
   border-top: 3px solid var(--yellow);
   color: #98a3c2;
   font-size: 0.875rem;
@@ -1885,7 +1886,7 @@ td:first-child {
   }
 
   .hero {
-    min-height: 620px;
+    min-height: 520px;
     margin-right: 0.45rem;
     box-shadow:
       7px 7px 0 var(--yellow),
@@ -1905,10 +1906,10 @@ td:first-child {
   .hero__content {
     display: flex;
     width: 100%;
-    min-height: 620px;
+    min-height: 520px;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 2rem 1.4rem 2.6rem;
+    padding: 1.5rem 1.2rem 2rem;
   }
 
   .hero .eyebrow {
@@ -1927,7 +1928,7 @@ td:first-child {
 
   .field-strip {
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 2.5rem;
+    margin-top: 1.75rem;
   }
 
   .gameplay-grid {
@@ -1936,7 +1937,7 @@ td:first-child {
 
   .gameplay-card,
   .gameplay-card--wide {
-    min-height: 300px;
+    min-height: 250px;
     grid-row: auto;
   }
 
@@ -1958,7 +1959,7 @@ td:first-child {
   }
 
   .filter-actions {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
   }
 
   .table-scroll {
@@ -1984,7 +1985,7 @@ td:first-child {
 
   .table-scroll tbody {
     display: grid;
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
 
   .table-scroll tr {
@@ -2041,7 +2042,7 @@ td:first-child {
   .tier-hero {
     grid-template-columns: 1fr;
     margin-right: 0.45rem;
-    padding: 2rem 1.3rem 2.4rem;
+    padding: 1.5rem 1.1rem 1.8rem;
     box-shadow:
       7px 7px 0 var(--yellow),
       12px 12px 0 rgb(255 63 100 / 35%);

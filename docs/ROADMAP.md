@@ -277,3 +277,9 @@ Do not start this phase until static content workflow becomes a bottleneck.
 **Status:** Complete as of June 19, 2026.
 
 **Implementation note:** Added four static, original-language guides based on recurring subreddit questions. The expansion covers match fundamentals and colored cards, team recovery, Roll Point pity planning, and solo-queue ranked decision-making, with Reddit demand sources and patch-sensitivity warnings attached to each article.
+
+## Maintenance — Compact Layout Pass
+
+**Status:** Complete as of June 19, 2026.
+
+**Implementation note:** Tightened the shared layout rhythm across navigation, heroes, cards, tables, character guides, articles, tier-list sections, and mobile views. Reduced oversized minimum heights and vertical gaps while preserving readable type, touch-friendly controls, responsive stacking, and the existing visual identity.
