@@ -150,6 +150,8 @@ Acceptance criteria:
 
 **Implementation note:** Phase 3 added five sourced Markdown guides, reusable guide cards and article layouts, static `/guides/[slug]` generation, featured guides on the home page, source and patch-sensitivity displays, tag-based related-guide selection, and character-to-guide links for Star and Stripe and All Might.
 
+**Content note:** Added a Season 17 Shota Aizawa guide covering beginner decision-making, level breakpoints, practical and conditional combo routes, Erasure timing, advanced cloth movement, team-fight priorities, matchup considerations, and a repeatable Training routine. Patch-sensitive Beta behavior is explicitly separated from reliable kit fundamentals.
+
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.
 
