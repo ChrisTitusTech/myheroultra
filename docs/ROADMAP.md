@@ -152,6 +152,8 @@ Acceptance criteria:
 
 **Content note:** Added a Season 17 Shota Aizawa guide covering beginner decision-making, level breakpoints, practical and conditional combo routes, Erasure timing, advanced cloth movement, team-fight priorities, matchup considerations, and a repeatable Training routine. Patch-sensitive Beta behavior is explicitly separated from reliable kit fundamentals.
 
+**Content note:** Added a Season 17 Crazy Torch Dabi guide based on current UltraRumble.com data and creator transcripts. The guide prioritizes the Season 17 Alpha and Gamma improvements, documents the observed Beta early-release bug, separates reliable pressure from conditional combo routes, and covers health management, level priorities, positioning, matchups, and team-fight decisions.
+
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.
 
