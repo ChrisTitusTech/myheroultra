@@ -154,6 +154,8 @@ Acceptance criteria:
 
 **Content note:** Added a Season 17 Crazy Torch Dabi guide based on current UltraRumble.com data and creator transcripts. The guide prioritizes the Season 17 Alpha and Gamma improvements, documents the observed Beta early-release bug, separates reliable pressure from conditional combo routes, and covers health management, level priorities, positioning, matchups, and team-fight decisions.
 
+**Content note:** Added a Season 17 original Support Overhaul guide using a recency-and-reach weighted review of current game data, five YouTube guides and match analyses, and four Reddit technique discussions. The guide distinguishes original Overhaul from Blighted Precipice, updates obsolete launch-era Special Action advice, and covers level priorities, surface-aware Beta use, reliable and conditional combos, landing-cancel tech, team healing, matchups, tuning goals, and a repeatable Training routine.
+
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.
 
