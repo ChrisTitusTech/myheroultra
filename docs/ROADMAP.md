@@ -156,6 +156,8 @@ Acceptance criteria:
 
 **Content note:** Added a Season 17 original Support Overhaul guide using a recency-and-reach weighted review of current game data, five YouTube guides and match analyses, and four Reddit technique discussions. The guide distinguishes original Overhaul from Blighted Precipice, updates obsolete launch-era Special Action advice, and covers level priorities, surface-aware Beta use, reliable and conditional combos, landing-cancel tech, team healing, matchups, tuning goals, and a repeatable Training routine.
 
+**Content note:** Added a Season 17 original Strike Shoto Todoroki guide using current database values and a recency-weighted review of YouTube and Reddit sources. The guide separates reliable freeze conversions from geometry- and timing-dependent combo tech, documents modern Ice Step jump-cancel movement, and covers level breakpoints, wall control, team play, matchups, tuning goals, and a repeatable Training routine.
+
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.
 
