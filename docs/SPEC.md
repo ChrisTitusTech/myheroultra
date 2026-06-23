@@ -234,6 +234,7 @@ The site uses Astro's default static generation mode. The Cloudflare adapter is 
 - Every roster record has a static detail route, local artwork, source metadata, skill summaries, and a complete level-up order.
 - At least 9 sourced guide pages exist, with draft entries excluded from production routes.
 - The guide library includes a current original Strike Shoto article that distinguishes reliable routes from patch-sensitive Ice Step and double-Beta tech.
+- The guide library includes a current Fumikage Tokoyami article that distinguishes dependable resource cycling and Beta confirms from patch-sensitive melee-loop and T.U.N.I.N.G. optimizations.
 - The guide library includes intermediate and expert coverage for movement, coordinated team fights, recovery i-frames, and outnumbered endgames.
 - The Season 17 tier list covers every roster record exactly once, with unreleased styles outside competitive tiers.
 - Every external asset has a matching source-manifest entry and production pages do not hotlink imagery.

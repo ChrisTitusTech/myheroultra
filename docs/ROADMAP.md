@@ -158,6 +158,8 @@ Acceptance criteria:
 
 **Content note:** Added a Season 17 original Strike Shoto Todoroki guide using current database values and a recency-weighted review of YouTube and Reddit sources. The guide separates reliable freeze conversions from geometry- and timing-dependent combo tech, documents modern Ice Step jump-cancel movement, and covers level breakpoints, wall control, team play, matchups, tuning goals, and a repeatable Training routine.
 
+**Content note:** Added a Season 17 Fumikage Tokoyami guide synthesized from transcript-only reviews of five popular YouTube guides and representative Reddit technique discussions. The guide centers Black Ankh resource cycling, separates reliable Beta-to-Alpha confirms from conditional air-melee loops, and covers Gamma team utility, aerial movement, adaptive level priorities, tuning directions, common mistakes, and a repeatable Training routine.
+
 ## Phase 4 — SEO and Polish
 Goal: Make the site discoverable and professional.
 
