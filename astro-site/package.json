@@ -21,7 +21,7 @@
   "dependencies": {
     "@astrojs/react": "5.0.7",
     "@astrojs/sitemap": "3.7.3",
-    "astro": "6.4.8",
+    "astro": "7.3.2",
     "react": "19.2.7",
     "react-dom": "19.2.7"
   },
@@ -35,7 +35,7 @@
     "globals": "17.4.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.61.1",
-    "wrangler": "4.102.0"
+    "wrangler": "4.131.0"
   },
   "overrides": {
     "esbuild": "0.28.1",
